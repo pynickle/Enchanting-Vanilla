@@ -33,9 +33,9 @@ public abstract class VillagerMixin extends AbstractVillager {
     @Unique
     private ItemStack OMINOUS_BANNER = Items.WHITE_BANNER.getDefaultInstance();
 
-    public VillagerMixin(EntityType<? extends AbstractVillager> entityType, Level world) {
-        super(entityType, world);
-        HolderLookup.RegistryLookup<BannerPattern> bannerPattern = world.registryAccess().lookupOrThrow(Registries.BANNER_PATTERN);
+    public VillagerMixin(EntityType<? extends AbstractVillager> entityType, Level level) {
+        super(entityType, level);
+        HolderLookup.RegistryLookup<BannerPattern> bannerPattern = level.registryAccess().lookupOrThrow(Registries.BANNER_PATTERN);
 
         OMINOUS_BANNER.set(DataComponents.HIDE_ADDITIONAL_TOOLTIP, Unit.INSTANCE);
         OMINOUS_BANNER.set(DataComponents.RARITY, Rarity.UNCOMMON);
@@ -60,7 +60,7 @@ public abstract class VillagerMixin extends AbstractVillager {
             )
     )
     private void init(EntityType<? extends Villager> entityType, Level level, VillagerType villagerType, CallbackInfo ci) {
-        this.enchanting_vanilla$villagersAttractedGoal = new DoubleHandedTemptGoal(this, 1.0D, Ingredient.of(Items.EMERALD), Ingredient.of(OMINOUS_BANNER), false);
+        this.enchanting_vanilla$villagersAttractedGoal = new DoubleHandedTemptGoal(this, 0.5F, Ingredient.of(Items.EMERALD), Ingredient.of(OMINOUS_BANNER), false);
     }
 
     @Inject(
@@ -71,7 +71,7 @@ public abstract class VillagerMixin extends AbstractVillager {
     )
     private void checkVillagersAttracted(CallbackInfo ci) {
         if (!this.enchanting_vanilla$villagersAttractedGoal.canUse()) {
-            this.enchanting_vanilla$villagersAttractedGoal = new DoubleHandedTemptGoal(this, 1.0D, Ingredient.of(Items.EMERALD), Ingredient.of(OMINOUS_BANNER), false);
+            this.enchanting_vanilla$villagersAttractedGoal = new DoubleHandedTemptGoal(this, 0.5F, Ingredient.of(Items.EMERALD), Ingredient.of(OMINOUS_BANNER), false);
         }
         this.goalSelector.addGoal(0, this.enchanting_vanilla$villagersAttractedGoal);
     }
