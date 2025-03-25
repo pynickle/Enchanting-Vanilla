@@ -21,7 +21,6 @@ public class EnchantingVanilla {
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
 
         EVBlocks.BLOCKS.register(modEventBus);
-        // EVBlockEntities.BLOCK_ENTITIES.register(modEventBus);
     }
 
     public static ResourceLocation prefix(String name) {

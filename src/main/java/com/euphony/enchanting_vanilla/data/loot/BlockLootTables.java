@@ -8,8 +8,6 @@ import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 
-import java.util.Set;
-
 public class BlockLootTables extends BlockLootSubProvider {
     public BlockLootTables(HolderLookup.Provider registries) {
         super(ImmutableSet.of(), FeatureFlags.REGISTRY.allFlags(), registries);
@@ -22,6 +20,6 @@ public class BlockLootTables extends BlockLootSubProvider {
 
     @Override
     protected void generate() {
-        // dropOther(EVBlocks.WATERLOGGED_LILY_PAD.get(), Items.LILY_PAD);
+
     }
 }
