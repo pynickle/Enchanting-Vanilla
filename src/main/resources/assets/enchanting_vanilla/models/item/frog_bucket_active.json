@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "enchanting_vanilla:item/frog_bucket_active"
+    "layer0": "enc_vanilla:item/frog_bucket_active"
   }
 }

@@ -2,18 +2,18 @@
   "variants": {
     "": [
       {
-        "model": "enchanting_vanilla:block/waterlogged_lily_pad"
+        "model": "enc_vanilla:block/waterlogged_lily_pad"
       },
       {
-        "model": "enchanting_vanilla:block/waterlogged_lily_pad",
+        "model": "enc_vanilla:block/waterlogged_lily_pad",
         "y": 90
       },
       {
-        "model": "enchanting_vanilla:block/waterlogged_lily_pad",
+        "model": "enc_vanilla:block/waterlogged_lily_pad",
         "y": 180
       },
       {
-        "model": "enchanting_vanilla:block/waterlogged_lily_pad",
+        "model": "enc_vanilla:block/waterlogged_lily_pad",
         "y": 270
       }
     ]
