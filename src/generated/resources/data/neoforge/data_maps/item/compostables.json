@@ -1,0 +1,52 @@
+{
+  "values": {
+    "minecraft:bamboo": {
+      "chance": 0.5
+    },
+    "minecraft:beetroot_soup": {
+      "chance": 0.85
+    },
+    "minecraft:chorus_flower": {
+      "chance": 0.85
+    },
+    "minecraft:chorus_fruit": {
+      "chance": 0.65
+    },
+    "minecraft:chorus_plant": {
+      "chance": 0.65
+    },
+    "minecraft:coarse_dirt": {
+      "chance": 0.3
+    },
+    "minecraft:dead_bush": {
+      "chance": 0.1
+    },
+    "minecraft:dirt": {
+      "chance": 0.3
+    },
+    "minecraft:grass_block": {
+      "chance": 0.5
+    },
+    "minecraft:muddy_mangrove_roots": {
+      "chance": 0.3
+    },
+    "minecraft:mushroom_stew": {
+      "chance": 0.85
+    },
+    "minecraft:mycelium": {
+      "chance": 0.65
+    },
+    "minecraft:podzol": {
+      "chance": 0.3
+    },
+    "minecraft:popped_chorus_fruit": {
+      "chance": 0.85
+    },
+    "minecraft:rooted_dirt": {
+      "chance": 0.65
+    },
+    "minecraft:rotten_flesh": {
+      "chance": 0.5
+    }
+  }
+}

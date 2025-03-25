@@ -1,7 +1,8 @@
 package com.euphony.enchanting_vanilla;
 
-import com.euphony.enchanting_vanilla.common.init.EVBlockEntities;
 import com.euphony.enchanting_vanilla.common.init.EVBlocks;
+import com.euphony.enchanting_vanilla.common.init.EVDataComponentTypes;
+import com.euphony.enchanting_vanilla.common.init.EVItems;
 import com.mojang.logging.LogUtils;
 import net.minecraft.resources.ResourceLocation;
 import net.neoforged.bus.api.IEventBus;
@@ -21,6 +22,8 @@ public class EnchantingVanilla {
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
 
         EVBlocks.BLOCKS.register(modEventBus);
+        EVDataComponentTypes.DATA_COMPONENTS.register(modEventBus);
+        EVItems.ITEMS.register(modEventBus);
     }
 
     public static ResourceLocation prefix(String name) {

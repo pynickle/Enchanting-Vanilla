@@ -1,6 +1,7 @@
 package com.euphony.enchanting_vanilla.data;
 
 import com.euphony.enchanting_vanilla.EnchantingVanilla;
+import com.euphony.enchanting_vanilla.data.models.ItemModelGenerator;
 import net.minecraft.DetectedVersion;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
@@ -27,8 +28,11 @@ public class DataGenerators {
         DatapackBuiltinEntriesProvider datapackProvider = new RegistryDataGenerator(output, event.getLookupProvider());
         CompletableFuture<HolderLookup.Provider> lookupProvider = datapackProvider.getRegistryProvider();
 
+        generator.addProvider(true, new ItemModelGenerator(output, event.getExistingFileHelper()));
+
         generator.addProvider(true, datapackProvider);
         generator.addProvider(true, new LootGenerator(output, lookupProvider));
+        generator.addProvider(true, new DataMapGenerator(output, lookupProvider));
         generator.addProvider(true, new PackMetadataGenerator(output).add(PackMetadataSection.TYPE, new PackMetadataSection(
                 Component.literal("Resources for Enchanting Vanilla"),
                 DetectedVersion.BUILT_IN.getPackVersion(PackType.CLIENT_RESOURCES),

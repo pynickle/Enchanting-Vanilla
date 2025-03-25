@@ -1,6 +1,6 @@
 package com.euphony.enchanting_vanilla.data;
 
-import com.euphony.enchanting_vanilla.data.loot.BlockLootTables;
+import com.euphony.enchanting_vanilla.data.loots.BlockLootTables;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.WritableRegistry;
 import net.minecraft.data.PackOutput;

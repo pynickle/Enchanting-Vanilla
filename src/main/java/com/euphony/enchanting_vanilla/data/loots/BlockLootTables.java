@@ -1,4 +1,4 @@
-package com.euphony.enchanting_vanilla.data.loot;
+package com.euphony.enchanting_vanilla.data.loots;
 
 import com.euphony.enchanting_vanilla.common.init.EVBlocks;
 import com.google.common.collect.ImmutableSet;
