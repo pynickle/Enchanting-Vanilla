@@ -1,6 +1,6 @@
 package com.euphony.enc_vanilla.data;
 
-import com.euphony.enc_vanilla.EnchantingVanilla;
+import com.euphony.enc_vanilla.EncVanilla;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.RegistrySetBuilder;
 import net.minecraft.data.PackOutput;
@@ -14,6 +14,6 @@ public class RegistryDataGenerator extends DatapackBuiltinEntriesProvider {
     public static final RegistrySetBuilder BUILDER = new RegistrySetBuilder();
 
     public RegistryDataGenerator(PackOutput output, CompletableFuture<HolderLookup.Provider> provider) {
-        super(output, provider, BUILDER, Set.of("minecraft", EnchantingVanilla.MODID));
+        super(output, provider, BUILDER, Set.of("minecraft", EncVanilla.MODID));
     }
 }

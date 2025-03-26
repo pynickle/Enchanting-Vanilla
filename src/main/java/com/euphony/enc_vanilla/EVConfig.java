@@ -21,7 +21,7 @@ public class EVConfig {
     }
 
     public static void register(ModContainer container) {
-        if (!container.getModId().equals(EnchantingVanilla.MODID)) {
+        if (!container.getModId().equals(EncVanilla.MODID)) {
             throw new IllegalArgumentException();
         }
         instance = new EVConfig(container);

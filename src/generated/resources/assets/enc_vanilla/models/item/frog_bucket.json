@@ -1,0 +1,14 @@
+{
+  "parent": "minecraft:item/generated",
+  "overrides": [
+    {
+      "model": "enc_vanilla:item/frog_bucket_active",
+      "predicate": {
+        "minecraft:custom_model_data": 1.0
+      }
+    }
+  ],
+  "textures": {
+    "layer0": "enc_vanilla:item/frog_bucket"
+  }
+}

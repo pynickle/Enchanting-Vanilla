@@ -1,6 +1,6 @@
 package com.euphony.enc_vanilla.data;
 
-import com.euphony.enc_vanilla.EnchantingVanilla;
+import com.euphony.enc_vanilla.EncVanilla;
 import com.euphony.enc_vanilla.data.models.ItemModelGenerator;
 import net.minecraft.DetectedVersion;
 import net.minecraft.core.HolderLookup;
@@ -18,7 +18,7 @@ import net.neoforged.neoforge.data.event.GatherDataEvent;
 import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
 
-@EventBusSubscriber(modid = EnchantingVanilla.MODID, bus = EventBusSubscriber.Bus.MOD)
+@EventBusSubscriber(modid = EncVanilla.MODID, bus = EventBusSubscriber.Bus.MOD)
 public class DataGenerators {
     @SubscribeEvent
     public static void gatherData(GatherDataEvent event) {

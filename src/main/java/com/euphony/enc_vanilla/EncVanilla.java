@@ -11,12 +11,12 @@ import org.slf4j.Logger;
 
 import java.util.Locale;
 
-@Mod(EnchantingVanilla.MODID)
-public class EnchantingVanilla {
+@Mod(EncVanilla.MODID)
+public class EncVanilla {
     public static final String MODID = "enc_vanilla";
     private static final Logger LOGGER = LogUtils.getLogger();
 
-    public EnchantingVanilla(IEventBus modEventBus, ModContainer modContainer) {
+    public EncVanilla(IEventBus modEventBus, ModContainer modContainer) {
         EVConfig.register(modContainer);
 
         EVBlocks.BLOCKS.register(modEventBus);
