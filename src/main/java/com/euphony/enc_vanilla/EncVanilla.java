@@ -20,7 +20,6 @@ public class EncVanilla {
         EVConfig.register(modContainer);
 
         EVBlocks.BLOCKS.register(modEventBus);
-        // EVDataComponentTypes.DATA_COMPONENTS.register(modEventBus);
         EVItems.ITEMS.register(modEventBus);
     }
 

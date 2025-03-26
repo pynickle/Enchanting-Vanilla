@@ -21,6 +21,7 @@ public class ItemModelGenerator extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
+        basicItem(EncVanilla.prefix("frog_bucket_active"));
         predicateItem(EVItems.FROG_BUCKET_ITEM.get(), 1, "frog_bucket_active");
     }
 

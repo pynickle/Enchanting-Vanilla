@@ -1,6 +1,7 @@
 package com.euphony.enc_vanilla.events;
 
 import com.euphony.enc_vanilla.EVConfig;
+import com.euphony.enc_vanilla.EncVanilla;
 import com.euphony.enc_vanilla.common.init.EVItems;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.sounds.SoundEvents;
@@ -18,7 +19,7 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
 
-@EventBusSubscriber(modid = "enc_vanilla")
+@EventBusSubscriber(modid = EncVanilla.MODID)
 public class FrogBucketEvent {
     @SubscribeEvent
     public static void entityInteract(PlayerInteractEvent.EntityInteract event) {

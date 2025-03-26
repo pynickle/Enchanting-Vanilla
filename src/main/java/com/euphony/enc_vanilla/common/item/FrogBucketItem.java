@@ -30,7 +30,7 @@ public class FrogBucketItem extends MobBucketItem {
             int z = Mth.floor(pos.z);
             boolean isActive = stack.get(DataComponents.CUSTOM_MODEL_DATA).value() == 1;
             if(isActive != isSlimeChunk(serverLevel, x, z))
-                stack.set(DataComponents.CUSTOM_MODEL_DATA, new CustomModelData(isActive ? 1 : 0));
+                stack.set(DataComponents.CUSTOM_MODEL_DATA, new CustomModelData(isActive ? 0 : 1));
         }
     }
 
