@@ -22,3 +22,7 @@ A vanilla extension mod
 ### **5.** *More Compostable Items*
 * You can now compost even more items, which include rotten flesh, dead bush, grass blocks and more.
 * Specific information can be viewed in JEI or EMI.
+
+### **6.** *Painting Switching*
+* You can now right-click on a painting to quickly switch between paintings.
+* This is compatible with the Fast Paintings mod.

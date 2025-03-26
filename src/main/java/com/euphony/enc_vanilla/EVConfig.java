@@ -47,6 +47,10 @@ public class EVConfig {
         return common.enabledSlimeChunkDetecting.getAsBoolean();
     }
 
+    public boolean enabledPaintingSwitching() {
+        return common.enabledPaintingSwitching.getAsBoolean();
+    }
+
     public void save() {
         common.spec.save();
         client.spec.save();
@@ -69,6 +73,7 @@ public class EVConfig {
         public final BooleanValue enabledInvisibleItemFrame;
         public final BooleanValue enabledBlocksOnLilyPad;
         public final BooleanValue enabledSlimeChunkDetecting;
+        public final BooleanValue enabledPaintingSwitching;
 
         public CommonConfig() {
             var builder = new ModConfigSpec.Builder();
@@ -78,6 +83,7 @@ public class EVConfig {
             enabledInvisibleItemFrame = builder.define("enabledInvisibleItemFrame", true);
             enabledBlocksOnLilyPad = builder.define("enabledBlocksOnLilyPad", true);
             enabledSlimeChunkDetecting = builder.define("enabledSlimeChunkDetecting", true);
+            enabledPaintingSwitching = builder.define("enabledPaintingSwitching", true);
             builder.pop();
 
             spec = builder.build();

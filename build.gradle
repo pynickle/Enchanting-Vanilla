@@ -19,6 +19,17 @@ repositories {
         name = "ModMaven"
         url = "https://modmaven.dev"
     }
+    exclusiveContent {
+        // Curse Maven
+        forRepository {
+            maven {
+                url "https://cursemaven.com"
+            }
+        }
+        filter {
+            includeGroup "curse.maven"
+        }
+    }
     mavenLocal()
 }
 
@@ -77,6 +88,11 @@ sourceSets.main.resources { srcDir 'src/generated/resources' }
 dependencies {
     compileOnly("mezz.jei:jei-${minecraft_version}-neoforge-api:${jei_version}")
     runtimeOnly("mezz.jei:jei-${minecraft_version}-neoforge:${jei_version}")
+    compileOnly("curse.maven:selene-499980:${selene_id}")
+    compileOnly("curse.maven:fast-paintings-883287:${fast_paintings_id}")
+
+    runtimeOnly("curse.maven:selene-499980:${selene_id}")
+    runtimeOnly("curse.maven:fast-paintings-883287:${fast_paintings_id}")
 }
 
 var generateModMetadata = tasks.register("generateModMetadata", ProcessResources) {
