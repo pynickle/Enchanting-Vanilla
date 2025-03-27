@@ -15,7 +15,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(ItemFrame.class)
-public abstract class InvisibleItemFrame extends HangingEntity implements ICustomItemFrame {
+public abstract class ItemFrameMixin extends HangingEntity implements ICustomItemFrame {
     @Shadow public abstract ItemStack getItem();
 
     @Shadow public abstract void setItem(ItemStack stack);
@@ -23,7 +23,7 @@ public abstract class InvisibleItemFrame extends HangingEntity implements ICusto
     @Unique
     private boolean enc_vanilla$isInvisible;
 
-    protected InvisibleItemFrame(EntityType<? extends HangingEntity> entityType, Level level) {
+    protected ItemFrameMixin(EntityType<? extends HangingEntity> entityType, Level level) {
         super(entityType, level);
     }
 

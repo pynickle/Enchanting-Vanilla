@@ -23,7 +23,7 @@ import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
 public class FrogBucketEvent {
     @SubscribeEvent
     public static void entityInteract(PlayerInteractEvent.EntityInteract event) {
-        if(!EVConfig.instance().enabledBlocksOnLilyPad()) {
+        if(!EVConfig.instance().enabledSlimeChunkDetecting()) {
             return;
         }
         Entity entity = event.getTarget();

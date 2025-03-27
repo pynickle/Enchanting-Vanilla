@@ -26,3 +26,6 @@ A vanilla extension mod
 ### **6.** *Painting Switching*
 * You can now right-click on a painting to quickly switch between paintings.
 * This is compatible with the Fast Paintings mod.
+
+### **7.** *Cut Vine*
+* Now you can right-click on the vine to convert it and the vines below it into cut vines, which will not grow.

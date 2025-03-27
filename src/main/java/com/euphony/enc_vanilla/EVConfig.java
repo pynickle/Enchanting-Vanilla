@@ -50,6 +50,10 @@ public class EVConfig {
     public boolean enabledPaintingSwitching() {
         return common.enabledPaintingSwitching.getAsBoolean();
     }
+    
+    public boolean enabledCutVine() {
+        return common.enabledCutVine.getAsBoolean();
+    }
 
     public void save() {
         common.spec.save();
@@ -74,6 +78,7 @@ public class EVConfig {
         public final BooleanValue enabledBlocksOnLilyPad;
         public final BooleanValue enabledSlimeChunkDetecting;
         public final BooleanValue enabledPaintingSwitching;
+        public final BooleanValue enabledCutVine;
 
         public CommonConfig() {
             var builder = new ModConfigSpec.Builder();
@@ -84,6 +89,7 @@ public class EVConfig {
             enabledBlocksOnLilyPad = builder.define("enabledBlocksOnLilyPad", true);
             enabledSlimeChunkDetecting = builder.define("enabledSlimeChunkDetecting", true);
             enabledPaintingSwitching = builder.define("enabledPaintingSwitching", true);
+            enabledCutVine = builder.define("enabledCutVine", true);
             builder.pop();
 
             spec = builder.build();
