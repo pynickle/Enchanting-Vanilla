@@ -44,11 +44,15 @@ public class StopGrowingEvent {
                     testPos = testPos.above();
                     testState = level.getBlockState(testPos);
                 }
-                level.setBlockAndUpdate(testPos.below(), EVBlocks.CUT_SUGAR_CANE.get().defaultBlockState());
-                item.hurtAndBreak(1, player, LivingEntity.getSlotForHand(hand));
-                player.swing(hand);
+                if(!level.getBlockState(testPos).is(EVBlocks.CUT_SUGAR_CANE.get())) {
+                    level.setBlockAndUpdate(testPos.below(), EVBlocks.CUT_SUGAR_CANE.get().defaultBlockState());
+                    item.hurtAndBreak(1, player, LivingEntity.getSlotForHand(hand));
+                    player.swing(hand, true);
 
-                event.setCanceled(true);
+                    event.setCanceled(true);
+                }
+            } else if(state.is(Blocks.BAMBOO)) {
+
             }
         }
     }
