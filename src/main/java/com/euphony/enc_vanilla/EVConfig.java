@@ -50,9 +50,13 @@ public class EVConfig {
     public boolean enabledPaintingSwitching() {
         return common.enabledPaintingSwitching.getAsBoolean();
     }
-    
+
     public boolean enabledCutVine() {
         return common.enabledCutVine.getAsBoolean();
+    }
+
+    public boolean enabledStopGrowing() {
+        return common.enabledStopGrowing.getAsBoolean();
     }
 
     public void save() {
@@ -79,6 +83,7 @@ public class EVConfig {
         public final BooleanValue enabledSlimeChunkDetecting;
         public final BooleanValue enabledPaintingSwitching;
         public final BooleanValue enabledCutVine;
+        public final BooleanValue enabledStopGrowing;
 
         public CommonConfig() {
             var builder = new ModConfigSpec.Builder();
@@ -90,6 +95,7 @@ public class EVConfig {
             enabledSlimeChunkDetecting = builder.define("enabledSlimeChunkDetecting", true);
             enabledPaintingSwitching = builder.define("enabledPaintingSwitching", true);
             enabledCutVine = builder.define("enabledCutVine", true);
+            enabledStopGrowing = builder.define("enabledStopGrowing", true);
             builder.pop();
 
             spec = builder.build();

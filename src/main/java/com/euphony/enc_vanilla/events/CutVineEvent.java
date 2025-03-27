@@ -62,6 +62,7 @@ public class CutVineEvent {
 
             level.playSound(player, blockPos, SoundEvents.SHEEP_SHEAR, SoundSource.PLAYERS, 1.0F, 1.0F);
             item.hurtAndBreak(1, player, LivingEntity.getSlotForHand(hand));
+            player.swing(hand, true);
 
             event.setCanceled(true);
         }

@@ -29,3 +29,6 @@ A vanilla extension mod
 
 ### **7.** *Cut Vine*
 * Now you can right-click on the vine to convert it and the vines below it into cut vines, which will not grow.
+
+### **8.** *Stop Growing*
+* Now you can right-click on saplings, bamboo and sugar cane with shears to stop them growing.

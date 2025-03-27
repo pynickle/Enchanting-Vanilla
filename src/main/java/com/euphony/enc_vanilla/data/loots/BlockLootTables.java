@@ -7,6 +7,7 @@ import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
+import org.jetbrains.annotations.NotNull;
 
 public class BlockLootTables extends BlockLootSubProvider {
     public BlockLootTables(HolderLookup.Provider registries) {
@@ -14,7 +15,7 @@ public class BlockLootTables extends BlockLootSubProvider {
     }
 
     @Override
-    protected Iterable<Block> getKnownBlocks() {
+    protected @NotNull Iterable<Block> getKnownBlocks() {
         return EVBlocks.BLOCKS.getEntries().stream().filter(holder -> !holder.get().asItem().equals(Items.AIR)).map(holder -> (Block)holder.get()).toList();
     }
 

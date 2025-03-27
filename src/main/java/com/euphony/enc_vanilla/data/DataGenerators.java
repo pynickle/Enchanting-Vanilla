@@ -2,6 +2,7 @@ package com.euphony.enc_vanilla.data;
 
 import com.euphony.enc_vanilla.EncVanilla;
 import com.euphony.enc_vanilla.data.models.ItemModelGenerator;
+import com.euphony.enc_vanilla.data.tag.BlockTagGenerator;
 import net.minecraft.DetectedVersion;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
@@ -13,6 +14,7 @@ import net.minecraft.server.packs.metadata.pack.PackMetadataSection;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.common.data.DatapackBuiltinEntriesProvider;
+import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
 
 import java.util.Optional;
@@ -24,13 +26,15 @@ public class DataGenerators {
     public static void gatherData(GatherDataEvent event) {
         DataGenerator generator = event.getGenerator();
         PackOutput output = generator.getPackOutput();
+        ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
 
         DatapackBuiltinEntriesProvider datapackProvider = new RegistryDataGenerator(output, event.getLookupProvider());
         CompletableFuture<HolderLookup.Provider> lookupProvider = datapackProvider.getRegistryProvider();
 
-        generator.addProvider(true, new ItemModelGenerator(output, event.getExistingFileHelper()));
+        generator.addProvider(true, new ItemModelGenerator(output, existingFileHelper));
 
         generator.addProvider(true, datapackProvider);
+        generator.addProvider(true, new BlockTagGenerator(output, lookupProvider, existingFileHelper));
         generator.addProvider(true, new LootGenerator(output, lookupProvider));
         generator.addProvider(true, new DataMapGenerator(output, lookupProvider));
         generator.addProvider(true, new PackMetadataGenerator(output).add(PackMetadataSection.TYPE, new PackMetadataSection(
