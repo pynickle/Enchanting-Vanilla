@@ -32,3 +32,7 @@ A vanilla extension mod
 
 ### **8.** *Stop Growing*
 * Now you can right-click on bamboo and sugar cane with shears to stop them growing.
+
+### **9.** *Compress Slime Block*
+* Now you can make it compress into a compressed Slime block by placing an anvil on top of two consecutive slime blocks above and below.
+* It's more sticky and you can bounce higher and higher on it

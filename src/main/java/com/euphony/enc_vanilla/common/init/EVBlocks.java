@@ -1,10 +1,7 @@
 package com.euphony.enc_vanilla.common.init;
 
 import com.euphony.enc_vanilla.EncVanilla;
-import com.euphony.enc_vanilla.common.block.CutBambooSaplingBlock;
-import com.euphony.enc_vanilla.common.block.CutSugarCaneBlock;
-import com.euphony.enc_vanilla.common.block.CutVineBlock;
-import com.euphony.enc_vanilla.common.block.WaterloggedLilyPadBlock;
+import com.euphony.enc_vanilla.common.block.*;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.BlockItem;
@@ -32,6 +29,9 @@ public class EVBlocks {
 
     public static final DeferredBlock<CutBambooSaplingBlock> CUT_BAMBOO_SAPLING = registerWithItem("cut_bamboo_sapling", CutBambooSaplingBlock::new,
             BlockBehaviour.Properties.ofFullCopy(Blocks.BAMBOO_SAPLING));
+
+    public static final DeferredBlock<CompressedSlimeBlock> COMPRESSED_SLIME_BLOCK = registerWithItem("compressed_slime_block", CompressedSlimeBlock::new,
+            BlockBehaviour.Properties.ofFullCopy(Blocks.SLIME_BLOCK));
 
     public static <T extends Block> DeferredBlock<T> register(String name, Function<BlockBehaviour.Properties, T> function, BlockBehaviour.Properties properties) {
         return BLOCKS.registerBlock(name, function, properties);

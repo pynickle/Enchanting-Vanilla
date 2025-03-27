@@ -24,5 +24,6 @@ public class BlockLootTables extends BlockLootSubProvider {
         add(EVBlocks.CUT_VINE.get(), createShearsOnlyDrop(Items.VINE));
         dropOther(EVBlocks.CUT_SUGAR_CANE.get(), Items.SUGAR_CANE);
         dropOther(EVBlocks.CUT_BAMBOO_SAPLING.get(), Items.BAMBOO);
+        dropSelf(EVBlocks.COMPRESSED_SLIME_BLOCK.get());
     }
 }

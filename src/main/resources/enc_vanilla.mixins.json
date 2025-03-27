@@ -6,6 +6,7 @@
   "refmap": "enc_vanilla.refmap.json",
   "mixins": [
     "BambooStalkBlockMixin",
+    "FallingBlockEntityMixin",
     "ItemFrameMixin",
     "ThrownPotionMixin",
     "VillagerMixin",

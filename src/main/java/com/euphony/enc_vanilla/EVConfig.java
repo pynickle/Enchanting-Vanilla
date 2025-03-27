@@ -59,6 +59,10 @@ public class EVConfig {
         return common.enabledStopGrowing.getAsBoolean();
     }
 
+    public boolean enabledCompressSlimeBlock() {
+        return common.enabledCompressSlimeBlock.getAsBoolean();
+    }
+
     public void save() {
         common.spec.save();
         client.spec.save();
@@ -84,6 +88,7 @@ public class EVConfig {
         public final BooleanValue enabledPaintingSwitching;
         public final BooleanValue enabledCutVine;
         public final BooleanValue enabledStopGrowing;
+        public final BooleanValue enabledCompressSlimeBlock;
 
         public CommonConfig() {
             var builder = new ModConfigSpec.Builder();
@@ -96,6 +101,7 @@ public class EVConfig {
             enabledPaintingSwitching = builder.define("enabledPaintingSwitching", true);
             enabledCutVine = builder.define("enabledCutVine", true);
             enabledStopGrowing = builder.define("enabledStopGrowing", true);
+            enabledCompressSlimeBlock = builder.define("enabledCompressSlimeBlock", true);
             builder.pop();
 
             spec = builder.build();
