@@ -1,10 +1,10 @@
-// 1.21.1	2025-03-27T16:07:10.3657814	Tags for minecraft:block mod id enc_vanilla
+// 1.21.1	2025-03-27T23:24:36.5192558	Tags for minecraft:block mod id enc_vanilla
 bcd2c89c3fd303c4c0329819a7c41d4caa36847c data/minecraft/tags/block/climbable.json
 bcd2c89c3fd303c4c0329819a7c41d4caa36847c data/minecraft/tags/block/enchantment_power_transmitter.json
 bcd2c89c3fd303c4c0329819a7c41d4caa36847c data/minecraft/tags/block/fall_damage_resetting.json
 bcd2c89c3fd303c4c0329819a7c41d4caa36847c data/minecraft/tags/block/mangrove_logs_can_grow_through.json
 bcd2c89c3fd303c4c0329819a7c41d4caa36847c data/minecraft/tags/block/mangrove_roots_can_grow_through.json
-b215d65b25c27ea44e4e3436a61ac65525bc552a data/minecraft/tags/block/mineable/axe.json
+54cf559dbeb828faceba8be58889917960891f36 data/minecraft/tags/block/mineable/axe.json
 bcd2c89c3fd303c4c0329819a7c41d4caa36847c data/minecraft/tags/block/replaceable.json
 bcd2c89c3fd303c4c0329819a7c41d4caa36847c data/minecraft/tags/block/replaceable_by_trees.json
-b215d65b25c27ea44e4e3436a61ac65525bc552a data/minecraft/tags/block/sword_efficient.json
+54cf559dbeb828faceba8be58889917960891f36 data/minecraft/tags/block/sword_efficient.json

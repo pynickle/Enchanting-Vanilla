@@ -22,8 +22,8 @@ public class BlockTagGenerator extends BlockTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider provider) {
-        tag(BlockTags.SWORD_EFFICIENT).add(EVBlocks.CUT_VINE.get(), EVBlocks.WATERLOGGED_LILY_PAD.get());
-        tag(BlockTags.MINEABLE_WITH_AXE).add(EVBlocks.CUT_VINE.get(), EVBlocks.WATERLOGGED_LILY_PAD.get());
+        tag(BlockTags.SWORD_EFFICIENT).add(EVBlocks.CUT_VINE.get(), EVBlocks.WATERLOGGED_LILY_PAD.get(), EVBlocks.CUT_SUGAR_CANE.get());
+        tag(BlockTags.MINEABLE_WITH_AXE).add(EVBlocks.CUT_VINE.get(), EVBlocks.WATERLOGGED_LILY_PAD.get(), EVBlocks.CUT_SUGAR_CANE.get());
 
         tag(BlockTags.MANGROVE_LOGS_CAN_GROW_THROUGH).add(EVBlocks.CUT_VINE.get());
         tag(BlockTags.MANGROVE_ROOTS_CAN_GROW_THROUGH).add(EVBlocks.CUT_VINE.get());

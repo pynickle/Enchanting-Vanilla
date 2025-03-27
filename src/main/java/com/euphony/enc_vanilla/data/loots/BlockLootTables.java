@@ -21,6 +21,7 @@ public class BlockLootTables extends BlockLootSubProvider {
 
     @Override
     protected void generate() {
-
+        add(EVBlocks.CUT_VINE.get(), createShearsOnlyDrop(Items.VINE));
+        dropOther(EVBlocks.CUT_SUGAR_CANE.get(), Items.SUGAR_CANE);
     }
 }

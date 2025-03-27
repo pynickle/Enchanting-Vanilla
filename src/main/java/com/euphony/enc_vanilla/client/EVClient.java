@@ -16,6 +16,9 @@ public class EVClient {
     public static void registerBlockColor(RegisterColorHandlersEvent.Block event) {
         event.register((state, level, pos, tintIndex) -> 2129968, EVBlocks.WATERLOGGED_LILY_PAD.get());
         event.register((state, level, pos, tintIndex) -> level != null && pos != null ? BiomeColors.getAverageFoliageColor(level, pos) : FoliageColor.getDefaultColor(), EVBlocks.CUT_VINE.get());
-
+        event.register(
+                (state, level, pos, tintIndex) -> level != null && pos != null ? BiomeColors.getAverageGrassColor(level, pos) : -1,
+                EVBlocks.CUT_SUGAR_CANE.get()
+        );
     }
 }

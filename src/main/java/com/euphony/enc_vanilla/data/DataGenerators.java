@@ -1,6 +1,7 @@
 package com.euphony.enc_vanilla.data;
 
 import com.euphony.enc_vanilla.EncVanilla;
+import com.euphony.enc_vanilla.data.models.BlockModelGenerator;
 import com.euphony.enc_vanilla.data.models.ItemModelGenerator;
 import com.euphony.enc_vanilla.data.tag.BlockTagGenerator;
 import net.minecraft.DetectedVersion;
@@ -31,7 +32,9 @@ public class DataGenerators {
         DatapackBuiltinEntriesProvider datapackProvider = new RegistryDataGenerator(output, event.getLookupProvider());
         CompletableFuture<HolderLookup.Provider> lookupProvider = datapackProvider.getRegistryProvider();
 
+        generator.addProvider(true, new BlockModelGenerator(output, existingFileHelper));
         generator.addProvider(true, new ItemModelGenerator(output, existingFileHelper));
+        generator.addProvider(true, new BlockStateGenerator(output, existingFileHelper));
 
         generator.addProvider(true, datapackProvider);
         generator.addProvider(true, new BlockTagGenerator(output, lookupProvider, existingFileHelper));

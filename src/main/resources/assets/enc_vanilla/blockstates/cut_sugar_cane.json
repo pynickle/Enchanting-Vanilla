@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "enc_vanilla:block/cut_sugar_cane"
+    }
+  }
+}
