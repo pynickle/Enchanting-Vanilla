@@ -1,6 +1,7 @@
 package com.euphony.enc_vanilla.common.init;
 
 import com.euphony.enc_vanilla.EncVanilla;
+import com.euphony.enc_vanilla.common.block.CutBambooSaplingBlock;
 import com.euphony.enc_vanilla.common.block.CutSugarCaneBlock;
 import com.euphony.enc_vanilla.common.block.CutVineBlock;
 import com.euphony.enc_vanilla.common.block.WaterloggedLilyPadBlock;
@@ -28,6 +29,9 @@ public class EVBlocks {
 
     public static final DeferredBlock<CutSugarCaneBlock> CUT_SUGAR_CANE = registerWithItem("cut_sugar_cane", CutSugarCaneBlock::new,
             BlockBehaviour.Properties.ofFullCopy(Blocks.SUGAR_CANE));
+
+    public static final DeferredBlock<CutBambooSaplingBlock> CUT_BAMBOO_SAPLING = registerWithItem("cut_bamboo_sapling", CutBambooSaplingBlock::new,
+            BlockBehaviour.Properties.ofFullCopy(Blocks.BAMBOO_SAPLING));
 
     public static <T extends Block> DeferredBlock<T> register(String name, Function<BlockBehaviour.Properties, T> function, BlockBehaviour.Properties properties) {
         return BLOCKS.registerBlock(name, function, properties);

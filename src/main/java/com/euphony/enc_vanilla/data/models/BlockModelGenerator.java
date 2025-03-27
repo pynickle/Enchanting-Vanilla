@@ -2,7 +2,6 @@ package com.euphony.enc_vanilla.data.models;
 
 import com.euphony.enc_vanilla.EncVanilla;
 import net.minecraft.data.PackOutput;
-import net.minecraft.resources.ResourceLocation;
 import net.neoforged.neoforge.client.model.generators.BlockModelProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 
