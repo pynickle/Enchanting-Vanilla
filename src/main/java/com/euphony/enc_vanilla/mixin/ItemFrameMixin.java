@@ -31,6 +31,8 @@ public abstract class ItemFrameMixin extends HangingEntity implements ICustomIte
     private void setHeldItem(ItemStack value, boolean update, CallbackInfo ci) {
         if (this.enc_vanilla$isInvisible)
             ((ItemFrame) (Object) this).setInvisible(true);
+        else
+            ((ItemFrame) (Object) this).setInvisible(false);
     }
 
     @Inject(method = "removeFramedMap", at = @At("TAIL"))

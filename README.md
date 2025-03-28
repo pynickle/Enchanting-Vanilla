@@ -8,7 +8,7 @@ A vanilla extension mod
 * Villagers can be attracted by the player holding an emerald in the main hand and an ominous banner in the offhand.
 
 ### **2.** *Invisible Item Frame*
-* You can use a Splash Shape Invisibility Potion on an item frame to make it invisible, as well as a Splash Shape Water Bottle to de-invisible it.
+* You can use a Splash Invisibility Potion on an item frame to make it invisible, as well as a Splash Water Bottle to de-invisible it.
 * Item frames are only invisible when items are placed on them.
 
 ### **3.** *Blocks On Lily Pad*
@@ -35,4 +35,4 @@ A vanilla extension mod
 
 ### **9.** *Compress Slime Block*
 * Now you can make it compress into a compressed Slime block by placing an anvil on top of two consecutive slime blocks above and below.
-* It's more sticky and you can bounce higher and higher on it
+* It's more sticky, and you can bounce higher and higher on it
