@@ -27,3 +27,16 @@ versionRange = "${minecraft_version_range}"
 ordering = "NONE"
 side = "BOTH"
 
+[[dependencies."${mod_id}"]]
+modId = "soul_fire_d"
+type = "optional"
+versionRange = "[${soul_fire_d_version},)"
+ordering = "AFTER"
+side = "BOTH"
+
+[[dependencies."${mod_id}"]]
+modId = "cobweb"
+type = "optional"
+versionRange = "[${cobweb_version},)"
+ordering = "AFTER"
+side = "BOTH"

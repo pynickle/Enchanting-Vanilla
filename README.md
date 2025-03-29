@@ -36,3 +36,7 @@ A vanilla extension mod
 ### **9.** *Compress Slime Block*
 * Now you can make it compress into a compressed Slime block by placing an anvil on top of two consecutive slime blocks above and below.
 * It's more sticky, and you can bounce higher and higher on it
+
+### **10.** *Torch Hit*
+* You can attack creatures with torches or soul torches to give them a chance to catch fire, compatible with Soul fire'd.
+* In the config file you can configure creature catching fire time and probability, etc., and you can also add torches from other mods (some of which have already been added).

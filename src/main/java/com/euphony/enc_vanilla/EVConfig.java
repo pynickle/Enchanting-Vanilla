@@ -8,6 +8,8 @@ import net.neoforged.neoforge.common.ModConfigSpec.DoubleValue;
 import net.neoforged.neoforge.common.ModConfigSpec.EnumValue;
 import net.neoforged.neoforge.common.ModConfigSpec.IntValue;
 
+import java.util.List;
+
 
 public class EVConfig {
     private final ClientConfig client = new ClientConfig();
@@ -63,6 +65,30 @@ public class EVConfig {
         return common.enabledCompressSlimeBlock.getAsBoolean();
     }
 
+    public boolean enabledTorchHit() {
+        return common.enabledTorchHit.getAsBoolean();
+    }
+
+    public boolean enabledMobTorchHit() {
+        return common.enabledMobTorchHit.getAsBoolean();
+    }
+
+    public int torchHitFireChance() {
+        return common.torchHitFireChance.getAsInt();
+    }
+
+    public double torchHitFireDuration() {
+        return common.torchHitFireDuration.getAsDouble();
+    }
+
+    public List<? extends String> getExtraTorchItems() {
+        return common.extraTorchItems.get();
+    }
+
+    public List<? extends String> getExtraSoulTorchItems() {
+        return common.extraSoulTorchItems.get();
+    }
+
     public void save() {
         common.spec.save();
         client.spec.save();
@@ -90,6 +116,13 @@ public class EVConfig {
         public final BooleanValue enabledStopGrowing;
         public final BooleanValue enabledCompressSlimeBlock;
 
+        public final BooleanValue enabledTorchHit;
+        public final BooleanValue enabledMobTorchHit;
+        public IntValue torchHitFireChance;
+        public DoubleValue torchHitFireDuration;
+        private ModConfigSpec.ConfigValue<List<? extends String>> extraTorchItems;
+        private ModConfigSpec.ConfigValue<List<? extends String>> extraSoulTorchItems;
+
         public CommonConfig() {
             var builder = new ModConfigSpec.Builder();
 
@@ -102,69 +135,68 @@ public class EVConfig {
             enabledCutVine = builder.define("enabledCutVine", true);
             enabledStopGrowing = builder.define("enabledStopGrowing", true);
             enabledCompressSlimeBlock = builder.define("enabledCompressSlimeBlock", true);
+
+            enabledTorchHit = builder.define("enabledTorchHit", true);
+            enabledMobTorchHit = builder
+                    .comment("Whether or not an attack by a mob with a torch can set an enemy on fire.")
+                    .define("enabledMobTorchHit", true);
+            torchHitFireChance = builder
+                    .comment("The chance of a torch hit setting an enemy on fire.")
+                            .defineInRange("torchHitFireChance", 50, 0, 100);
+            torchHitFireDuration = builder
+                    .comment("The duration of the fire effect in seconds.")
+                    .defineInRange("torchHitFireDuration", 3.0, 0, 10);
+            extraTorchItems = builder.comment(" List of item ids that should be considered as a Torch.").defineListAllowEmpty(
+                    "extra torch items",
+                    () -> List.of(
+                            "bonetorch:bonetorch",
+                            "torchmaster:megatorch",
+                            "hardcore_torches:lit_torch",
+                            "magnumtorch:diamond_magnum_torch",
+                            "magnumtorch:emerald_magnum_torch",
+                            "magnumtorch:amethyst_magnum_torch",
+                            "magical_torches:mega_torch",
+                            "magical_torches:grand_torch",
+                            "magical_torches:medium_torch",
+                            "magical_torches:small_torch",
+                            "pgwbandedtorches:banded_torch_white",
+                            "pgwbandedtorches:banded_torch_orange",
+                            "pgwbandedtorches:banded_torch_magenta",
+                            "pgwbandedtorches:banded_torch_light_blue",
+                            "pgwbandedtorches:banded_torch_yellow",
+                            "pgwbandedtorches:banded_torch_lime",
+                            "pgwbandedtorches:banded_torch_pink",
+                            "pgwbandedtorches:banded_torch_gray",
+                            "pgwbandedtorches:banded_torch_light_gray",
+                            "pgwbandedtorches:banded_torch_cyan",
+                            "pgwbandedtorches:banded_torch_purple",
+                            "pgwbandedtorches:banded_torch_blue",
+                            "pgwbandedtorches:banded_torch_brown",
+                            "pgwbandedtorches:banded_torch_green",
+                            "pgwbandedtorches:banded_torch_red",
+                            "pgwbandedtorches:banded_torch_black"
+                    ),
+                    this::stringListValidator
+            );
+            extraTorchItems = builder
+                    .comment("Items that could be considered torches")
+                    .defineListAllowEmpty("extraTorchItems", List.of(
+                            "torchmaster:megatorch",
+                            "magnumtorch:diamond_magnum_torch",
+                            "magnumtorch:emerald_magnum_torch",
+                            "magnumtorch:amethyst_magnum_torch",
+                            "bonetorch:bonetorch"
+                    ), () -> "", this::stringListValidator);
+            extraSoulTorchItems = builder
+                    .comment("Items that could be considered soul torches")
+                    .defineListAllowEmpty("extraSoulTorchItems", List::of, () -> "", this::stringListValidator);
             builder.pop();
 
             spec = builder.build();
         }
-    }
 
-    private static BooleanValue define(ModConfigSpec.Builder builder, String name, boolean defaultValue,
-                                       String comment) {
-        builder.comment(comment);
-        return define(builder, name, defaultValue);
-    }
-
-    private static BooleanValue define(ModConfigSpec.Builder builder, String name, boolean defaultValue) {
-        return builder.define(name, defaultValue);
-    }
-
-    private static IntValue define(ModConfigSpec.Builder builder, String name, int defaultValue, String comment) {
-        builder.comment(comment);
-        return define(builder, name, defaultValue);
-    }
-
-    private static DoubleValue define(ModConfigSpec.Builder builder, String name, double defaultValue) {
-        return define(builder, name, defaultValue, Double.MIN_VALUE, Double.MAX_VALUE);
-    }
-
-    private static DoubleValue define(ModConfigSpec.Builder builder, String name, double defaultValue, String comment) {
-        builder.comment(comment);
-        return define(builder, name, defaultValue);
-    }
-
-    private static DoubleValue define(ModConfigSpec.Builder builder, String name, double defaultValue, double min,
-                                      double max, String comment) {
-        builder.comment(comment);
-        return define(builder, name, defaultValue, min, max);
-    }
-
-    private static DoubleValue define(ModConfigSpec.Builder builder, String name, double defaultValue, double min,
-                                      double max) {
-        return builder.defineInRange(name, defaultValue, min, max);
-    }
-
-    private static IntValue define(ModConfigSpec.Builder builder, String name, int defaultValue, int min, int max,
-                                   String comment) {
-        builder.comment(comment);
-        return define(builder, name, defaultValue, min, max);
-    }
-
-    private static IntValue define(ModConfigSpec.Builder builder, String name, int defaultValue, int min, int max) {
-        return builder.defineInRange(name, defaultValue, min, max);
-    }
-
-    private static IntValue define(ModConfigSpec.Builder builder, String name, int defaultValue) {
-        return define(builder, name, defaultValue, Integer.MIN_VALUE, Integer.MAX_VALUE);
-    }
-
-    private static <T extends Enum<T>> EnumValue<T> defineEnum(ModConfigSpec.Builder builder, String name,
-                                                               T defaultValue) {
-        return builder.defineEnum(name, defaultValue);
-    }
-
-    private static <T extends Enum<T>> EnumValue<T> defineEnum(ModConfigSpec.Builder builder, String name,
-                                                               T defaultValue, String comment) {
-        builder.comment(comment);
-        return defineEnum(builder, name, defaultValue);
+        public boolean stringListValidator(Object element) {
+            return element instanceof String string && !string.isBlank();
+        }
     }
 }
