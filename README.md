@@ -43,3 +43,6 @@ A vanilla extension mod
 
 ### **11.** *Slabs To Blocks*
 * Add recipes for all slabs to blocks.
+
+### **12.** *Sponge Place*
+* You can now place a sponge directly on the water without having to place a cube next to it first.

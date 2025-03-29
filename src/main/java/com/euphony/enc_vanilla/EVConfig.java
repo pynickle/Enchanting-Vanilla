@@ -93,6 +93,10 @@ public class EVConfig {
         return common.enabledSlabsToBlocks.getAsBoolean();
     }
 
+    public boolean enabledSpongePlace() {
+        return common.enabledSpongePlace.getAsBoolean();
+    }
+
     public void save() {
         common.spec.save();
         client.spec.save();
@@ -128,6 +132,7 @@ public class EVConfig {
         private ModConfigSpec.ConfigValue<List<? extends String>> extraSoulTorchItems;
 
         public final BooleanValue enabledSlabsToBlocks;
+        public final BooleanValue enabledSpongePlace;
 
         public CommonConfig() {
             var builder = new ModConfigSpec.Builder();
@@ -196,7 +201,9 @@ public class EVConfig {
             extraSoulTorchItems = builder
                     .comment("Items that could be considered soul torches")
                     .defineListAllowEmpty("extraSoulTorchItems", List::of, () -> "", this::stringListValidator);
+
             enabledSlabsToBlocks = builder.define("enabledSlabsToBlocks", true);
+            enabledSpongePlace = builder.define("enabledSpongePlace", true);
             builder.pop();
 
             spec = builder.build();
