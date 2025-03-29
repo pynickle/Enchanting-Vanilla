@@ -48,4 +48,4 @@ A vanilla extension mod
 * You can now place a sponge directly on the water without having to place a cube next to it first.
 
 ### **13.** *Sponge Campfire*
-* Now you can use campfire drying sponges
+* Now you can use campfire drying sponges.

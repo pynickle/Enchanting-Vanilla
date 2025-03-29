@@ -23,10 +23,10 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(FallingBlockEntity.class)
 abstract class FallingBlockEntityMixin extends Entity {
     @Shadow
-    public BlockState blockState;
+    private BlockState blockState;
 
     @Unique
-    private float anvilcraft$fallDistance;
+    private float enc_vanilla$fallDistance;
 
     public FallingBlockEntityMixin(EntityType<?> entityType, Level level) {
         super(entityType, level);
@@ -44,7 +44,7 @@ abstract class FallingBlockEntityMixin extends Entity {
     private void anvilPerFallOnGround(CallbackInfo ci) {
         if (this.level().isClientSide()) return;
         if (this.onGround()) return;
-        this.anvilcraft$fallDistance = this.fallDistance;
+        this.enc_vanilla$fallDistance = this.fallDistance;
     }
 
     @Inject(
@@ -60,7 +60,7 @@ abstract class FallingBlockEntityMixin extends Entity {
         if (this.level().isClientSide()) return;
         if (!this.blockState.is(BlockTags.ANVIL)) return;
         FallingBlockEntity entity = (FallingBlockEntity) (Object) this;
-        AnvilFallOnLandEvent event = new AnvilFallOnLandEvent(this.level(), blockPos, entity, this.anvilcraft$fallDistance);
+        AnvilFallOnLandEvent event = new AnvilFallOnLandEvent(this.level(), blockPos, entity, this.enc_vanilla$fallDistance);
         NeoForge.EVENT_BUS.post(event);
     }
 }
