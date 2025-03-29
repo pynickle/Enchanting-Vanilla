@@ -3,6 +3,7 @@ package com.euphony.enc_vanilla.data;
 import com.euphony.enc_vanilla.EncVanilla;
 import com.euphony.enc_vanilla.data.models.BlockModelGenerator;
 import com.euphony.enc_vanilla.data.models.ItemModelGenerator;
+import com.euphony.enc_vanilla.data.recipes.RecipeGenerator;
 import com.euphony.enc_vanilla.data.tag.BlockTagGenerator;
 import net.minecraft.DetectedVersion;
 import net.minecraft.core.HolderLookup;
@@ -39,6 +40,7 @@ public class DataGenerators {
         generator.addProvider(true, datapackProvider);
         generator.addProvider(true, new BlockTagGenerator(output, lookupProvider, existingFileHelper));
         generator.addProvider(true, new LootGenerator(output, lookupProvider));
+        generator.addProvider(true, new RecipeGenerator(output, lookupProvider));
         generator.addProvider(true, new DataMapGenerator(output, lookupProvider));
         generator.addProvider(true, new PackMetadataGenerator(output).add(PackMetadataSection.TYPE, new PackMetadataSection(
                 Component.literal("Resources for Enchanting Vanilla"),
