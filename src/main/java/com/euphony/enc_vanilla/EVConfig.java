@@ -89,6 +89,10 @@ public class EVConfig {
         return common.extraSoulTorchItems.get();
     }
 
+    public boolean enabledSlabsToBlocks() {
+        return common.enabledSlabsToBlocks.getAsBoolean();
+    }
+
     public void save() {
         common.spec.save();
         client.spec.save();
@@ -122,6 +126,8 @@ public class EVConfig {
         public DoubleValue torchHitFireDuration;
         private ModConfigSpec.ConfigValue<List<? extends String>> extraTorchItems;
         private ModConfigSpec.ConfigValue<List<? extends String>> extraSoulTorchItems;
+
+        public final BooleanValue enabledSlabsToBlocks;
 
         public CommonConfig() {
             var builder = new ModConfigSpec.Builder();
@@ -190,6 +196,7 @@ public class EVConfig {
             extraSoulTorchItems = builder
                     .comment("Items that could be considered soul torches")
                     .defineListAllowEmpty("extraSoulTorchItems", List::of, () -> "", this::stringListValidator);
+            enabledSlabsToBlocks = builder.define("enabledSlabsToBlocks", true);
             builder.pop();
 
             spec = builder.build();

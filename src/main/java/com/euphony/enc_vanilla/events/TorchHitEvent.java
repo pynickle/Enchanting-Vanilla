@@ -73,7 +73,7 @@ public final class TorchHitEvent {
     }
 
     private static boolean isSoulTorch(ItemStack item) {
-        return item.is(Items.SOUL_TORCH) || EVConfig.instance().getExtraTorchItems().contains(ItemUtils.getKey(item.getItem()).toString());
+        return item.is(Items.SOUL_TORCH) || EVConfig.instance().getExtraSoulTorchItems().contains(ItemUtils.getKey(item.getItem()).toString());
     }
 
     private static boolean canAttack(LivingEntity attacker, LivingEntity target) {

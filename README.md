@@ -40,3 +40,6 @@ A vanilla extension mod
 ### **10.** *Torch Hit*
 * You can attack creatures with torches or soul torches to give them a chance to catch fire, compatible with Soul fire'd.
 * In the config file you can configure creature catching fire time and probability, etc., and you can also add torches from other mods (some of which have already been added).
+
+### **11.** *Slabs To Blocks*
+* Add recipes for all slabs to blocks.

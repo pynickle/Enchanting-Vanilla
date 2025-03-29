@@ -8,6 +8,7 @@
     "BambooStalkBlockMixin",
     "FallingBlockEntityMixin",
     "ItemFrameMixin",
+    "RecipeManagerMixin",
     "ThrownPotionMixin",
     "VillagerMixin",
     "WaterlilyBlockMixin"
