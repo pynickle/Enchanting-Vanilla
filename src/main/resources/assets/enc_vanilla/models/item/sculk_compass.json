@@ -1,0 +1,41 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "enc_vanilla:item/sculk_compass_16"
+  },
+  "overrides": [
+    { "predicate": { "enc_vanilla:angle": 0.000000 }, "model": "enc_vanilla:item/sculk_compass" },
+    { "predicate": { "enc_vanilla:angle": 0.015625 }, "model": "enc_vanilla:item/sculk_compass_17" },
+    { "predicate": { "enc_vanilla:angle": 0.046875 }, "model": "enc_vanilla:item/sculk_compass_18" },
+    { "predicate": { "enc_vanilla:angle": 0.078125 }, "model": "enc_vanilla:item/sculk_compass_19" },
+    { "predicate": { "enc_vanilla:angle": 0.109375 }, "model": "enc_vanilla:item/sculk_compass_20" },
+    { "predicate": { "enc_vanilla:angle": 0.140625 }, "model": "enc_vanilla:item/sculk_compass_21" },
+    { "predicate": { "enc_vanilla:angle": 0.171875 }, "model": "enc_vanilla:item/sculk_compass_22" },
+    { "predicate": { "enc_vanilla:angle": 0.203125 }, "model": "enc_vanilla:item/sculk_compass_23" },
+    { "predicate": { "enc_vanilla:angle": 0.234375 }, "model": "enc_vanilla:item/sculk_compass_24" },
+    { "predicate": { "enc_vanilla:angle": 0.265625 }, "model": "enc_vanilla:item/sculk_compass_25" },
+    { "predicate": { "enc_vanilla:angle": 0.296875 }, "model": "enc_vanilla:item/sculk_compass_26" },
+    { "predicate": { "enc_vanilla:angle": 0.328125 }, "model": "enc_vanilla:item/sculk_compass_27" },
+    { "predicate": { "enc_vanilla:angle": 0.359375 }, "model": "enc_vanilla:item/sculk_compass_28" },
+    { "predicate": { "enc_vanilla:angle": 0.390625 }, "model": "enc_vanilla:item/sculk_compass_29" },
+    { "predicate": { "enc_vanilla:angle": 0.421875 }, "model": "enc_vanilla:item/sculk_compass_30" },
+    { "predicate": { "enc_vanilla:angle": 0.453125 }, "model": "enc_vanilla:item/sculk_compass_31" },
+    { "predicate": { "enc_vanilla:angle": 0.484375 }, "model": "enc_vanilla:item/sculk_compass_00" },
+    { "predicate": { "enc_vanilla:angle": 0.515625 }, "model": "enc_vanilla:item/sculk_compass_01" },
+    { "predicate": { "enc_vanilla:angle": 0.546875 }, "model": "enc_vanilla:item/sculk_compass_02" },
+    { "predicate": { "enc_vanilla:angle": 0.578125 }, "model": "enc_vanilla:item/sculk_compass_03" },
+    { "predicate": { "enc_vanilla:angle": 0.609375 }, "model": "enc_vanilla:item/sculk_compass_04" },
+    { "predicate": { "enc_vanilla:angle": 0.640625 }, "model": "enc_vanilla:item/sculk_compass_05" },
+    { "predicate": { "enc_vanilla:angle": 0.671875 }, "model": "enc_vanilla:item/sculk_compass_06" },
+    { "predicate": { "enc_vanilla:angle": 0.703125 }, "model": "enc_vanilla:item/sculk_compass_07" },
+    { "predicate": { "enc_vanilla:angle": 0.734375 }, "model": "enc_vanilla:item/sculk_compass_08" },
+    { "predicate": { "enc_vanilla:angle": 0.765625 }, "model": "enc_vanilla:item/sculk_compass_09" },
+    { "predicate": { "enc_vanilla:angle": 0.796875 }, "model": "enc_vanilla:item/sculk_compass_10" },
+    { "predicate": { "enc_vanilla:angle": 0.828125 }, "model": "enc_vanilla:item/sculk_compass_11" },
+    { "predicate": { "enc_vanilla:angle": 0.859375 }, "model": "enc_vanilla:item/sculk_compass_12" },
+    { "predicate": { "enc_vanilla:angle": 0.890625 }, "model": "enc_vanilla:item/sculk_compass_13" },
+    { "predicate": { "enc_vanilla:angle": 0.921875 }, "model": "enc_vanilla:item/sculk_compass_14" },
+    { "predicate": { "enc_vanilla:angle": 0.953125 }, "model": "enc_vanilla:item/sculk_compass_15" },
+    { "predicate": { "enc_vanilla:angle": 0.984375 }, "model": "enc_vanilla:item/sculk_compass" }
+  ]
+}

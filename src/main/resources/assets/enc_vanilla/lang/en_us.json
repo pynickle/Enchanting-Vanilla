@@ -1,4 +1,9 @@
 {
   "item.enc_vanilla.frog_bucket": "Frog Bucket",
-  "block.enc_vanilla.waterlogged_lily_pad": "Lily Pad"
+  "item.enc_vanilla.sculk_compass": "Sculk Compass",
+  "block.enc_vanilla.waterlogged_lily_pad": "Lily Pad",
+  "block.enc_vanilla.cut_vine": "Cut Vine",
+  "block.enc_vanilla.cut_sugar_cane": "Sugar Cane",
+  "block.enc_vanilla.cut_bamboo_sapling": "Bamboo Sapling",
+  "block.enc_vanilla.compressed_slime_block": "Compressed Slime Block"
 }

@@ -23,6 +23,12 @@ public class ItemModelGenerator extends ItemModelProvider {
     protected void registerModels() {
         basicItem(EncVanilla.prefix("frog_bucket_active"));
         predicateItem(EVItems.FROG_BUCKET_ITEM.get(), 1, "frog_bucket_active");
+        for(int i = 0; i < 16; i++) {
+            basicItem(EncVanilla.prefix("sculk_compass_" + String.format("%02d", i)));
+        }
+        for(int i = 17; i < 32; i++) {
+            basicItem(EncVanilla.prefix("sculk_compass_" + i));
+        }
     }
 
     protected ItemModelBuilder.OverrideBuilder predicateItem(Item item, int customModelData, String overrideModel) {

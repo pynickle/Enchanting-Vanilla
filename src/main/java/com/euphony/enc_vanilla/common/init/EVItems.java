@@ -2,6 +2,7 @@ package com.euphony.enc_vanilla.common.init;
 
 import com.euphony.enc_vanilla.EncVanilla;
 import com.euphony.enc_vanilla.common.item.FrogBucketItem;
+import com.euphony.enc_vanilla.common.item.SculkCompassItem;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.BlockItem;
@@ -18,6 +19,9 @@ public class EVItems {
 
     public static final DeferredItem<FrogBucketItem> FROG_BUCKET_ITEM = register("frog_bucket",
             FrogBucketItem::new);
+
+    public static final DeferredItem<SculkCompassItem> SCULK_COMPASS_ITEM = register("sculk_compass",
+            SculkCompassItem::new);
 
     static <T extends Item> DeferredItem<T> register(String name, Function<Item.Properties, T> item) {
         return ITEMS.registerItem(name, item);

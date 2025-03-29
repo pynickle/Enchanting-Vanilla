@@ -1,4 +1,9 @@
 {
   "item.enc_vanilla.frog_bucket": "青蛙桶",
-  "block.enc_vanilla.waterlogged_lily_pad": "睡莲"
+  "item.enc_vanilla.sculk_compass": "幽匿指南针",
+  "block.enc_vanilla.waterlogged_lily_pad": "睡莲",
+  "block.enc_vanilla.cut_vine": "切下的藤蔓",
+  "block.enc_vanilla.cut_sugar_cane": "甘蔗",
+  "block.enc_vanilla.cut_bamboo_sapling": "竹笋",
+  "block.enc_vanilla.compressed_slime_block": "压缩史莱姆块"
 }
