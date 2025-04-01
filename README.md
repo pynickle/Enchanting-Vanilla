@@ -58,4 +58,4 @@ A vanilla extension mod
 * Place the biome crystal in your offhand and the sculk compass in your main hand, long press to use it and the compass will point to the biome corresponding to the biome crystal.
 * There is a 1% chance that it will explode and lose your biome crystal, and the sculk compass will also be destroyed.
 * If not damaged, the biome crystal returns to the unbound biome state and you can craft it again.
-* Throw the sculk compass and biome crystals into Soulfire to remove their bindings.
+* Throw the sculk compass into Soulfire to remove its bindings.

@@ -35,7 +35,7 @@ public abstract class BaseFireBlockMixin extends Block {
             }
         } else if(state.is(Blocks.SOUL_FIRE)) {
             if (entity instanceof ItemEntity item) {
-                if (item.getItem().is(EVItems.SCULK_COMPASS_ITEM) || item.getItem().is(ItemTagGenerator.BIOME_CRYSTAL)) {
+                if (item.getItem().is(EVItems.SCULK_COMPASS_ITEM)) {
                     item.discard();
                     Containers.dropItemStack(level, pos.getX(), pos.getY() + 0.5, pos.getZ(), new ItemStack(item.getItem().getItem(), 1));
                     ci.cancel();
