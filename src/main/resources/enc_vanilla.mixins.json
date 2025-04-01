@@ -8,6 +8,7 @@
     "BambooStalkBlockMixin",
     "BaseFireBlockMixin",
     "FallingBlockEntityMixin",
+    "FarmBlockMixin",
     "ItemFrameMixin",
     "PowderSnowBlockMixin",
     "RecipeManagerMixin",

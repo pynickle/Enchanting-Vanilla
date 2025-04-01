@@ -97,6 +97,14 @@ public class EVConfig {
         return common.enabledSpongePlace.getAsBoolean();
     }
 
+    public boolean enabledSculkCompass() {
+        return common.enabledSculkCompass.getAsBoolean();
+    }
+
+    public boolean enabledFarmlandTramplingPrevention() {
+        return common.enabledFarmlandTramplingPrevention.getAsBoolean();
+    }
+
     public void save() {
         common.spec.save();
         client.spec.save();
@@ -133,6 +141,8 @@ public class EVConfig {
 
         public final BooleanValue enabledSlabsToBlocks;
         public final BooleanValue enabledSpongePlace;
+        public final BooleanValue enabledSculkCompass;
+        public final BooleanValue enabledFarmlandTramplingPrevention;
 
         public CommonConfig() {
             var builder = new ModConfigSpec.Builder();
@@ -204,6 +214,8 @@ public class EVConfig {
 
             enabledSlabsToBlocks = builder.define("enabledSlabsToBlocks", true);
             enabledSpongePlace = builder.define("enabledSpongePlace", true);
+            enabledSculkCompass = builder.define("enabledSculkCompass", true);
+            enabledFarmlandTramplingPrevention = builder.define("enabledFarmlandTramplingPrevention", true);
             builder.pop();
 
             spec = builder.build();

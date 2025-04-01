@@ -1,5 +1,6 @@
 package com.euphony.enc_vanilla.common.item;
 
+import com.euphony.enc_vanilla.EVConfig;
 import com.euphony.enc_vanilla.common.init.EVDataComponentTypes;
 import com.euphony.enc_vanilla.common.init.EVItems;
 import com.euphony.enc_vanilla.data.tag.ItemTagGenerator;
@@ -10,18 +11,14 @@ import net.minecraft.Util;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionResultHolder;
-import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.ai.behavior.warden.SonicBoom;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -29,7 +26,6 @@ import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Explosion;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.biome.Biome;
-import net.minecraft.world.level.block.TntBlock;
 import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.NotNull;
 
@@ -46,6 +42,9 @@ public class SculkCompassItem extends Item {
 
     @Override
     public @NotNull InteractionResultHolder<ItemStack> use(Level level, @NotNull Player player, @NotNull InteractionHand hand) {
+        if(!EVConfig.instance().enabledSculkCompass())
+            return new InteractionResultHolder<>(InteractionResult.PASS, player.getItemInHand(hand));
+
         if(!level.isClientSide()) {
             if(hand == InteractionHand.MAIN_HAND && player.getMainHandItem().is(EVItems.SCULK_COMPASS_ITEM)) {
                 CompassState state = getState(player.getItemInHand(hand));

@@ -50,7 +50,7 @@ A vanilla extension mod
 ### **13.** *Sponge Campfire*
 * Now you can use campfire drying sponges.
 
-### **14.** *Sculk Compass*
+### **14.** *Sculk Compass(Biome Finder)*
 * You have a chance to find a damaged sculk compass in an Ancient City chest, use Echo Shards and Amethyst to repair it.
 * You can swipe suspicious blocks for a chance to get different types of biome crystals.
 * You can manually convert these biome crystal types (refer to tooltip).
@@ -60,3 +60,6 @@ A vanilla extension mod
 * If not damaged, the biome crystal returns to the unbound biome state and you can craft it again.
 * Throw the sculk compass into Soulfire to remove its bindings.
 * The sculk compass will randomly spin if no biome is found or if it is unbound.
+
+### **15.** *Farmland Trampling Prevention*
+* Now when you have a slow falling effect, you won't be trampling farmland.
