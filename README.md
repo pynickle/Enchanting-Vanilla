@@ -63,3 +63,6 @@ A vanilla extension mod
 
 ### **15.** *Farmland Trampling Prevention*
 * Now when you have a slow falling effect, you won't be trampling farmland.
+
+### **16.** *Painting of the Four Elements*
+* Now you can place elemental paintings of water, wind, fire and earth.

@@ -7,6 +7,7 @@ import com.euphony.enc_vanilla.data.models.ItemModelGenerator;
 import com.euphony.enc_vanilla.data.recipes.RecipeGenerator;
 import com.euphony.enc_vanilla.data.tag.BlockTagGenerator;
 import com.euphony.enc_vanilla.data.tag.ItemTagGenerator;
+import com.euphony.enc_vanilla.data.tag.PaintingVariantTagGenerator;
 import net.minecraft.DetectedVersion;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
@@ -37,6 +38,7 @@ public class DataGenerators {
 
         generator.addProvider(true, new BlockModelGenerator(output, existingFileHelper));
         generator.addProvider(true, new ItemModelGenerator(output, existingFileHelper));
+        generator.addProvider(true, new PaintingVariantTagGenerator(output, lookupProvider));
         generator.addProvider(true, new BlockStateGenerator(output, existingFileHelper));
 
         generator.addProvider(true, datapackProvider);
