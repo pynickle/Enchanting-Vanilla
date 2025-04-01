@@ -59,3 +59,4 @@ A vanilla extension mod
 * There is a 1% chance that it will explode and lose your biome crystal, and the sculk compass will also be destroyed.
 * If not damaged, the biome crystal returns to the unbound biome state and you can craft it again.
 * Throw the sculk compass into Soulfire to remove its bindings.
+* The sculk compass will randomly spin if no biome is found or if it is unbound.
