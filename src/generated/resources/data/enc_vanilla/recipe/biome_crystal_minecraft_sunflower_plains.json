@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "enc_vanilla:biome_crystal"
+    },
+    {
+      "item": "minecraft:grass_block"
+    },
+    {
+      "item": "minecraft:yellow_dye"
+    }
+  ],
+  "result": {
+    "components": {
+      "enc_vanilla:biome": "minecraft:sunflower_plains"
+    },
+    "count": 1,
+    "id": "enc_vanilla:biome_crystal"
+  }
+}

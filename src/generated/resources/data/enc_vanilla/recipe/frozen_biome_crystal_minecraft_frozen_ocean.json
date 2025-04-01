@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "enc_vanilla:frozen_biome_crystal"
+    },
+    {
+      "item": "minecraft:water_bucket"
+    },
+    {
+      "item": "minecraft:kelp"
+    }
+  ],
+  "result": {
+    "components": {
+      "enc_vanilla:biome": "minecraft:frozen_ocean"
+    },
+    "count": 1,
+    "id": "enc_vanilla:frozen_biome_crystal"
+  }
+}

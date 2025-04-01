@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "enc_vanilla:biome_crystal"
+    },
+    {
+      "item": "minecraft:gravel"
+    }
+  ],
+  "result": {
+    "components": {
+      "enc_vanilla:biome": "minecraft:windswept_gravelly_hills"
+    },
+    "count": 1,
+    "id": "enc_vanilla:biome_crystal"
+  }
+}

@@ -49,3 +49,13 @@ A vanilla extension mod
 
 ### **13.** *Sponge Campfire*
 * Now you can use campfire drying sponges.
+
+### **14.** *Sculk Compass*
+* You have a chance to find a damaged sculk compass in an Ancient City chest, use Echo Shards and Amethyst to repair it.
+* You can swipe suspicious blocks for a chance to get different types of biome crystals.
+* You can manually convert these biome crystal types (refer to tooltip).
+* You can craft a biome crystal that corresponds to a biome.
+* Place the biome crystal in your offhand and the sculk compass in your main hand, long press to use it and the compass will point to the biome corresponding to the biome crystal.
+* There is a 1% chance that it will explode and lose your biome crystal, and the sculk compass will also be destroyed.
+* If not damaged, the biome crystal returns to the unbound biome state and you can craft it again.
+* Throw the sculk compass and biome crystals into Soulfire to remove their bindings.

@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "enc_vanilla:heated_biome_crystal"
+    },
+    {
+      "item": "minecraft:coarse_dirt"
+    },
+    {
+      "item": "minecraft:terracotta"
+    }
+  ],
+  "result": {
+    "components": {
+      "enc_vanilla:biome": "minecraft:wooded_badlands"
+    },
+    "count": 1,
+    "id": "enc_vanilla:heated_biome_crystal"
+  }
+}

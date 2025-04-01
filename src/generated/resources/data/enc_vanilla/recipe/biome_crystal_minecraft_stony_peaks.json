@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "enc_vanilla:biome_crystal"
+    },
+    {
+      "item": "minecraft:stone"
+    }
+  ],
+  "result": {
+    "components": {
+      "enc_vanilla:biome": "minecraft:stony_peaks"
+    },
+    "count": 1,
+    "id": "enc_vanilla:biome_crystal"
+  }
+}

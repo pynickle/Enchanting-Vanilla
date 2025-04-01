@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "enc_vanilla:biome_crystal"
+    },
+    {
+      "item": "minecraft:birch_log"
+    },
+    {
+      "item": "minecraft:birch_log"
+    }
+  ],
+  "result": {
+    "components": {
+      "enc_vanilla:biome": "minecraft:old_growth_birch_forest"
+    },
+    "count": 1,
+    "id": "enc_vanilla:biome_crystal"
+  }
+}

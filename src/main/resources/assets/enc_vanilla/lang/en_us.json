@@ -1,6 +1,13 @@
 {
   "item.enc_vanilla.frog_bucket": "Frog Bucket",
+  "item.enc_vanilla.damaged_sculk_compass": "Damaged Sculk Compass",
   "item.enc_vanilla.sculk_compass": "Sculk Compass",
+  "item.enc_vanilla.biome_crystal": "Biome Crystal",
+  "item.enc_vanilla.biome_crystal.desc": "Use the dispenser to fire a fire charge at it to turn it into a heated biome crystal, throw it into the powder snow to get a frozen biome crystal",
+  "item.enc_vanilla.heated_biome_crystal": "Heated Biome Crystal",
+  "item.enc_vanilla.heated_biome_crystal.desc": "Use it on a water cauldron to get frozen biome crystal",
+  "item.enc_vanilla.frozen_biome_crystal": "Frozen Biome Crystal",
+  "item.enc_vanilla.frozen_biome_crystal.desc": "Throw it in the fire to get a biome crystal",
   "block.enc_vanilla.waterlogged_lily_pad": "Lily Pad",
   "block.enc_vanilla.cut_vine": "Cut Vine",
   "block.enc_vanilla.cut_sugar_cane": "Sugar Cane",

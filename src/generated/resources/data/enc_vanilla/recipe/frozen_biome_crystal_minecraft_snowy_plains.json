@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "enc_vanilla:frozen_biome_crystal"
+    },
+    {
+      "item": "minecraft:snow"
+    },
+    {
+      "item": "minecraft:grass_block"
+    }
+  ],
+  "result": {
+    "components": {
+      "enc_vanilla:biome": "minecraft:snowy_plains"
+    },
+    "count": 1,
+    "id": "enc_vanilla:frozen_biome_crystal"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "type": "enc_vanilla:add_item",
+  "conditions": [
+    {
+      "condition": "neoforge:loot_table_id",
+      "loot_table_id": "minecraft:archaeology/trail_ruins_rare"
+    },
+    {
+      "chance": 0.2,
+      "condition": "minecraft:random_chance"
+    }
+  ],
+  "item": "enc_vanilla:biome_crystal"
+}

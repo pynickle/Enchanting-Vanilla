@@ -29,6 +29,10 @@ public class ItemModelGenerator extends ItemModelProvider {
         for(int i = 17; i < 32; i++) {
             basicItem(EncVanilla.prefix("sculk_compass_" + i));
         }
+        basicItem(EVItems.DAMAGED_SCULK_COMPASS_ITEM.get());
+        basicItem(EVItems.BIOME_CRYSTAL_ITEM.get());
+        basicItem(EVItems.FROZEN_BIOME_CRYSTAL_ITEM.get());
+        basicItem(EVItems.HEATED_BIOME_CRYSTAL_ITEM.get());
     }
 
     protected ItemModelBuilder.OverrideBuilder predicateItem(Item item, int customModelData, String overrideModel) {

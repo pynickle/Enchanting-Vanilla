@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "enc_vanilla:biome_crystal"
+    },
+    {
+      "item": "minecraft:short_grass"
+    },
+    {
+      "item": "minecraft:bee_nest"
+    }
+  ],
+  "result": {
+    "components": {
+      "enc_vanilla:biome": "minecraft:meadow"
+    },
+    "count": 1,
+    "id": "enc_vanilla:biome_crystal"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "enc_vanilla:biome_crystal"
+    },
+    {
+      "item": "minecraft:spruce_log"
+    },
+    {
+      "item": "minecraft:mossy_cobblestone"
+    }
+  ],
+  "result": {
+    "components": {
+      "enc_vanilla:biome": "minecraft:old_growth_spruce_taiga"
+    },
+    "count": 1,
+    "id": "enc_vanilla:biome_crystal"
+  }
+}

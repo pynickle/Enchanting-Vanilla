@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "enc_vanilla:frozen_biome_crystal"
+    },
+    {
+      "item": "minecraft:spruce_log"
+    },
+    {
+      "item": "minecraft:short_grass"
+    }
+  ],
+  "result": {
+    "components": {
+      "enc_vanilla:biome": "minecraft:snowy_taiga"
+    },
+    "count": 1,
+    "id": "enc_vanilla:frozen_biome_crystal"
+  }
+}

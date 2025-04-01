@@ -1,6 +1,13 @@
 {
   "item.enc_vanilla.frog_bucket": "青蛙桶",
+  "item.enc_vanilla.damaged_sculk_compass": "损坏的幽匿指南针",
   "item.enc_vanilla.sculk_compass": "幽匿指南针",
+  "item.enc_vanilla.biome_crystal": "生物群系水晶",
+  "item.enc_vanilla.biome_crystal.desc": "使用发射器向其发射火焰弹，将其变成高温生物群系水晶，将其扔进细雪中，得到冰冻生物群系水晶",
+  "item.enc_vanilla.heated_biome_crystal": "高温生物群系水晶",
+  "item.enc_vanilla.heated_biome_crystal.desc": "右击盛水的炼药锅，可获得冰冻生物群系水晶",
+  "item.enc_vanilla.frozen_biome_crystal": "冰冻生物群系水晶",
+  "item.enc_vanilla.frozen_biome_crystal.desc": "把它扔进火里，获得生物群系水晶",
   "block.enc_vanilla.waterlogged_lily_pad": "睡莲",
   "block.enc_vanilla.cut_vine": "切下的藤蔓",
   "block.enc_vanilla.cut_sugar_cane": "甘蔗",

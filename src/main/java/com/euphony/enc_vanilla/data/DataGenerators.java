@@ -1,10 +1,12 @@
 package com.euphony.enc_vanilla.data;
 
 import com.euphony.enc_vanilla.EncVanilla;
+import com.euphony.enc_vanilla.data.loots.GlobalLootModifierGenerator;
 import com.euphony.enc_vanilla.data.models.BlockModelGenerator;
 import com.euphony.enc_vanilla.data.models.ItemModelGenerator;
 import com.euphony.enc_vanilla.data.recipes.RecipeGenerator;
 import com.euphony.enc_vanilla.data.tag.BlockTagGenerator;
+import com.euphony.enc_vanilla.data.tag.ItemTagGenerator;
 import net.minecraft.DetectedVersion;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
@@ -38,7 +40,10 @@ public class DataGenerators {
         generator.addProvider(true, new BlockStateGenerator(output, existingFileHelper));
 
         generator.addProvider(true, datapackProvider);
-        generator.addProvider(true, new BlockTagGenerator(output, lookupProvider, existingFileHelper));
+        BlockTagGenerator blockTagGenerator = new BlockTagGenerator(output, lookupProvider, existingFileHelper);
+        generator.addProvider(true, blockTagGenerator);
+        generator.addProvider(true, new ItemTagGenerator(output, lookupProvider, blockTagGenerator.contentsGetter(), existingFileHelper));
+        generator.addProvider(true, new GlobalLootModifierGenerator(output, lookupProvider));
         generator.addProvider(true, new LootGenerator(output, lookupProvider));
         generator.addProvider(true, new RecipeGenerator(output, lookupProvider));
         generator.addProvider(true, new DataMapGenerator(output, lookupProvider));

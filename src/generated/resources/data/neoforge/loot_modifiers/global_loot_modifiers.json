@@ -1,0 +1,9 @@
+{
+  "entries": [
+    "enc_vanilla:damaged_sculk_compass",
+    "enc_vanilla:biome_crystal",
+    "enc_vanilla:heated_biome_crystal",
+    "enc_vanilla:frozen_biome_crystal"
+  ],
+  "replace": false
+}

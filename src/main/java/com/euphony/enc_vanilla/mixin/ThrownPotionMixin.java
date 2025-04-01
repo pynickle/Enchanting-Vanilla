@@ -37,7 +37,7 @@ public class ThrownPotionMixin {
 
     @Unique
     private static void enc_vanilla$handleSplash(Iterable<MobEffectInstance> effectInstanceList, ThrownPotion thrownPotion) {
-        AABB checkBox = thrownPotion.getBoundingBox().inflate(4.0D, 2.0D, 4.0D);
+        AABB checkBox = thrownPotion.getBoundingBox().inflate(2.0D, 1.0D, 2.0D);
         effectInstanceList.forEach(instance -> {
             if (instance.getEffect() == MobEffects.INVISIBILITY) {
                 List<ItemFrame> itemFrames = thrownPotion.level().getEntitiesOfClass(ItemFrame.class, checkBox);
