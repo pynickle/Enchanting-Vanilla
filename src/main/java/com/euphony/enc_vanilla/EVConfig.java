@@ -105,6 +105,14 @@ public class EVConfig {
         return common.enabledFarmlandTramplingPrevention.getAsBoolean();
     }
 
+    public boolean enabledShutupNameTag() {
+        return common.enabledShutupNameTag.getAsBoolean();
+    }
+
+    public boolean enabledJukeboxLoop() {
+        return common.enabledJukeboxLoop.getAsBoolean();
+    }
+
     public void save() {
         common.spec.save();
         client.spec.save();
@@ -143,6 +151,8 @@ public class EVConfig {
         public final BooleanValue enabledSpongePlace;
         public final BooleanValue enabledSculkCompass;
         public final BooleanValue enabledFarmlandTramplingPrevention;
+        public final BooleanValue enabledShutupNameTag;
+        public final BooleanValue enabledJukeboxLoop;
 
         public CommonConfig() {
             var builder = new ModConfigSpec.Builder();
@@ -216,6 +226,8 @@ public class EVConfig {
             enabledSpongePlace = builder.define("enabledSpongePlace", true);
             enabledSculkCompass = builder.define("enabledSculkCompass", true);
             enabledFarmlandTramplingPrevention = builder.define("enabledFarmlandTramplingPrevention", true);
+            enabledShutupNameTag = builder.define("enabledShutupNameTag", true);
+            enabledJukeboxLoop = builder.define("enabledJukeboxLoop", true);
             builder.pop();
 
             spec = builder.build();

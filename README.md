@@ -66,3 +66,9 @@ A vanilla extension mod
 
 ### **16.** *Painting of the Four Elements*
 * Now you can place elemental paintings of water, wind, fire and earth.
+
+### **17.** *Shutup Name Tag*
+* Now you can use a name tag to name a mob "Shutup!" to make it silent.
+
+### **18.** *Jukebox Loop*
+* Now the jukebox will loop the music disc.
