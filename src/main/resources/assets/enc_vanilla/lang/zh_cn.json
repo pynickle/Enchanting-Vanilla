@@ -8,6 +8,7 @@
   "item.enc_vanilla.heated_biome_crystal.desc": "右击盛水的炼药锅，可获得冰冻生物群系水晶",
   "item.enc_vanilla.frozen_biome_crystal": "冰冻生物群系水晶",
   "item.enc_vanilla.frozen_biome_crystal.desc": "把它扔进火里，获得生物群系水晶",
+  "itemGroup.enc_vanilla.items": "物品",
   "block.enc_vanilla.waterlogged_lily_pad": "睡莲",
   "block.enc_vanilla.cut_vine": "切下的藤蔓",
   "block.enc_vanilla.cut_sugar_cane": "甘蔗",

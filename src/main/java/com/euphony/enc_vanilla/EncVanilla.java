@@ -1,6 +1,7 @@
 package com.euphony.enc_vanilla;
 
 import com.euphony.enc_vanilla.common.init.EVBlocks;
+import com.euphony.enc_vanilla.common.init.EVCreativeTabs;
 import com.euphony.enc_vanilla.common.init.EVDataComponentTypes;
 import com.euphony.enc_vanilla.common.init.EVItems;
 import com.euphony.enc_vanilla.common.loot.EVLootModifiers;
@@ -23,6 +24,8 @@ public class EncVanilla {
 
         EVBlocks.BLOCKS.register(modEventBus);
         EVItems.ITEMS.register(modEventBus);
+
+        EVCreativeTabs.TABS.register(modEventBus);
 
         EVDataComponentTypes.DATA_COMPONENTS.register(modEventBus);
         EVLootModifiers.register(modEventBus);
