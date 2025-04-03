@@ -1,6 +1,6 @@
 package com.euphony.enc_vanilla.mixin;
 
-import com.euphony.enc_vanilla.EVConfig;
+import com.euphony.enc_vanilla.EVConfigRemoved;
 import com.euphony.enc_vanilla.EncVanilla;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableMultimap;
@@ -24,7 +24,7 @@ import java.util.Map;
 public abstract class RecipeManagerMixin {
     @Inject(method = "lambda$apply$0", at = @At(value = "NEW", target = "net/minecraft/world/item/crafting/RecipeHolder"))
     private static void lambda(CallbackInfo ci, @Local(argsOnly = true) ImmutableMultimap.Builder<RecipeType<?>, RecipeHolder<?>> builder, @Local(argsOnly = true) ImmutableMap.Builder<ResourceLocation, RecipeHolder<?>> builder1, @Local(argsOnly = true) ResourceLocation resourcelocation, @Local(ordinal = 0) Recipe<?> recipe) {
-        if(EVConfig.instance().enabledSlabsToBlocks()) {
+        if(EVConfigRemoved.instance().enabledSlabsToBlocks()) {
             enchantingVanilla$process(builder, builder1, resourcelocation, recipe);
         }
     }

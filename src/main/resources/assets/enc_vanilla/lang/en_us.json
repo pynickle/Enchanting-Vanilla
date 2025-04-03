@@ -14,5 +14,19 @@
   "block.enc_vanilla.cut_vine": "Cut Vine",
   "block.enc_vanilla.cut_sugar_cane": "Sugar Cane",
   "block.enc_vanilla.cut_bamboo_sapling": "Bamboo Sapling",
-  "block.enc_vanilla.compressed_slime_block": "Compressed Slime Block"
+  "block.enc_vanilla.compressed_slime_block": "Compressed Slime Block",
+  "yacl3.config.enc_vanilla:config": "Enchanting Vanilla",
+  "yacl3.config.enc_vanilla:config.category.qol": "Qol Improvements",
+  "yacl3.config.enc_vanilla:config.category.tools": "Tools",
+  "yacl3.config.enc_vanilla:config.category.client": "Client",
+  "yacl3.config.enc_vanilla:config.category.qol.group.villager_attraction": "Villager Attraction",
+  "yacl3.config.enc_vanilla:config.enableVillagerAttraction": "Enable Villager Attraction",
+  "yacl3.config.enc_vanilla:config.category.qol.group.item_frame": "Invisible Item Frame",
+  "yacl3.config.enc_vanilla:config.enableInvisibleItemFrame": "Enable Invisible Item Frame",
+  "yacl3.config.enc_vanilla:config.category.qol.group.torch_hit": "Torch Hit",
+  "yacl3.config.enc_vanilla:config.enableTorchHit": "Enable Torch Hit",
+  "yacl3.config.enc_vanilla:config.enableMobTorchHit": "Enable Mob Torch Hit",
+  "yacl3.config.enc_vanilla:config.torchHitFireChance": "Torch Hit Fire Chance",
+  "yacl3.config.enc_vanilla:config.torchHitFireDuration": "Torch Hit Fire Duration",
+  "yacl3.config.enc_vanilla:config.category.qol.group.other": "Other"
 }

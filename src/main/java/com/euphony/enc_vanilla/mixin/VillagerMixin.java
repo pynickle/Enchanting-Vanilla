@@ -1,6 +1,6 @@
 package com.euphony.enc_vanilla.mixin;
 
-import com.euphony.enc_vanilla.EVConfig;
+import com.euphony.enc_vanilla.EVConfigRemoved;
 import com.euphony.enc_vanilla.common.entity.DoubleHandedTemptGoal;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.component.DataComponents;
@@ -74,7 +74,7 @@ public abstract class VillagerMixin extends AbstractVillager {
             )
     )
     private void checkVillagersAttracted(CallbackInfo ci) {
-        final boolean configEnabled = EVConfig.instance().enabledVillagerAttraction();
+        final boolean configEnabled = EVConfigRemoved.instance().enabledVillagerAttraction();
         if(!this.enc_vanilla$villagersAttracted && configEnabled) {
             if (!this.enc_vanilla$villagersAttractedGoal.canUse()) {
                 this.enc_vanilla$villagersAttractedGoal = new DoubleHandedTemptGoal(this, 0.5F, Ingredient.of(Items.EMERALD), Ingredient.of(OMINOUS_BANNER), false);

@@ -1,6 +1,6 @@
 package com.euphony.enc_vanilla.events;
 
-import com.euphony.enc_vanilla.EVConfig;
+import com.euphony.enc_vanilla.EVConfigRemoved;
 import com.euphony.enc_vanilla.utils.ItemUtils;
 import com.euphony.enc_vanilla.utils.Utils;
 import it.crystalnest.soul_fire_d.api.FireManager;
@@ -24,7 +24,7 @@ public final class TorchHitEvent {
 
     @SubscribeEvent
     public static void handle(LivingIncomingDamageEvent event) {
-        if(!EVConfig.instance().enabledTorchHit()) return;
+        if(!EVConfigRemoved.instance().enabledTorchHit()) return;
         Entity entity = event.getSource().getEntity();
         Entity directEntity = event.getSource().getDirectEntity();
         LivingEntity target = event.getEntity();
@@ -41,7 +41,7 @@ public final class TorchHitEvent {
     }
 
     private static void attack(Entity target, ItemStack item) {
-        double seconds = getFireSeconds(item, target, EVConfig.instance().torchHitFireDuration());
+        double seconds = getFireSeconds(item, target, EVConfigRemoved.instance().torchHitFireDuration());
         if (seconds > 0) {
             if (Utils.isModLoaded("soul_fire_d")) {
                 setOnFire(item, target, seconds);
@@ -52,7 +52,7 @@ public final class TorchHitEvent {
     }
 
     private static double getFireSeconds(ItemStack item, Entity target, double seconds) {
-        if (Math.random() * 100 < EVConfig.instance().torchHitFireChance()) {
+        if (Math.random() * 100 < EVConfigRemoved.instance().torchHitFireChance()) {
             return seconds;
         }
         return 0;
@@ -69,15 +69,15 @@ public final class TorchHitEvent {
     }
 
     private static boolean isTorch(ItemStack item) {
-        return item.is(Items.TORCH) || EVConfig.instance().getExtraTorchItems().contains(ItemUtils.getKey(item.getItem()).toString()) || isSoulTorch(item);
+        return item.is(Items.TORCH) || EVConfigRemoved.instance().getExtraTorchItems().contains(ItemUtils.getKey(item.getItem()).toString()) || isSoulTorch(item);
     }
 
     private static boolean isSoulTorch(ItemStack item) {
-        return item.is(Items.SOUL_TORCH) || EVConfig.instance().getExtraSoulTorchItems().contains(ItemUtils.getKey(item.getItem()).toString());
+        return item.is(Items.SOUL_TORCH) || EVConfigRemoved.instance().getExtraSoulTorchItems().contains(ItemUtils.getKey(item.getItem()).toString());
     }
 
     private static boolean canAttack(LivingEntity attacker, LivingEntity target) {
-        return (attacker instanceof Player || EVConfig.instance().enabledMobTorchHit()) && attacker.canAttack(target) && (!(attacker instanceof Player attackerPlayer && target instanceof Player targetPlayer) || attackerPlayer.canHarmPlayer(targetPlayer));
+        return (attacker instanceof Player || EVConfigRemoved.instance().enabledMobTorchHit()) && attacker.canAttack(target) && (!(attacker instanceof Player attackerPlayer && target instanceof Player targetPlayer) || attackerPlayer.canHarmPlayer(targetPlayer));
     }
 
     public static void setOnFire(ItemStack item, Entity entity, double seconds) {

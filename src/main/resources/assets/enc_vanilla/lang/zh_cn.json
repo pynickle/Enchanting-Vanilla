@@ -14,5 +14,19 @@
   "block.enc_vanilla.cut_vine": "切下的藤蔓",
   "block.enc_vanilla.cut_sugar_cane": "甘蔗",
   "block.enc_vanilla.cut_bamboo_sapling": "竹笋",
-  "block.enc_vanilla.compressed_slime_block": "压缩史莱姆块"
+  "block.enc_vanilla.compressed_slime_block": "压缩史莱姆块",
+  "yacl3.config.enc_vanilla:config": "Enchanting Vanilla",
+  "yacl3.config.enc_vanilla:config.category.qol": "调整",
+  "yacl3.config.enc_vanilla:config.category.tools": "工具",
+  "yacl3.config.enc_vanilla:config.category.client": "客户端",
+  "yacl3.config.enc_vanilla:config.category.qol.group.villager_attraction": "村民吸引",
+  "yacl3.config.enc_vanilla:config.enableVillagerAttraction": "启用村民吸引",
+  "yacl3.config.enc_vanilla:config.category.qol.group.item_frame": "隐形物品展示框",
+  "yacl3.config.enc_vanilla:config.enableInvisibleItemFrame": "启用隐形展示框",
+  "yacl3.config.enc_vanilla:config.category.qol.group.torch_hit": "Torch Hit",
+  "yacl3.config.enc_vanilla:config.enableTorchHit": "启用火把攻击",
+  "yacl3.config.enc_vanilla:config.enableMobTorchHit": "启用生物火把攻击",
+  "yacl3.config.enc_vanilla:config.torchHitFireChance": "着火概率",
+  "yacl3.config.enc_vanilla:config.torchHitFireDuration": "着火时间",
+  "yacl3.config.enc_vanilla:config.category.qol.group.other": "其他"
 }

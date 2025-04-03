@@ -4,13 +4,16 @@ import com.euphony.enc_vanilla.EncVanilla;
 import com.euphony.enc_vanilla.common.init.EVBlocks;
 import com.euphony.enc_vanilla.common.init.EVItems;
 import com.euphony.enc_vanilla.common.item.SculkCompassItem;
+import com.euphony.enc_vanilla.config.client.EVConfigScreen;
 import com.euphony.enc_vanilla.utils.CompassState;
+import com.euphony.enc_vanilla.utils.Utils;
 import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.FoliageColor;
 import net.minecraft.world.phys.Vec3;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.ModLoadingContext;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
 import net.minecraft.client.multiplayer.ClientLevel;
@@ -24,6 +27,7 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
 import net.neoforged.api.distmarker.OnlyIn;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
+import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
 import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
@@ -51,6 +55,9 @@ public class EVClient {
     @SubscribeEvent
     public static void clientInit(FMLClientSetupEvent event) {
         event.enqueueWork(() -> {
+            if (Utils.isModLoaded("yet_another_config_lib_v3")) {
+                ModLoadingContext.get().registerExtensionPoint(IConfigScreenFactory.class, () -> (client, screen) -> new EVConfigScreen(screen));
+            }
             ItemProperties.register(EVItems.SCULK_COMPASS_ITEM.get(), ResourceLocation.fromNamespaceAndPath(EncVanilla.MODID, "angle"), new ClampedItemPropertyFunction() {
                 private final CompassWobble wobble = new CompassWobble();
                 private final CompassWobble wobbleRandom = new CompassWobble();

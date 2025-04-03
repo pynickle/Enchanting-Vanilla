@@ -1,6 +1,6 @@
 package com.euphony.enc_vanilla.mixin;
 
-import com.euphony.enc_vanilla.EVConfig;
+import com.euphony.enc_vanilla.EVConfigRemoved;
 import com.euphony.enc_vanilla.api.ICustomItemFrame;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -22,7 +22,7 @@ public class ThrownPotionMixin {
     @Inject(method = "applySplash(Ljava/lang/Iterable;Lnet/minecraft/world/entity/Entity;)V", at = @At("HEAD"))
     public void applySplash(Iterable<MobEffectInstance> effectInstanceList, @Nullable Entity entity, CallbackInfo ci) {
         ThrownPotion potion = (ThrownPotion) (Object) this;
-        if(EVConfig.instance().enabledInvisibleItemFrame()) {
+        if(EVConfigRemoved.instance().enabledInvisibleItemFrame()) {
             enc_vanilla$handleSplash(effectInstanceList, potion);
         }
     }
@@ -30,7 +30,7 @@ public class ThrownPotionMixin {
     @Inject(method = "applyWater()V", at = @At("HEAD"))
     private void applyWater(CallbackInfo ci) {
         ThrownPotion potion = (ThrownPotion) (Object) this;
-        if(EVConfig.instance().enabledInvisibleItemFrame()) {
+        if(EVConfigRemoved.instance().enabledInvisibleItemFrame()) {
             enc_vanilla$handleWater(potion);
         }
     }

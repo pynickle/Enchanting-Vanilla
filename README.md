@@ -2,7 +2,9 @@
 
 A vanilla extension mod
 
-## **Functions implemented:**
+## *Functions implemented:*
+
+### **Ⅰ. QOL Improvements**
 
 ### **1.** *Villager Attraction*
 * Villagers can be attracted by the player holding an emerald in the main hand and an ominous banner in the offhand.
@@ -15,42 +17,56 @@ A vanilla extension mod
 * Now you can place blocks above the lily pads, which works by turning the block underneath into waterlogged lily pad.
 * When the block above is removed, the lily pad will revert to its vanilla version.
 
-### **4.** *Slime Chunk Detecting*
-* You can right-click a frog with a bucket to get a frog bucket.
-* When you come to the Slime chunk with a frog bucket in your inventory, the frog bucket will be animated.
-
-### **5.** *More Compostable Items*
+### **4.** *More Compostable Items*
 * You can now compost even more items, which include rotten flesh, dead bush, grass blocks and more.
 * Specific information can be viewed in JEI or EMI.
 
-### **6.** *Painting Switching*
+### **5.** *Painting Switching*
 * You can now right-click on a painting to quickly switch between paintings.
 * This is compatible with the Fast Paintings mod.
 
-### **7.** *Cut Vine*
+### **6.** *Cut Vine*
 * Now you can right-click on the vine to convert it and the vines below it into cut vines, which will not grow.
 
-### **8.** *Stop Growing*
+### **7.** *Stop Growing*
 * Now you can right-click on bamboo and sugar cane with shears to stop them growing.
 
-### **9.** *Compress Slime Block*
-* Now you can make it compress into a compressed Slime block by placing an anvil on top of two consecutive slime blocks above and below.
-* It's more sticky, and you can bounce higher and higher on it
-
-### **10.** *Torch Hit*
+### **8.** *Torch Hit*
 * You can attack creatures with torches or soul torches to give them a chance to catch fire, compatible with Soul fire'd.
 * In the config file you can configure creature catching fire time and probability, etc., and you can also add torches from other mods (some of which have already been added).
 
-### **11.** *Slabs To Blocks*
+### **9.** *Slabs To Blocks*
 * Add recipes for all slabs to blocks.
 
-### **12.** *Sponge Place*
+### **10.** *Sponge Place*
 * You can now place a sponge directly on the water without having to place a cube next to it first.
 
-### **13.** *Sponge Campfire*
+### **11.** *Sponge Campfire*
 * Now you can use campfire drying sponges.
 
-### **14.** *Sculk Compass(Biome Finder)*
+### **12.** *Farmland Trampling Prevention*
+* Now when you have a slow falling effect, you won't be trampling farmland.
+
+### **13.** *Painting of the Four Elements*
+* Now you can place elemental paintings of water, wind, fire and earth.
+
+### **14.** *Shutup Name Tag*
+* Now you can use a name tag to name a mob "Shutup!" to make it silent.
+
+### **15.** *Jukebox Loop*
+* Now the jukebox will loop the music disc.
+
+### **Ⅱ. Tools**
+
+### **1.** *Slime Chunk Detecting*
+* You can right-click a frog with a bucket to get a frog bucket.
+* When you come to the Slime chunk with a frog bucket in your inventory, the frog bucket will be animated.
+
+### **2.** *Compress Slime Block*
+* Now you can make it compress into a compressed Slime block by placing an anvil on top of two consecutive slime blocks above and below.
+* It's more sticky, and you can bounce higher and higher on it
+
+### **3.** *Sculk Compass(Biome Finder)*
 * You have a chance to find a damaged sculk compass in an Ancient City chest, use Echo Shards and Amethyst to repair it.
 * You can swipe suspicious blocks for a chance to get different types of biome crystals.
 * You can manually convert these biome crystal types (refer to tooltip).
@@ -60,15 +76,3 @@ A vanilla extension mod
 * If not damaged, the biome crystal returns to the unbound biome state and you can craft it again.
 * Throw the sculk compass into Soulfire to remove its bindings.
 * The sculk compass will randomly spin if no biome is found or if it is unbound.
-
-### **15.** *Farmland Trampling Prevention*
-* Now when you have a slow falling effect, you won't be trampling farmland.
-
-### **16.** *Painting of the Four Elements*
-* Now you can place elemental paintings of water, wind, fire and earth.
-
-### **17.** *Shutup Name Tag*
-* Now you can use a name tag to name a mob "Shutup!" to make it silent.
-
-### **18.** *Jukebox Loop*
-* Now the jukebox will loop the music disc.

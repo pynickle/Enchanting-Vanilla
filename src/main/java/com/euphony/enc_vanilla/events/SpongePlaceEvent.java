@@ -1,6 +1,6 @@
 package com.euphony.enc_vanilla.events;
 
-import com.euphony.enc_vanilla.EVConfig;
+import com.euphony.enc_vanilla.EVConfigRemoved;
 import com.euphony.enc_vanilla.EncVanilla;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionHand;
@@ -22,7 +22,7 @@ import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent.RightClick
 public class SpongePlaceEvent {
     @SubscribeEvent
     public static void onSpongePlaceEvent(RightClickItem event) {
-        if(!EVConfig.instance().enabledSpongePlace()) return;
+        if(!EVConfigRemoved.instance().enabledSpongePlace()) return;
 
         ItemStack stack = event.getItemStack();
         if(stack.is(Items.SPONGE)) {

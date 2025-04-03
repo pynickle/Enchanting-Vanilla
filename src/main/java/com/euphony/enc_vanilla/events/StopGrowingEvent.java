@@ -1,6 +1,6 @@
 package com.euphony.enc_vanilla.events;
 
-import com.euphony.enc_vanilla.EVConfig;
+import com.euphony.enc_vanilla.EVConfigRemoved;
 import com.euphony.enc_vanilla.EncVanilla;
 import com.euphony.enc_vanilla.common.init.EVBlocks;
 import net.minecraft.core.BlockPos;
@@ -22,7 +22,7 @@ import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
 public class StopGrowingEvent {
     @SubscribeEvent
     public static void blockInteract(PlayerInteractEvent.RightClickBlock event) {
-        if(!EVConfig.instance().enabledStopGrowing()) {
+        if(!EVConfigRemoved.instance().enabledStopGrowing()) {
             return;
         }
 

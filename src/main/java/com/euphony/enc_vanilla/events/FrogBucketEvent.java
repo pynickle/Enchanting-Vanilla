@@ -1,6 +1,6 @@
 package com.euphony.enc_vanilla.events;
 
-import com.euphony.enc_vanilla.EVConfig;
+import com.euphony.enc_vanilla.EVConfigRemoved;
 import com.euphony.enc_vanilla.EncVanilla;
 import com.euphony.enc_vanilla.common.init.EVItems;
 import net.minecraft.core.component.DataComponents;
@@ -23,7 +23,7 @@ import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
 public class FrogBucketEvent {
     @SubscribeEvent
     public static void entityInteract(PlayerInteractEvent.EntityInteract event) {
-        if(!EVConfig.instance().enabledSlimeChunkDetecting()) {
+        if(!EVConfigRemoved.instance().enabledSlimeChunkDetecting()) {
             return;
         }
         Entity entity = event.getTarget();

@@ -1,6 +1,6 @@
 package com.euphony.enc_vanilla.events;
 
-import com.euphony.enc_vanilla.EVConfig;
+import com.euphony.enc_vanilla.EVConfigRemoved;
 import com.euphony.enc_vanilla.EncVanilla;
 import net.mehvahdjukaar.fastpaintings.PaintingBlockEntity;
 import net.minecraft.ResourceLocationException;
@@ -36,7 +36,7 @@ import java.util.*;
 public class SwitchPaintingEvent {
     @SubscribeEvent
     public static void entityInteract(PlayerInteractEvent.EntityInteract event) {
-        if(!EVConfig.instance().enabledPaintingSwitching()) {
+        if(!EVConfigRemoved.instance().enabledPaintingSwitching()) {
             return;
         }
 

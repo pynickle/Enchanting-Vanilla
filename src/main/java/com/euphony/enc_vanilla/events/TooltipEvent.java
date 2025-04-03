@@ -1,6 +1,6 @@
 package com.euphony.enc_vanilla.events;
 
-import com.euphony.enc_vanilla.EVConfig;
+import com.euphony.enc_vanilla.EVConfigRemoved;
 import com.euphony.enc_vanilla.EncVanilla;
 import com.euphony.enc_vanilla.common.init.EVDataComponentTypes;
 import com.euphony.enc_vanilla.common.init.EVItems;
@@ -41,7 +41,7 @@ public class TooltipEvent {
                 event.getToolTip().add(createTooltip("biome." + biome.location().toLanguageKey()));
             }
         } else if(item.is(EVItems.SCULK_COMPASS_ITEM) || item.is(EVItems.DAMAGED_SCULK_COMPASS_ITEM)) {
-            if(!EVConfig.instance().enabledSculkCompass()) {
+            if(!EVConfigRemoved.instance().enabledSculkCompass()) {
                 event.getToolTip().add(createTooltip("item.enc_vanilla.sculk_compass.desc"));
             }
         }

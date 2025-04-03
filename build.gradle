@@ -42,6 +42,11 @@ repositories {
             includeGroup "it.crystalnest"
         }
     }
+    maven {
+        // YACL
+        name 'Xander Maven'
+        url 'https://maven.isxander.dev/releases'
+    }
     mavenLocal()
 }
 
@@ -100,6 +105,8 @@ sourceSets.main.resources { srcDir 'src/generated/resources' }
 dependencies {
     compileOnly("mezz.jei:jei-${minecraft_version}-neoforge-api:${jei_version}")
     runtimeOnly("mezz.jei:jei-${minecraft_version}-neoforge:${jei_version}")
+    compileOnly("dev.isxander:yet-another-config-lib:${yacl_version}+${minecraft_version}-neoforge")
+    runtimeOnly("dev.isxander:yet-another-config-lib:${yacl_version}+${minecraft_version}-neoforge")
     compileOnly("curse.maven:selene-499980:${selene_id}")
     compileOnly("curse.maven:fast-paintings-883287:${fast_paintings_id}")
 
@@ -118,6 +125,7 @@ var generateModMetadata = tasks.register("generateModMetadata", ProcessResources
                              loader_version_range   : loader_version_range,
                              soul_fire_d_version    : soul_fire_d_version,
                              cobweb_version         : cobweb_version,
+                             yacl_version           : yacl_version,
                              mod_id                 : mod_id,
                              mod_name               : mod_name,
                              mod_license            : mod_license,

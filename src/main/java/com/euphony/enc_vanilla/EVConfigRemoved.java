@@ -5,19 +5,18 @@ import net.neoforged.fml.config.ModConfig;
 import net.neoforged.neoforge.common.ModConfigSpec;
 import net.neoforged.neoforge.common.ModConfigSpec.BooleanValue;
 import net.neoforged.neoforge.common.ModConfigSpec.DoubleValue;
-import net.neoforged.neoforge.common.ModConfigSpec.EnumValue;
 import net.neoforged.neoforge.common.ModConfigSpec.IntValue;
 
 import java.util.List;
 
-
-public class EVConfig {
+@Deprecated(forRemoval = true)
+public class EVConfigRemoved {
     private final ClientConfig client = new ClientConfig();
     private final CommonConfig common = new CommonConfig();
 
-    private static EVConfig instance;
+    private static EVConfigRemoved instance;
 
-    private EVConfig(ModContainer container) {
+    private EVConfigRemoved(ModContainer container) {
         container.registerConfig(ModConfig.Type.CLIENT, client.spec);
         container.registerConfig(ModConfig.Type.COMMON, common.spec);
     }
@@ -26,10 +25,10 @@ public class EVConfig {
         if (!container.getModId().equals(EncVanilla.MODID)) {
             throw new IllegalArgumentException();
         }
-        instance = new EVConfig(container);
+        instance = new EVConfigRemoved(container);
     }
 
-    public static EVConfig instance() {
+    public static EVConfigRemoved instance() {
         return instance;
     }
 
@@ -155,6 +154,7 @@ public class EVConfig {
         public final BooleanValue enabledJukeboxLoop;
 
         public CommonConfig() {
+
             var builder = new ModConfigSpec.Builder();
 
             builder.push("general");

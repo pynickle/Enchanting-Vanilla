@@ -1,6 +1,6 @@
 package com.euphony.enc_vanilla.mixin;
 
-import com.euphony.enc_vanilla.EVConfig;
+import com.euphony.enc_vanilla.EVConfigRemoved;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
@@ -15,7 +15,7 @@ import java.util.Objects;
 public class ShutupNameTag {
     @Inject(method = "playSound(Lnet/minecraft/sounds/SoundEvent;FF)V", at = @At("HEAD"), cancellable = true)
     private void playSoundInject(SoundEvent sound, float volume, float pitch, CallbackInfo ci) {
-        if (!EVConfig.instance().enabledShutupNameTag())
+        if (!EVConfigRemoved.instance().enabledShutupNameTag())
             return;
 
         if ((Object) this instanceof LivingEntity livingEntity) {

@@ -1,6 +1,6 @@
 package com.euphony.enc_vanilla.mixin;
 
-import com.euphony.enc_vanilla.EVConfig;
+import com.euphony.enc_vanilla.EVConfigRemoved;
 import net.minecraft.core.Holder;
 import net.minecraft.world.item.JukeboxSong;
 import net.minecraft.world.item.JukeboxSongPlayer;
@@ -21,7 +21,7 @@ public class JukeboxSongPlayerMixin {
 
     @Inject(method = "tick", at = @At("HEAD"), cancellable = true)
     public void tickInject(LevelAccessor level, BlockState state, CallbackInfo ci) {
-        if(!EVConfig.instance().enabledJukeboxLoop())
+        if(!EVConfigRemoved.instance().enabledJukeboxLoop())
             return;
         if (this.song != null) {
             if (this.song.value().hasFinished(this.ticksSinceSongStarted)) {
