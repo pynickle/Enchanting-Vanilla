@@ -28,5 +28,11 @@
   "yacl3.config.enc_vanilla:config.enableMobTorchHit": "Enable Mob Torch Hit",
   "yacl3.config.enc_vanilla:config.torchHitFireChance": "Torch Hit Fire Chance",
   "yacl3.config.enc_vanilla:config.torchHitFireDuration": "Torch Hit Fire Duration",
-  "yacl3.config.enc_vanilla:config.category.qol.group.other": "Other"
+  "yacl3.config.enc_vanilla:config.extraTorchItems": "Extra Torch Items",
+  "yacl3.config.enc_vanilla:config.extraTorchItems.button": "Configure Extra Torch Items",
+  "yacl3.config.enc_vanilla:config.category.qol.group.other": "Other",
+  "yacl3.config.enc_vanilla:config.enableBlocksOnLilyPad": "Enable Blocks On Lily Pad",
+  "yacl3.config.enc_vanilla:config.enablePaintingSwitching": "Enable Painting Switching",
+  "yacl3.config.enc_vanilla:config.enableCutVine": "Enable Cut Vine",
+  "yacl3.config.enc_vanilla:config.enableStopGrowing": "Enable Stop Growing"
 }

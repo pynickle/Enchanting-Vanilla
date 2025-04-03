@@ -1,8 +1,10 @@
-package com.euphony.enc_vanilla.config.categories;
+package com.euphony.enc_vanilla.config.categories.qol;
 
 import com.euphony.enc_vanilla.EncVanilla;
+import com.euphony.enc_vanilla.config.categories.qol.screen.ExtraTorchItemsScreen;
 import com.euphony.enc_vanilla.utils.config.ConfigUtils;
 import com.google.gson.GsonBuilder;
+import com.mojang.authlib.minecraft.client.MinecraftClient;
 import dev.isxander.yacl3.api.*;
 import dev.isxander.yacl3.api.controller.BooleanControllerBuilder;
 import dev.isxander.yacl3.api.controller.DoubleSliderControllerBuilder;
@@ -25,10 +27,6 @@ public final class QolConfig {
                     .setPath(Path.of("config", EncVanilla.MODID + "/qol.json")).build()
             )
             .build();
-
-    public static void load() {
-        HANDLER.load();
-    }
 
     public static void save() {
         HANDLER.save();
@@ -129,7 +127,7 @@ public final class QolConfig {
 
             Option<BiConsumer<YACLScreen, ButtonOption>> extraTorchItemsOpt = ConfigUtils.getButtonOption("extraTorchItems")
                     .action(((yaclScreen, buttonOption) ->{
-
+                        yaclScreen.getMinecraft().setScreen(ExtraTorchItemsScreen.makeScreen().generateScreen(yaclScreen));
                     }))
                     .build();
 
@@ -144,6 +142,20 @@ public final class QolConfig {
                     .binding(defaults.enablePaintingSwitching,
                             () -> config.enablePaintingSwitching,
                             newVal -> config.enablePaintingSwitching = newVal)
+                    .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
+                    .build();
+
+            Option<Boolean> enableCutVineOpt = ConfigUtils.<Boolean>getGenericOption("enableCutVine", "cut_vine")
+                    .binding(defaults.enableCutVine,
+                            () -> config.enableCutVine,
+                            newVal -> config.enableCutVine = newVal)
+                    .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
+                    .build();
+
+            Option<Boolean> enableStopGrowingOpt = ConfigUtils.<Boolean>getGenericOption("enableStopGrowing", "stop_growing")
+                    .binding(defaults.enableStopGrowing,
+                            () -> config.enableStopGrowing,
+                            newVal -> config.enableStopGrowing = newVal)
                     .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
                     .build();
 
@@ -177,7 +189,9 @@ public final class QolConfig {
                                     .name(ConfigUtils.getGroupName(QOL_CATEGORY, OTHER_GROUP))
                                     .options(List.of(
                                             enableBlocksOnLilyPadOpt,
-                                            enablePaintingSwitchingOpt
+                                            enablePaintingSwitchingOpt,
+                                            enableCutVineOpt,
+                                            enableStopGrowingOpt
                                     ))
                                     .build())
                             .build())

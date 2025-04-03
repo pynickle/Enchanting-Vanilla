@@ -17,43 +17,33 @@ A vanilla extension mod
 * Now you can place blocks above the lily pads, which works by turning the block underneath into waterlogged lily pad.
 * When the block above is removed, the lily pad will revert to its vanilla version.
 
-### **4.** *More Compostable Items*
-* You can now compost even more items, which include rotten flesh, dead bush, grass blocks and more.
-* Specific information can be viewed in JEI or EMI.
-
-### **5.** *Painting Switching*
+### **4.** *Painting Switching*
 * You can now right-click on a painting to quickly switch between paintings.
 * This is compatible with the Fast Paintings mod.
 
-### **6.** *Cut Vine*
+### **5.** *Cut Vine*
 * Now you can right-click on the vine to convert it and the vines below it into cut vines, which will not grow.
 
-### **7.** *Stop Growing*
+### **6.** *Stop Growing*
 * Now you can right-click on bamboo and sugar cane with shears to stop them growing.
 
-### **8.** *Torch Hit*
+### **7.** *Torch Hit*
 * You can attack creatures with torches or soul torches to give them a chance to catch fire, compatible with Soul fire'd.
 * In the config file you can configure creature catching fire time and probability, etc., and you can also add torches from other mods (some of which have already been added).
 
-### **9.** *Slabs To Blocks*
-* Add recipes for all slabs to blocks.
-
-### **10.** *Sponge Place*
+### **8.** *Sponge Place*
 * You can now place a sponge directly on the water without having to place a cube next to it first.
 
-### **11.** *Sponge Campfire*
-* Now you can use campfire drying sponges.
-
-### **12.** *Farmland Trampling Prevention*
+### **9.** *Farmland Trampling Prevention*
 * Now when you have a slow falling effect, you won't be trampling farmland.
 
-### **13.** *Painting of the Four Elements*
+### **10.** *Painting of the Four Elements*
 * Now you can place elemental paintings of water, wind, fire and earth.
 
-### **14.** *Shutup Name Tag*
+### **11.** *Shutup Name Tag*
 * Now you can use a name tag to name a mob "Shutup!" to make it silent.
 
-### **15.** *Jukebox Loop*
+### **12.** *Jukebox Loop*
 * Now the jukebox will loop the music disc.
 
 ### **Ⅱ. Tools**
@@ -76,3 +66,15 @@ A vanilla extension mod
 * If not damaged, the biome crystal returns to the unbound biome state and you can craft it again.
 * Throw the sculk compass into Soulfire to remove its bindings.
 * The sculk compass will randomly spin if no biome is found or if it is unbound.
+
+### **Ⅲ. Recipes**
+
+### **1.** *More Compostable Items*
+* You can now compost even more items, which include rotten flesh, dead bush, grass blocks and more.
+* Specific information can be viewed in JEI or EMI.
+
+### **2.** *Slabs To Blocks*
+* Add recipes for all slabs to blocks.
+
+### **3.** *Sponge Campfire*
+* Now you can use campfire drying sponges.

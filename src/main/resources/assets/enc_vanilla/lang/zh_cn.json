@@ -23,10 +23,16 @@
   "yacl3.config.enc_vanilla:config.enableVillagerAttraction": "启用村民吸引",
   "yacl3.config.enc_vanilla:config.category.qol.group.item_frame": "隐形物品展示框",
   "yacl3.config.enc_vanilla:config.enableInvisibleItemFrame": "启用隐形展示框",
-  "yacl3.config.enc_vanilla:config.category.qol.group.torch_hit": "Torch Hit",
+  "yacl3.config.enc_vanilla:config.category.qol.group.torch_hit": "火把攻击",
   "yacl3.config.enc_vanilla:config.enableTorchHit": "启用火把攻击",
   "yacl3.config.enc_vanilla:config.enableMobTorchHit": "启用生物火把攻击",
   "yacl3.config.enc_vanilla:config.torchHitFireChance": "着火概率",
   "yacl3.config.enc_vanilla:config.torchHitFireDuration": "着火时间",
-  "yacl3.config.enc_vanilla:config.category.qol.group.other": "其他"
+  "yacl3.config.enc_vanilla:config.extraTorchItems": "额外火把物品",
+  "yacl3.config.enc_vanilla:config.extraTorchItems.button": "配置额外火把物品",
+  "yacl3.config.enc_vanilla:config.category.qol.group.other": "其他",
+  "yacl3.config.enc_vanilla:config.enableBlocksOnLilyPad": "启用睡莲上方块",
+  "yacl3.config.enc_vanilla:config.enablePaintingSwitching": "启用画作切换",
+  "yacl3.config.enc_vanilla:config.enableCutVine": "启用切下藤蔓",
+  "yacl3.config.enc_vanilla:config.enableStopGrowing": "启用停止生长"
 }

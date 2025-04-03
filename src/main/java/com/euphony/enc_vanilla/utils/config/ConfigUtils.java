@@ -1,9 +1,7 @@
 package com.euphony.enc_vanilla.utils.config;
 
 import com.euphony.enc_vanilla.EncVanilla;
-import dev.isxander.yacl3.api.ButtonOption;
-import dev.isxander.yacl3.api.Option;
-import dev.isxander.yacl3.api.OptionDescription;
+import dev.isxander.yacl3.api.*;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.resources.ResourceLocation;
@@ -13,6 +11,15 @@ import javax.annotation.Nullable;
 public class ConfigUtils {
     public static final int IMG_WIDTH = 1920;
     public static final int IMG_HEIGHT = 1080;
+
+    public static ListOption.Builder<String> getListGroupOption(String name) {
+        return ListOption.<String>createBuilder()
+                .name(getOptionName(name))
+                .description(OptionDescription.createBuilder()
+                        .text(getDesc(name, null))
+                        .build()
+                );
+    }
 
     public static ButtonOption.Builder getButtonOption(String name) {
         return ButtonOption.createBuilder()

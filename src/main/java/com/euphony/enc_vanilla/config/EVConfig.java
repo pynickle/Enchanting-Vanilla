@@ -1,6 +1,6 @@
 package com.euphony.enc_vanilla.config;
 
-import com.euphony.enc_vanilla.config.categories.QolConfig;
+import com.euphony.enc_vanilla.config.categories.qol.QolConfig;
 
 public final class EVConfig {
     public static QolConfig qolConfig = QolConfig.HANDLER.instance();
