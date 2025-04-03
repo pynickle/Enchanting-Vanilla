@@ -15,7 +15,6 @@ import net.minecraft.network.chat.Component;
 
 import java.nio.file.Path;
 import java.util.List;
-import java.lang.Boolean;
 import java.util.function.BiConsumer;
 
 public final class QolConfig {

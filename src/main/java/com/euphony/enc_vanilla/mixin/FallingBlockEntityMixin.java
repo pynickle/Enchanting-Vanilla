@@ -3,7 +3,6 @@ package com.euphony.enc_vanilla.mixin;
 import com.euphony.enc_vanilla.EVConfigRemoved;
 import com.euphony.enc_vanilla.events.custom.AnvilFallOnLandEvent;
 import com.llamalad7.mixinextras.sugar.Local;
-
 import net.minecraft.core.BlockPos;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.entity.Entity;
@@ -12,7 +11,6 @@ import net.minecraft.world.entity.item.FallingBlockEntity;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.common.NeoForge;
-
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;

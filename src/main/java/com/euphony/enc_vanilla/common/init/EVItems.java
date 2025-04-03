@@ -1,7 +1,8 @@
 package com.euphony.enc_vanilla.common.init;
 
 import com.euphony.enc_vanilla.EncVanilla;
-import com.euphony.enc_vanilla.common.item.*;
+import com.euphony.enc_vanilla.common.item.FrogBucketItem;
+import com.euphony.enc_vanilla.common.item.SculkCompassItem;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;

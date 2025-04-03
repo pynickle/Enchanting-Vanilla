@@ -1,15 +1,14 @@
 package com.euphony.enc_vanilla.events;
 
+import com.euphony.enc_vanilla.EncVanilla;
 import com.euphony.enc_vanilla.common.init.EVBlocks;
+import com.euphony.enc_vanilla.events.custom.AnvilFallOnLandEvent;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
-
-import com.euphony.enc_vanilla.EncVanilla;
-import com.euphony.enc_vanilla.events.custom.AnvilFallOnLandEvent;
 
 @EventBusSubscriber(modid = EncVanilla.MODID)
 public class CompressSlimeBlockEvent {

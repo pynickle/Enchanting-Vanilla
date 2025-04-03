@@ -1,7 +1,6 @@
 package com.euphony.enc_vanilla.mixin;
 
 import com.euphony.enc_vanilla.common.init.EVItems;
-import com.euphony.enc_vanilla.data.tag.ItemTagGenerator;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.Containers;
 import net.minecraft.world.entity.Entity;

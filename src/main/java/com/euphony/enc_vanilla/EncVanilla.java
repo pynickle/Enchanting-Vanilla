@@ -6,7 +6,6 @@ import com.euphony.enc_vanilla.common.init.EVDataComponentTypes;
 import com.euphony.enc_vanilla.common.init.EVItems;
 import com.euphony.enc_vanilla.common.loot.EVLootModifiers;
 import com.euphony.enc_vanilla.config.EVConfig;
-import com.mojang.logging.LogUtils;
 import net.minecraft.resources.ResourceLocation;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;

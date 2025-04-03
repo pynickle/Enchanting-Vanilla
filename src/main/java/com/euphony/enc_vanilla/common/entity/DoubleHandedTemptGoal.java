@@ -1,15 +1,15 @@
 package com.euphony.enc_vanilla.common.entity;
 
-import java.util.EnumSet;
-import java.util.function.Predicate;
-import javax.annotation.Nullable;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.PathfinderMob;
 import net.minecraft.world.entity.ai.goal.Goal;
-import net.minecraft.world.entity.ai.goal.Goal.Flag;
 import net.minecraft.world.entity.ai.targeting.TargetingConditions;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+
+import javax.annotation.Nullable;
+import java.util.EnumSet;
+import java.util.function.Predicate;
 
 public class DoubleHandedTemptGoal extends Goal {
     private static final TargetingConditions TEMP_TARGETING = TargetingConditions.forNonCombat().range((double)10.0F).ignoreLineOfSight();

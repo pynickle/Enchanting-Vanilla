@@ -1,12 +1,11 @@
 package com.euphony.enc_vanilla.config.client.widget;
 
-import org.jetbrains.annotations.NotNull;
-
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;
+import org.jetbrains.annotations.NotNull;
 
 public class CategoryButton extends Button {
     private final ItemStack icon;
