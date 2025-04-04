@@ -85,6 +85,7 @@ public final class QolConfig {
     @SerialEntry public boolean enableShutupNameTag = true;
     @SerialEntry public boolean enableJukeboxLoop = true;
     @SerialEntry public boolean enableCakeDrop = true;
+    @SerialEntry public boolean enableCeilingTorch = true;
 
     public static YetAnotherConfigLib makeScreen() {
         return YetAnotherConfigLib.create(HANDLER, (defaults, config, builder) -> {
@@ -207,6 +208,13 @@ public final class QolConfig {
                     .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
                     .build();
 
+            Option<Boolean> enableCeilingTorchOpt = ConfigUtils.<Boolean>getGenericOption("enableCeilingTorch", "ceiling_torch")
+                    .binding(defaults.enableCeilingTorch,
+                            () -> config.enableCeilingTorch,
+                            newVal -> config.enableCeilingTorch = newVal)
+                    .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
+                    .build();
+
             return builder
                     .title(Component.translatable("yacl3.config.enc_vanilla:config"))
                     .category(ConfigCategory.createBuilder()
@@ -250,7 +258,8 @@ public final class QolConfig {
                                             enableSpongePlacingOpt,
                                             enableShutupNameTagOpt,
                                             enableJukeboxLoopOpt,
-                                            enableCakeDropOpt
+                                            enableCakeDropOpt,
+                                            enableCeilingTorchOpt
                                     ))
                                     .build())
                             .build())

@@ -49,6 +49,10 @@ A vanilla extension mod
 ### **13.** *Cake Drop*
 * Now you can destroy a whole cake to get it.
 
+### **14.** *Ceiling Torch*
+* Now you can place torches on the ceiling.
+* The inverted redstone torch sends a signal to the block above it.
+
 ### **Ⅱ. Tools**
 
 ### **1.** *Slime Chunk Detecting*

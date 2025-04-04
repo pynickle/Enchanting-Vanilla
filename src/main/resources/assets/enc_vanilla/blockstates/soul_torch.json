@@ -1,0 +1,5 @@
+{
+  "variants": {
+    "": { "model": "enc_vanilla:block/soul_torch", "x": 180 }
+  }
+}

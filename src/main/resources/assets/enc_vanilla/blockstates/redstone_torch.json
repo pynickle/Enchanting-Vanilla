@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "lit=false": {
+      "model": "enc_vanilla:block/redstone_torch_off",
+      "x": 180
+    },
+    "lit=true": {
+      "model": "enc_vanilla:block/redstone_torch",
+      "x": 180
+    }
+  }
+}

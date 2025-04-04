@@ -48,6 +48,7 @@
   "yacl3.config.enc_vanilla:config.enableShutupNameTag": "Enable Shutup Name Tag",
   "yacl3.config.enc_vanilla:config.enableJukeboxLoop": "Enable Jukebox Loop",
   "yacl3.config.enc_vanilla:config.enableCakeDrop": "Enable Cake Drop",
+  "yacl3.config.enc_vanilla:config.enableCeilingTorch": "Enable Ceiling Torch",
 
   "yacl3.config.enc_vanilla:config.category.tools.group.compressed_slime_block": "Compressed Slime Block",
   "yacl3.config.enc_vanilla:config.enableCompressedSlimeBlock": "Enable Compressed Slime Block",

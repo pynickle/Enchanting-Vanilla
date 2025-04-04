@@ -28,22 +28,8 @@ ordering = "NONE"
 side = "BOTH"
 
 [[dependencies."${mod_id}"]]
-modId = "soul_fire_d"
-type = "optional"
-versionRange = "[${soul_fire_d_version},)"
-ordering = "AFTER"
-side = "BOTH"
-
-[[dependencies."${mod_id}"]]
-modId = "cobweb"
-type = "optional"
-versionRange = "[${cobweb_version},)"
-ordering = "AFTER"
-side = "BOTH"
-
-[[dependencies."${mod_id}"]]
 modId = "yet_another_config_lib_v3"
-mandatory = true
+type = "required"
 versionRange = "[${yacl_version},)"
 ordering = "NONE"
 side = "CLIENT"

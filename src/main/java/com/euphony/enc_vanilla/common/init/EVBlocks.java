@@ -2,6 +2,7 @@ package com.euphony.enc_vanilla.common.init;
 
 import com.euphony.enc_vanilla.EncVanilla;
 import com.euphony.enc_vanilla.common.block.*;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -27,6 +28,11 @@ public class EVBlocks {
 
     public static final DeferredBlock<CompressedSlimeBlock> COMPRESSED_SLIME_BLOCK = registerWithItem("compressed_slime_block", CompressedSlimeBlock::new,
             BlockBehaviour.Properties.ofFullCopy(Blocks.SLIME_BLOCK));
+
+    public static final DeferredBlock<CeilingTorchBlock> CEILING_TORCH = register("torch", (p) -> new CeilingTorchBlock(p, ParticleTypes.FLAME, Blocks.TORCH), BlockBehaviour.Properties.ofFullCopy(Blocks.TORCH));
+    public static final DeferredBlock<RedstoneCeilingTorchBlock> CEILING_REDSTONE_TORCH = register("redstone_torch", (p) -> new RedstoneCeilingTorchBlock(p, Blocks.REDSTONE_TORCH), BlockBehaviour.Properties.ofFullCopy(Blocks.REDSTONE_TORCH));
+    public static final DeferredBlock<CeilingTorchBlock> CEILING_SOUL_TORCH = register("soul_torch", (p) -> new CeilingTorchBlock(p, ParticleTypes.SOUL_FIRE_FLAME, Blocks.SOUL_TORCH), BlockBehaviour.Properties.ofFullCopy(Blocks.SOUL_TORCH));
+
 
     public static <T extends Block> DeferredBlock<T> register(String name, Function<BlockBehaviour.Properties, T> function, BlockBehaviour.Properties properties) {
         return BLOCKS.registerBlock(name, function, properties);
