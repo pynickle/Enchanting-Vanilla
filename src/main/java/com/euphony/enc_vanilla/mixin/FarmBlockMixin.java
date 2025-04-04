@@ -1,6 +1,6 @@
 package com.euphony.enc_vanilla.mixin;
 
-import com.euphony.enc_vanilla.EVConfigRemoved;
+import com.euphony.enc_vanilla.config.categories.qol.QolConfig;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
@@ -19,7 +19,7 @@ public class FarmBlockMixin {
     @Inject(method = "turnToDirt", at = @At("HEAD"), cancellable = true)
     private static void setToDirtMixin(Entity entity, BlockState state, Level world, BlockPos pos, CallbackInfo ci) {
 
-        if (!EVConfigRemoved.instance().enabledFarmlandTramplingPrevention())
+        if (!QolConfig.HANDLER.instance().enableFarmlandTramplingPrevention)
             return;
 
         if (entity instanceof LivingEntity livingEntity) {

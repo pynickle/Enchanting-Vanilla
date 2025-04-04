@@ -1,8 +1,8 @@
 package com.euphony.enc_vanilla.events;
 
-import com.euphony.enc_vanilla.EVConfigRemoved;
 import com.euphony.enc_vanilla.EncVanilla;
 import com.euphony.enc_vanilla.common.init.EVBlocks;
+import com.euphony.enc_vanilla.config.categories.qol.QolConfig;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.sounds.SoundEvents;
@@ -27,7 +27,7 @@ import java.util.Map;
 public class CutVineEvent {
     @SubscribeEvent
     public static void blockInteract(PlayerInteractEvent.RightClickBlock event) {
-        if(!EVConfigRemoved.instance().enabledCutVine()) {
+        if(!QolConfig.HANDLER.instance().enableCutVine) {
             return;
         }
 

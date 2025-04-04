@@ -1,7 +1,7 @@
 package com.euphony.enc_vanilla.mixin;
 
-import com.euphony.enc_vanilla.EVConfigRemoved;
 import com.euphony.enc_vanilla.common.init.EVBlocks;
+import com.euphony.enc_vanilla.config.categories.qol.QolConfig;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.component.DataComponents;
@@ -32,7 +32,7 @@ public abstract class WaterlilyBlockMixin extends Block {
     protected @NotNull ItemInteractionResult useItemOn(ItemStack stack, @NotNull BlockState state, @NotNull Level level, @NotNull BlockPos pos, @NotNull Player player, @NotNull InteractionHand hand, @NotNull BlockHitResult hitResult) {
         Item item = stack.getItem();
 
-        if(!enc_vanilla$canPlaceBlock(player, pos, stack) || !EVConfigRemoved.instance().enabledBlocksOnLilyPad()) {
+        if(!enc_vanilla$canPlaceBlock(player, pos, stack) || !QolConfig.HANDLER.instance().enableBlocksOnLilyPad) {
             return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
         }
         if (!stack.isEmpty() && !(item instanceof PlaceOnWaterBlockItem) && !(stack.getItem() instanceof BoneMealItem)) {

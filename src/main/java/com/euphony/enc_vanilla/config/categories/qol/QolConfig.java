@@ -1,10 +1,10 @@
 package com.euphony.enc_vanilla.config.categories.qol;
 
 import com.euphony.enc_vanilla.EncVanilla;
+import com.euphony.enc_vanilla.config.categories.qol.screen.ExtraSoulTorchItemsScreen;
 import com.euphony.enc_vanilla.config.categories.qol.screen.ExtraTorchItemsScreen;
 import com.euphony.enc_vanilla.utils.config.ConfigUtils;
 import com.google.gson.GsonBuilder;
-import com.mojang.authlib.minecraft.client.MinecraftClient;
 import dev.isxander.yacl3.api.*;
 import dev.isxander.yacl3.api.controller.BooleanControllerBuilder;
 import dev.isxander.yacl3.api.controller.DoubleSliderControllerBuilder;
@@ -36,6 +36,7 @@ public final class QolConfig {
     private static final String VILLAGER_ATTRACTION_GROUP = "villager_attraction";
     private static final String ITEM_FRAME_GROUP = "item_frame";
     private static final String TORCH_HIT_GROUP = "torch_hit";
+    private static final String TRAMPLING_PREVENTION_GROUP = "trampling_prevention";
     private static final String OTHER_GROUP = "other";
 
     @SerialEntry public boolean enableVillagerAttraction = true;
@@ -73,11 +74,16 @@ public final class QolConfig {
             "pgwbandedtorches:banded_torch_red",
             "pgwbandedtorches:banded_torch_black"
     );
+    @SerialEntry public List<String> extraSoulTorchItems = List.of();
 
     @SerialEntry public boolean enableBlocksOnLilyPad = true;
     @SerialEntry public boolean enablePaintingSwitching = true;
     @SerialEntry public boolean enableCutVine = true;
     @SerialEntry public boolean enableStopGrowing = true;
+    @SerialEntry public boolean enableSpongePlacing = true;
+    @SerialEntry public boolean enableFarmlandTramplingPrevention = true;
+    @SerialEntry public boolean enableShutupNameTag = true;
+    @SerialEntry public boolean enableJukeboxLoop = true;
 
     public static YetAnotherConfigLib makeScreen() {
         return YetAnotherConfigLib.create(HANDLER, (defaults, config, builder) -> {
@@ -131,6 +137,19 @@ public final class QolConfig {
                     }))
                     .build();
 
+            Option<BiConsumer<YACLScreen, ButtonOption>> extraSoulTorchItemsOpt = ConfigUtils.getButtonOption("extraSoulTorchItems")
+                    .action(((yaclScreen, buttonOption) ->{
+                        yaclScreen.getMinecraft().setScreen(ExtraSoulTorchItemsScreen.makeScreen().generateScreen(yaclScreen));
+                    }))
+                    .build();
+
+            Option<Boolean> enableFarmlandTramplingPreventionOpt = ConfigUtils.<Boolean>getGenericOption("enableFarmlandTramplingPrevention", "trampling_prevention")
+                    .binding(defaults.enableFarmlandTramplingPrevention,
+                            () -> config.enableFarmlandTramplingPrevention,
+                            newVal -> config.enableFarmlandTramplingPrevention = newVal)
+                    .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
+                    .build();
+
             Option<Boolean> enableBlocksOnLilyPadOpt = ConfigUtils.<Boolean>getGenericOption("enableBlockOnLilyPad", "blocks_on_lily_pad")
                     .binding(defaults.enableBlocksOnLilyPad,
                             () -> config.enableBlocksOnLilyPad,
@@ -159,6 +178,27 @@ public final class QolConfig {
                     .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
                     .build();
 
+            Option<Boolean> enableSpongePlacingOpt = ConfigUtils.<Boolean>getGenericOption("enableSpongePlacing", "sponge_placing")
+                    .binding(defaults.enableSpongePlacing,
+                            () -> config.enableSpongePlacing,
+                            newVal -> config.enableSpongePlacing = newVal)
+                    .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
+                    .build();
+
+            Option<Boolean> enableShutupNameTagOpt = ConfigUtils.<Boolean>getGenericOption("enableShutupNameTag", "shutup_name_tag")
+                    .binding(defaults.enableShutupNameTag,
+                            () -> config.enableShutupNameTag,
+                            newVal -> config.enableShutupNameTag = newVal)
+                    .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
+                    .build();
+
+            Option<Boolean> enableJukeboxLoopOpt = ConfigUtils.<Boolean>getGenericOption("enableJukeboxLoop", "jukebox_loop")
+                    .binding(defaults.enableJukeboxLoop,
+                            () -> config.enableJukeboxLoop,
+                            newVal -> config.enableJukeboxLoop = newVal)
+                    .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
+                    .build();
+
             return builder
                     .title(Component.translatable("yacl3.config.enc_vanilla:config"))
                     .category(ConfigCategory.createBuilder()
@@ -182,7 +222,14 @@ public final class QolConfig {
                                             enableMobTorchHitOpt,
                                             torchHitFireChanceOpt,
                                             torchHitFireDurationOpt,
-                                            extraTorchItemsOpt
+                                            extraTorchItemsOpt,
+                                            extraSoulTorchItemsOpt
+                                    ))
+                                    .build())
+                            .group(OptionGroup.createBuilder()
+                                    .name(ConfigUtils.getGroupName(QOL_CATEGORY, TRAMPLING_PREVENTION_GROUP))
+                                    .options(List.of(
+                                            enableFarmlandTramplingPreventionOpt
                                     ))
                                     .build())
                             .group(OptionGroup.createBuilder()
@@ -191,7 +238,10 @@ public final class QolConfig {
                                             enableBlocksOnLilyPadOpt,
                                             enablePaintingSwitchingOpt,
                                             enableCutVineOpt,
-                                            enableStopGrowingOpt
+                                            enableStopGrowingOpt,
+                                            enableSpongePlacingOpt,
+                                            enableShutupNameTagOpt,
+                                            enableJukeboxLoopOpt
                                     ))
                                     .build())
                             .build())

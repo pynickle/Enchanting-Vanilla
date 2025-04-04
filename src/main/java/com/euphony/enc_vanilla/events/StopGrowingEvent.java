@@ -1,8 +1,8 @@
 package com.euphony.enc_vanilla.events;
 
-import com.euphony.enc_vanilla.EVConfigRemoved;
 import com.euphony.enc_vanilla.EncVanilla;
 import com.euphony.enc_vanilla.common.init.EVBlocks;
+import com.euphony.enc_vanilla.config.categories.qol.QolConfig;
 import net.minecraft.core.BlockPos;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.InteractionHand;
@@ -22,9 +22,7 @@ import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
 public class StopGrowingEvent {
     @SubscribeEvent
     public static void blockInteract(PlayerInteractEvent.RightClickBlock event) {
-        if(!EVConfigRemoved.instance().enabledStopGrowing()) {
-            return;
-        }
+        if(!QolConfig.HANDLER.instance().enableStopGrowing) return;
 
         Level level = event.getLevel();
         if (level.isClientSide) {

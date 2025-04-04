@@ -1,6 +1,6 @@
 package com.euphony.enc_vanilla.mixin;
 
-import com.euphony.enc_vanilla.EVConfigRemoved;
+import com.euphony.enc_vanilla.config.categories.ToolsConfig;
 import com.euphony.enc_vanilla.events.custom.AnvilFallOnLandEvent;
 import com.llamalad7.mixinextras.sugar.Local;
 import net.minecraft.core.BlockPos;
@@ -54,7 +54,7 @@ abstract class FallingBlockEntityMixin extends Entity {
                             "Lnet/minecraft/world/level/block/Fallable;onLand(Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/entity/item/FallingBlockEntity;)V")
     )
     private void anvilFallOnGround(CallbackInfo ci, @Local BlockPos blockPos) {
-        if(!EVConfigRemoved.instance().enabledCompressSlimeBlock()) return;
+        if(!ToolsConfig.HANDLER.instance().enableCompressedSlimeBlock) return;
         if (this.level().isClientSide()) return;
         if (!this.blockState.is(BlockTags.ANVIL)) return;
         FallingBlockEntity entity = (FallingBlockEntity) (Object) this;

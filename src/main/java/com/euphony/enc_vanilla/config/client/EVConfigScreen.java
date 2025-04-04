@@ -51,7 +51,7 @@ public class EVConfigScreen extends Screen {
 
         int categoryButtonWidth = (this.width - 80) / 3;
 
-        var qolButton = new CategoryButton(30, 50, categoryButtonWidth, 20,
+        var qolButton = new CategoryButton(30, 40, categoryButtonWidth, 20,
                 Component.translatable("yacl3.config.enc_vanilla:config.category.qol"), Items.IRON_PICKAXE.getDefaultInstance(), (btn) -> {
             if(this.qolConfigScreen == null) {
                 this.qolConfigScreen = QolConfig.makeScreen().generateScreen(this);
@@ -59,7 +59,7 @@ public class EVConfigScreen extends Screen {
 
             this.minecraft.setScreen(this.qolConfigScreen);
         });
-        var toolsButton = new CategoryButton(30 + categoryButtonWidth + 10, 50, categoryButtonWidth, 20,
+        var toolsButton = new CategoryButton(30 + categoryButtonWidth + 10, 40, categoryButtonWidth, 20,
                 Component.translatable("yacl3.config.enc_vanilla:config.category.tools"), Items.AMETHYST_SHARD.getDefaultInstance(), (btn) -> {
             if(this.toolsConfigScreen == null) {
                 this.toolsConfigScreen = ToolsConfig.makeScreen().generateScreen(this);
@@ -67,7 +67,7 @@ public class EVConfigScreen extends Screen {
 
             this.minecraft.setScreen(this.toolsConfigScreen);
         });
-        var clientButton = new CategoryButton(30 + (categoryButtonWidth + 10) * 2, 50, categoryButtonWidth, 20,
+        var clientButton = new CategoryButton(30 + (categoryButtonWidth + 10) * 2, 40, categoryButtonWidth, 20,
                 Component.translatable("yacl3.config.enc_vanilla:config.category.client"), Items.VINE.getDefaultInstance(), (btn) -> {
             if(this.clientConfigScreen == null) {
                 this.clientConfigScreen = ClientConfig.HANDLER.generateGui().generateScreen(this);
@@ -75,8 +75,8 @@ public class EVConfigScreen extends Screen {
 
             this.minecraft.setScreen(this.clientConfigScreen);
         });
-        var recipesButton = new CategoryButton(30, 80, categoryButtonWidth, 20,
-                Component.translatable("yacl3.config.enc_vanilla:config.category.client"), Items.VINE.getDefaultInstance(), (btn) -> {
+        var recipesButton = new CategoryButton(30, 70, categoryButtonWidth, 20,
+                Component.translatable("yacl3.config.enc_vanilla:config.category.recipes"), Items.ANVIL.getDefaultInstance(), (btn) -> {
             if(this.recipesConfigScreen == null) {
                 this.recipesConfigScreen = RecipesConfig.makeScreen().generateScreen(this);
             }

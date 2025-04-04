@@ -1,8 +1,8 @@
 package com.euphony.enc_vanilla.common.item;
 
-import com.euphony.enc_vanilla.EVConfigRemoved;
 import com.euphony.enc_vanilla.common.init.EVDataComponentTypes;
 import com.euphony.enc_vanilla.common.init.EVItems;
+import com.euphony.enc_vanilla.config.categories.ToolsConfig;
 import com.euphony.enc_vanilla.data.tag.ItemTagGenerator;
 import com.euphony.enc_vanilla.utils.CompassState;
 import com.google.common.base.Stopwatch;
@@ -42,7 +42,7 @@ public class SculkCompassItem extends Item {
 
     @Override
     public @NotNull InteractionResultHolder<ItemStack> use(Level level, @NotNull Player player, @NotNull InteractionHand hand) {
-        if(!EVConfigRemoved.instance().enabledSculkCompass())
+        if(!ToolsConfig.HANDLER.instance().enableSculkCompass)
             return new InteractionResultHolder<>(InteractionResult.PASS, player.getItemInHand(hand));
 
         if(!level.isClientSide()) {

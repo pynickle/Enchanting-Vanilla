@@ -34,5 +34,6 @@
   "yacl3.config.enc_vanilla:config.enableBlocksOnLilyPad": "Enable Blocks On Lily Pad",
   "yacl3.config.enc_vanilla:config.enablePaintingSwitching": "Enable Painting Switching",
   "yacl3.config.enc_vanilla:config.enableCutVine": "Enable Cut Vine",
-  "yacl3.config.enc_vanilla:config.enableStopGrowing": "Enable Stop Growing"
+  "yacl3.config.enc_vanilla:config.enableStopGrowing": "Enable Stop Growing",
+  "yacl3.config.enc_vanilla:config.category.recipes": "Recipes"
 }

@@ -26,7 +26,6 @@ public class EncVanilla {
     }
 
     public EncVanilla(IEventBus modEventBus, ModContainer modContainer) {
-        // EVConfig.register(modContainer);
         EncVanilla.getConfig().load();
         EVBlocks.BLOCKS.register(modEventBus);
         EVItems.ITEMS.register(modEventBus);

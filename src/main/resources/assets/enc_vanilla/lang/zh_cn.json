@@ -34,5 +34,6 @@
   "yacl3.config.enc_vanilla:config.enableBlocksOnLilyPad": "启用睡莲上方块",
   "yacl3.config.enc_vanilla:config.enablePaintingSwitching": "启用画作切换",
   "yacl3.config.enc_vanilla:config.enableCutVine": "启用切下藤蔓",
-  "yacl3.config.enc_vanilla:config.enableStopGrowing": "启用停止生长"
+  "yacl3.config.enc_vanilla:config.enableStopGrowing": "启用停止生长",
+  "yacl3.config.enc_vanilla:config.category.recipes": "配方"
 }

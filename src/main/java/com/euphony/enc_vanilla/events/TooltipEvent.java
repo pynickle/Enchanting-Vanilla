@@ -1,9 +1,9 @@
 package com.euphony.enc_vanilla.events;
 
-import com.euphony.enc_vanilla.EVConfigRemoved;
 import com.euphony.enc_vanilla.EncVanilla;
 import com.euphony.enc_vanilla.common.init.EVDataComponentTypes;
 import com.euphony.enc_vanilla.common.init.EVItems;
+import com.euphony.enc_vanilla.config.categories.ToolsConfig;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceKey;
@@ -41,7 +41,7 @@ public class TooltipEvent {
                 event.getToolTip().add(createTooltip("biome." + biome.location().toLanguageKey()));
             }
         } else if(item.is(EVItems.SCULK_COMPASS_ITEM) || item.is(EVItems.DAMAGED_SCULK_COMPASS_ITEM)) {
-            if(!EVConfigRemoved.instance().enabledSculkCompass()) {
+            if(!ToolsConfig.HANDLER.instance().enableSculkCompass) {
                 event.getToolTip().add(createTooltip("item.enc_vanilla.sculk_compass.desc"));
             }
         }
