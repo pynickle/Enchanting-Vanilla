@@ -29,12 +29,17 @@ public class RecipeGenerator extends RecipeProvider {
 
     @Override
     protected void buildRecipes(@NotNull RecipeOutput recipeOutput) {
-        addSmeltingRecipes(recipeOutput.withConditions(new BoolConfigCondition("spongeCampfire")));
-        addShapedRecipes(recipeOutput);
-        addBiomeCrystalRecipes(recipeOutput.withConditions(new BoolConfigCondition("sculkCompass")));
+        addSpongeCampfireRecipes(recipeOutput.withConditions(new BoolConfigCondition("spongeCampfire")));
+        addSculkCompassRecipes(recipeOutput.withConditions(new BoolConfigCondition("sculkCompass")));
     }
 
-    protected void addShapedRecipes(RecipeOutput recipeOutput) {
+    protected void addSpongeCampfireRecipes(RecipeOutput recipeOutput) {
+        SimpleCookingRecipeBuilder.campfireCooking(Ingredient.of(Items.WET_SPONGE), RecipeCategory.MISC, Items.SPONGE, 0.15F, 600)
+                .unlockedBy("has_item", has(Items.WET_SPONGE))
+                .save(recipeOutput, "wet_sponge_to_sponge");
+    }
+
+    protected void addSculkCompassRecipes(RecipeOutput recipeOutput) {
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, EVItems.SCULK_COMPASS_ITEM.get(), 1)
                 .define('S', EVItems.DAMAGED_SCULK_COMPASS_ITEM.get())
                 .define('I', Items.ECHO_SHARD)
@@ -44,15 +49,7 @@ public class RecipeGenerator extends RecipeProvider {
                 .pattern("III")
                 .unlockedBy("has_item", has(EVItems.DAMAGED_SCULK_COMPASS_ITEM.get()))
                 .save(recipeOutput, createKey("sculk_compass"));
-    }
 
-    protected void addSmeltingRecipes(RecipeOutput recipeOutput) {
-        SimpleCookingRecipeBuilder.campfireCooking(Ingredient.of(Items.WET_SPONGE), RecipeCategory.MISC, Items.SPONGE, 0.15F, 600)
-                .unlockedBy("has_item", has(Items.WET_SPONGE))
-                .save(recipeOutput, "wet_sponge_to_sponge");
-    }
-
-    protected void addBiomeCrystalRecipes(RecipeOutput recipeOutput) {
         for(Map.Entry<List<Item>, ResourceKey<Biome>> entry : BiomeCrystalMap.getRecipeMap("HEATED").entrySet()) {
             List<Item> items = entry.getKey();
             ResourceKey<Biome> biome = entry.getValue();

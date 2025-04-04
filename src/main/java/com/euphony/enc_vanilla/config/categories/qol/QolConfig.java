@@ -84,6 +84,7 @@ public final class QolConfig {
     @SerialEntry public boolean enableFarmlandTramplingPrevention = true;
     @SerialEntry public boolean enableShutupNameTag = true;
     @SerialEntry public boolean enableJukeboxLoop = true;
+    @SerialEntry public boolean enableCakeDrop = true;
 
     public static YetAnotherConfigLib makeScreen() {
         return YetAnotherConfigLib.create(HANDLER, (defaults, config, builder) -> {
@@ -199,6 +200,13 @@ public final class QolConfig {
                     .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
                     .build();
 
+            Option<Boolean> enableCakeDropOpt = ConfigUtils.<Boolean>getGenericOption("enableCakeDrop", "cake_drop")
+                    .binding(defaults.enableCakeDrop,
+                            () -> config.enableCakeDrop,
+                            newVal -> config.enableCakeDrop = newVal)
+                    .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
+                    .build();
+
             return builder
                     .title(Component.translatable("yacl3.config.enc_vanilla:config"))
                     .category(ConfigCategory.createBuilder()
@@ -241,7 +249,8 @@ public final class QolConfig {
                                             enableStopGrowingOpt,
                                             enableSpongePlacingOpt,
                                             enableShutupNameTagOpt,
-                                            enableJukeboxLoopOpt
+                                            enableJukeboxLoopOpt,
+                                            enableCakeDropOpt
                                     ))
                                     .build())
                             .build())

@@ -2,7 +2,7 @@
 
 A vanilla extension mod
 
-## *Functions implemented:*
+## *Functions implemented (19) :*
 
 ### **Ⅰ. QOL Improvements**
 
@@ -45,6 +45,9 @@ A vanilla extension mod
 
 ### **12.** *Jukebox Loop*
 * Now the jukebox will loop the music disc.
+
+### **13.** *Cake Drop*
+* Now you can destroy a whole cake to get it.
 
 ### **Ⅱ. Tools**
 

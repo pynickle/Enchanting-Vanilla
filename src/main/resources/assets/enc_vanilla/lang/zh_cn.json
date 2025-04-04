@@ -43,6 +43,7 @@
   "yacl3.config.enc_vanilla:config.enableSpongePlacing": "启用海绵放置",
   "yacl3.config.enc_vanilla:config.enableShutupNameTag": "启用安静命名牌",
   "yacl3.config.enc_vanilla:config.enableJukeboxLoop": "启用唱片机循环播放",
+  "yacl3.config.enc_vanilla:config.enableCakeDrop": "启用蛋糕掉落",
   "yacl3.config.enc_vanilla:config.category.tools.group.compressed_slime_block": "压缩史莱姆块",
   "yacl3.config.enc_vanilla:config.enableCompressedSlimeBlock": "启用压缩史莱姆块",
   "yacl3.config.enc_vanilla:config.category.tools.group.sculk_compass": "幽匿指南针",
@@ -51,5 +52,6 @@
   "yacl3.config.enc_vanilla:config.enableSlimeChunkDetecting": "启用史莱姆区块探测",
   "yacl3.config.enc_vanilla:config.category.recipes.group.other": "其他",
   "yacl3.config.enc_vanilla:config.enableMoreCompostable": "启用更多可堆肥",
-  "yacl3.config.enc_vanilla:config.enableSlabsToBlocks": "启用台阶合成方块"
+  "yacl3.config.enc_vanilla:config.enableSlabsToBlocks": "启用台阶合成方块",
+  "yacl3.config.enc_vanilla:config.enableSpongeCampfire": "启用海绵烘干"
 }
