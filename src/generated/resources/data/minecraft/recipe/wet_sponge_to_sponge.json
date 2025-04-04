@@ -1,4 +1,10 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "enc_vanilla:more_compostable",
+      "boolConfig": "spongeCampfire"
+    }
+  ],
   "type": "minecraft:campfire_cooking",
   "category": "food",
   "cookingtime": 600,

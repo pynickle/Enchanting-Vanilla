@@ -150,7 +150,7 @@ public final class QolConfig {
                     .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
                     .build();
 
-            Option<Boolean> enableBlocksOnLilyPadOpt = ConfigUtils.<Boolean>getGenericOption("enableBlockOnLilyPad", "blocks_on_lily_pad")
+            Option<Boolean> enableBlocksOnLilyPadOpt = ConfigUtils.<Boolean>getGenericOption("enableBlocksOnLilyPad", "blocks_on_lily_pad")
                     .binding(defaults.enableBlocksOnLilyPad,
                             () -> config.enableBlocksOnLilyPad,
                             newVal -> config.enableBlocksOnLilyPad = newVal)

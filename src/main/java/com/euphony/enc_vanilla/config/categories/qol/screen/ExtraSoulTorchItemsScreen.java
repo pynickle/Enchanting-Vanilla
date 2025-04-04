@@ -2,7 +2,9 @@ package com.euphony.enc_vanilla.config.categories.qol.screen;
 
 import com.euphony.enc_vanilla.config.categories.qol.QolConfig;
 import com.euphony.enc_vanilla.utils.config.ConfigUtils;
-import dev.isxander.yacl3.api.*;
+import dev.isxander.yacl3.api.ConfigCategory;
+import dev.isxander.yacl3.api.ListOption;
+import dev.isxander.yacl3.api.YetAnotherConfigLib;
 import dev.isxander.yacl3.api.controller.StringControllerBuilder;
 import net.minecraft.network.chat.Component;
 

@@ -1,9 +1,6 @@
 package com.euphony.enc_vanilla;
 
-import com.euphony.enc_vanilla.common.init.EVBlocks;
-import com.euphony.enc_vanilla.common.init.EVCreativeTabs;
-import com.euphony.enc_vanilla.common.init.EVDataComponentTypes;
-import com.euphony.enc_vanilla.common.init.EVItems;
+import com.euphony.enc_vanilla.common.init.*;
 import com.euphony.enc_vanilla.common.loot.EVLootModifiers;
 import com.euphony.enc_vanilla.config.EVConfig;
 import net.minecraft.resources.ResourceLocation;
@@ -29,6 +26,8 @@ public class EncVanilla {
         EncVanilla.getConfig().load();
         EVBlocks.BLOCKS.register(modEventBus);
         EVItems.ITEMS.register(modEventBus);
+
+        EVConditions.CONDITION_CODECS.register(modEventBus);
 
         EVCreativeTabs.TABS.register(modEventBus);
 

@@ -1,6 +1,7 @@
 package com.euphony.enc_vanilla.data.recipes;
 
 import com.euphony.enc_vanilla.EncVanilla;
+import com.euphony.enc_vanilla.common.condition.BoolConfigCondition;
 import com.euphony.enc_vanilla.common.init.EVDataComponentTypes;
 import com.euphony.enc_vanilla.common.init.EVItems;
 import com.euphony.enc_vanilla.common.item.BiomeCrystalMap;
@@ -28,9 +29,9 @@ public class RecipeGenerator extends RecipeProvider {
 
     @Override
     protected void buildRecipes(@NotNull RecipeOutput recipeOutput) {
-        addSmeltingRecipes(recipeOutput);
+        addSmeltingRecipes(recipeOutput.withConditions(new BoolConfigCondition("spongeCampfire")));
         addShapedRecipes(recipeOutput);
-        addBiomeCrystalRecipes(recipeOutput);
+        addBiomeCrystalRecipes(recipeOutput.withConditions(new BoolConfigCondition("sculkCompass")));
     }
 
     protected void addShapedRecipes(RecipeOutput recipeOutput) {

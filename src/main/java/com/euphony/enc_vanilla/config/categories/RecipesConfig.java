@@ -3,7 +3,10 @@ package com.euphony.enc_vanilla.config.categories;
 import com.euphony.enc_vanilla.EncVanilla;
 import com.euphony.enc_vanilla.utils.config.ConfigUtils;
 import com.google.gson.GsonBuilder;
-import dev.isxander.yacl3.api.*;
+import dev.isxander.yacl3.api.ConfigCategory;
+import dev.isxander.yacl3.api.Option;
+import dev.isxander.yacl3.api.OptionGroup;
+import dev.isxander.yacl3.api.YetAnotherConfigLib;
 import dev.isxander.yacl3.api.controller.BooleanControllerBuilder;
 import dev.isxander.yacl3.config.v2.api.ConfigClassHandler;
 import dev.isxander.yacl3.config.v2.api.SerialEntry;
@@ -33,14 +36,33 @@ public class RecipesConfig {
     private static final String RECIPES_CATEGORY = "recipes";
     private static final String OTHER_GROUP = "other";
 
+    @SerialEntry public boolean enableMoreCompostable = true;
     @SerialEntry public boolean enableSlabsToBlocks = true;
+    @SerialEntry public boolean enableSpongeCampfire = true;
 
     public static YetAnotherConfigLib makeScreen() {
         return YetAnotherConfigLib.create(HANDLER, (defaults, config, builder) -> {
+            Option<Boolean> enableMoreCompostableOpt = ConfigUtils.<Boolean>getGenericOption("enableMoreCompostable", "more_compostable")
+                    .binding(defaults.enableMoreCompostable,
+                            () -> config.enableMoreCompostable,
+                            newVal -> config.enableMoreCompostable = newVal)
+                    .flag(ConfigUtils.RESOURCE_RELOAD)
+                    .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
+                    .build();
+
             Option<Boolean> enableSlabsToBlocksOpt = ConfigUtils.<Boolean>getGenericOption("enableSlabsToBlocks", "slabs_to_blocks")
                     .binding(defaults.enableSlabsToBlocks,
                             () -> config.enableSlabsToBlocks,
                             newVal -> config.enableSlabsToBlocks = newVal)
+                    .flag(ConfigUtils.RESOURCE_RELOAD)
+                    .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
+                    .build();
+
+            Option<Boolean> enableSpongeCampfireOpt = ConfigUtils.<Boolean>getGenericOption("enableSpongeCampfire", "sponge_campfire")
+                    .binding(defaults.enableSpongeCampfire,
+                            () -> config.enableSpongeCampfire,
+                            newVal -> config.enableSpongeCampfire = newVal)
+                    .flag(ConfigUtils.RESOURCE_RELOAD)
                     .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
                     .build();
 
@@ -51,7 +73,9 @@ public class RecipesConfig {
                             .group(OptionGroup.createBuilder()
                                     .name(ConfigUtils.getGroupName(RECIPES_CATEGORY, OTHER_GROUP))
                                     .options(List.of(
-                                            enableSlabsToBlocksOpt
+                                            enableMoreCompostableOpt,
+                                            enableSlabsToBlocksOpt,
+                                            enableSpongeCampfireOpt
                                     ))
                                     .build())
                             .build())

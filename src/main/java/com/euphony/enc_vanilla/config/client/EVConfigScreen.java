@@ -2,8 +2,8 @@ package com.euphony.enc_vanilla.config.client;
 
 import com.euphony.enc_vanilla.config.categories.ClientConfig;
 import com.euphony.enc_vanilla.config.categories.RecipesConfig;
-import com.euphony.enc_vanilla.config.categories.qol.QolConfig;
 import com.euphony.enc_vanilla.config.categories.ToolsConfig;
+import com.euphony.enc_vanilla.config.categories.qol.QolConfig;
 import com.euphony.enc_vanilla.config.client.widget.CategoryButton;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.Button;
@@ -11,7 +11,6 @@ import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.CommonComponents;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.Items;
-import org.checkerframework.checker.units.qual.C;
 import org.jetbrains.annotations.Nullable;
 
 public class EVConfigScreen extends Screen {

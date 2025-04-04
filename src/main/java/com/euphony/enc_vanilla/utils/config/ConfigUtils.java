@@ -5,12 +5,26 @@ import dev.isxander.yacl3.api.*;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.MinecraftServer;
+import net.minecraft.server.packs.repository.PackRepository;
 
 import javax.annotation.Nullable;
+import java.util.Collection;
 
 public class ConfigUtils {
     public static final int IMG_WIDTH = 1920;
     public static final int IMG_HEIGHT = 1080;
+
+    public static final OptionFlag RESOURCE_RELOAD = (client) -> {
+        if(client.hasSingleplayerServer()) {
+            MinecraftServer server = client.getSingleplayerServer();
+            if (server != null) {
+                PackRepository packrepository = server.getPackRepository();
+                Collection<String> collection = packrepository.getSelectedIds();
+                server.reloadResources(collection);
+            }
+        }
+    };
 
     public static ListOption.Builder<String> getListGroupOption(String name) {
         return ListOption.<String>createBuilder()

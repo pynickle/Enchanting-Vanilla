@@ -1,4 +1,10 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "enc_vanilla:more_compostable",
+      "boolConfig": "sculkCompass"
+    }
+  ],
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [

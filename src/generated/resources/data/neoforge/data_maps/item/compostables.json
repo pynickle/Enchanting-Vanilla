@@ -1,51 +1,147 @@
 {
   "values": {
     "minecraft:bamboo": {
+      "neoforge:conditions": [
+        {
+          "type": "enc_vanilla:more_compostable",
+          "boolConfig": "moreCompostable"
+        }
+      ],
       "chance": 0.5
     },
     "minecraft:beetroot_soup": {
+      "neoforge:conditions": [
+        {
+          "type": "enc_vanilla:more_compostable",
+          "boolConfig": "moreCompostable"
+        }
+      ],
       "chance": 0.85
     },
     "minecraft:chorus_flower": {
+      "neoforge:conditions": [
+        {
+          "type": "enc_vanilla:more_compostable",
+          "boolConfig": "moreCompostable"
+        }
+      ],
       "chance": 0.85
     },
     "minecraft:chorus_fruit": {
+      "neoforge:conditions": [
+        {
+          "type": "enc_vanilla:more_compostable",
+          "boolConfig": "moreCompostable"
+        }
+      ],
       "chance": 0.65
     },
     "minecraft:chorus_plant": {
+      "neoforge:conditions": [
+        {
+          "type": "enc_vanilla:more_compostable",
+          "boolConfig": "moreCompostable"
+        }
+      ],
       "chance": 0.65
     },
     "minecraft:coarse_dirt": {
+      "neoforge:conditions": [
+        {
+          "type": "enc_vanilla:more_compostable",
+          "boolConfig": "moreCompostable"
+        }
+      ],
       "chance": 0.3
     },
     "minecraft:dead_bush": {
+      "neoforge:conditions": [
+        {
+          "type": "enc_vanilla:more_compostable",
+          "boolConfig": "moreCompostable"
+        }
+      ],
       "chance": 0.1
     },
     "minecraft:dirt": {
+      "neoforge:conditions": [
+        {
+          "type": "enc_vanilla:more_compostable",
+          "boolConfig": "moreCompostable"
+        }
+      ],
       "chance": 0.3
     },
     "minecraft:grass_block": {
+      "neoforge:conditions": [
+        {
+          "type": "enc_vanilla:more_compostable",
+          "boolConfig": "moreCompostable"
+        }
+      ],
       "chance": 0.5
     },
     "minecraft:muddy_mangrove_roots": {
+      "neoforge:conditions": [
+        {
+          "type": "enc_vanilla:more_compostable",
+          "boolConfig": "moreCompostable"
+        }
+      ],
       "chance": 0.3
     },
     "minecraft:mushroom_stew": {
+      "neoforge:conditions": [
+        {
+          "type": "enc_vanilla:more_compostable",
+          "boolConfig": "moreCompostable"
+        }
+      ],
       "chance": 0.85
     },
     "minecraft:mycelium": {
+      "neoforge:conditions": [
+        {
+          "type": "enc_vanilla:more_compostable",
+          "boolConfig": "moreCompostable"
+        }
+      ],
       "chance": 0.65
     },
     "minecraft:podzol": {
+      "neoforge:conditions": [
+        {
+          "type": "enc_vanilla:more_compostable",
+          "boolConfig": "moreCompostable"
+        }
+      ],
       "chance": 0.3
     },
     "minecraft:popped_chorus_fruit": {
+      "neoforge:conditions": [
+        {
+          "type": "enc_vanilla:more_compostable",
+          "boolConfig": "moreCompostable"
+        }
+      ],
       "chance": 0.85
     },
     "minecraft:rooted_dirt": {
+      "neoforge:conditions": [
+        {
+          "type": "enc_vanilla:more_compostable",
+          "boolConfig": "moreCompostable"
+        }
+      ],
       "chance": 0.65
     },
     "minecraft:rotten_flesh": {
+      "neoforge:conditions": [
+        {
+          "type": "enc_vanilla:more_compostable",
+          "boolConfig": "moreCompostable"
+        }
+      ],
       "chance": 0.5
     }
   }
