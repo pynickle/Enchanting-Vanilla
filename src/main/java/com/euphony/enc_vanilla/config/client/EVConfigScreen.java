@@ -69,7 +69,7 @@ public class EVConfigScreen extends Screen {
         var clientButton = new CategoryButton(30 + (categoryButtonWidth + 10) * 2, 40, categoryButtonWidth, 20,
                 Component.translatable("yacl3.config.enc_vanilla:config.category.client"), Items.VINE.getDefaultInstance(), (btn) -> {
             if(this.clientConfigScreen == null) {
-                this.clientConfigScreen = ClientConfig.HANDLER.generateGui().generateScreen(this);
+                this.clientConfigScreen = ClientConfig.makeScreen().generateScreen(this);
             }
 
             this.minecraft.setScreen(this.clientConfigScreen);

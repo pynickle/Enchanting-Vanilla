@@ -18,6 +18,9 @@
   "block.enc_vanilla.cut_bamboo_sapling": "Bamboo Sapling",
   "block.enc_vanilla.compressed_slime_block": "Compressed Slime Block",
 
+  "container.beehive.bees": "Bees: %s / %s",
+  "container.beehive.honey": "Honey: %s / %s",
+
   "yacl3.config.enc_vanilla:config": "Enchanting Vanilla",
   "yacl3.config.enc_vanilla:config.category.qol": "Qol Improvements",
   "yacl3.config.enc_vanilla:config.category.tools": "Tools",
@@ -56,6 +59,9 @@
   "yacl3.config.enc_vanilla:config.enableSculkCompass": "Enable Sculk Compass",
   "yacl3.config.enc_vanilla:config.category.tools.group.other": "Other",
   "yacl3.config.enc_vanilla:config.enableSlimeChunkDetecting": "Enable Slime Chunk Detecting",
+
+  "yacl3.config.enc_vanilla:config.category.client.group.other": "Other",
+  "yacl3.config.enc_vanilla:config.enableBeeInfo": "Enable Bee Info",
 
   "yacl3.config.enc_vanilla:config.category.recipes.group.other": "Other",
   "yacl3.config.enc_vanilla:config.enableMoreCompostable": "Enable More Compostable",

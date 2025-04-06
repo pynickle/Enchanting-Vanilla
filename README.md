@@ -2,7 +2,7 @@
 
 A vanilla extension mod
 
-## *Functions implemented (20) :*
+## *Functions implemented (21) :*
 
 ### **Ⅰ. QOL Improvements**
 
@@ -74,7 +74,12 @@ A vanilla extension mod
 * Throw the sculk compass into Soulfire to remove its bindings.
 * The sculk compass will randomly spin if no biome is found or if it is unbound.
 
-### **Ⅲ. Recipes**
+### **Ⅲ. Client**
+
+### **1.** *Bee Info*
+* You can now see the number of bees and the amount of honey in beehives and bee nests, just like the feature added natively in 1.21.2.
+
+### **Ⅳ. Recipes**
 
 ### **1.** *More Compostable Items*
 * You can now compost even more items, which include rotten flesh, dead bush, grass blocks and more.
