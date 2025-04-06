@@ -78,12 +78,12 @@ public class RecipeGenerator extends RecipeProvider {
         for(Item item : additionalItems) {
             shapeless
                     .requires(item)
-                    .unlockedBy("has_item", has(item));;
+                    .unlockedBy("has_item", has(item));
         }
         for(Item item : items) {
             shapeless
                     .requires(item)
-                    .unlockedBy("has_item", has(item));;
+                    .unlockedBy("has_item", has(item));
         }
         shapeless.save(recipeOutput, createKey(key));
     }
@@ -93,7 +93,7 @@ public class RecipeGenerator extends RecipeProvider {
         for(Item item : items) {
             shapeless
                     .requires(item)
-                    .unlockedBy("has_item", has(item));;
+                    .unlockedBy("has_item", has(item));
         }
         shapeless.save(recipeOutput, createKey(key));
     }
@@ -107,7 +107,7 @@ public class RecipeGenerator extends RecipeProvider {
         for(Item item : items) {
             shapeless
                     .requires(item)
-                    .unlockedBy("has_item", has(item));;
+                    .unlockedBy("has_item", has(item));
         }
         shapeless.save(recipeOutput, createKey(key));
     }

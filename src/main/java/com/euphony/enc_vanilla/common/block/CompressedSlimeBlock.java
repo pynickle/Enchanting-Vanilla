@@ -37,7 +37,7 @@ public class CompressedSlimeBlock extends SlimeBlock {
         double d0 = Math.abs(entity.getDeltaMovement().y);
         if (d0 < 0.1 && !entity.isSteppingCarefully()) {
             double d1 = 0.3 + d0 * 0.2;
-            entity.setDeltaMovement(entity.getDeltaMovement().multiply(d1, (double)1.0F, d1));
+            entity.setDeltaMovement(entity.getDeltaMovement().multiply(d1, 1.0F, d1));
         }
 
         super.stepOn(level, pos, state, entity);

@@ -117,7 +117,7 @@ public class EVClient {
                 }
 
                 private double getWrappedVisualRotationY(Entity entity) {
-                    return Mth.positiveModulo((double)(entity.getVisualRotationYInDegrees() / 360.0F), (double)1.0F);
+                    return Mth.positiveModulo(entity.getVisualRotationYInDegrees() / 360.0F, (double)1.0F);
                 }
 
                 private int hash(int value) {
@@ -140,10 +140,10 @@ public class EVClient {
                     void update(long ticks, double rotation) {
                         this.lastUpdateTick = ticks;
                         double d0 = rotation - this.rotation;
-                        d0 = Mth.positiveModulo(d0 + (double)0.5F, (double)1.0F) - (double)0.5F;
+                        d0 = Mth.positiveModulo(d0 + (double)0.5F, 1.0F) - (double)0.5F;
                         this.deltaRotation += d0 * 0.1;
                         this.deltaRotation *= 0.8;
-                        this.rotation = Mth.positiveModulo(this.rotation + this.deltaRotation, (double)1.0F);
+                        this.rotation = Mth.positiveModulo(this.rotation + this.deltaRotation, 1.0F);
                     }
                 }
             });

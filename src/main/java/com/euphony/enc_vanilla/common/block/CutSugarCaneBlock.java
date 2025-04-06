@@ -13,6 +13,6 @@ public class CutSugarCaneBlock extends SugarCaneBlock {
 
     @Override
     protected void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
-        return;
+
     }
 }

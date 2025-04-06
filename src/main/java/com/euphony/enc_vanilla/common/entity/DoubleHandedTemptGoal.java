@@ -12,7 +12,7 @@ import java.util.EnumSet;
 import java.util.function.Predicate;
 
 public class DoubleHandedTemptGoal extends Goal {
-    private static final TargetingConditions TEMP_TARGETING = TargetingConditions.forNonCombat().range((double)10.0F).ignoreLineOfSight();
+    private static final TargetingConditions TEMP_TARGETING = TargetingConditions.forNonCombat().range(10.0F).ignoreLineOfSight();
     private final TargetingConditions targetingConditions;
     protected final PathfinderMob mob;
     private final double speedModifier;
@@ -69,8 +69,8 @@ public class DoubleHandedTemptGoal extends Goal {
                 this.pz = this.player.getZ();
             }
 
-            this.pRotX = (double)this.player.getXRot();
-            this.pRotY = (double)this.player.getYRot();
+            this.pRotX = this.player.getXRot();
+            this.pRotY = this.player.getYRot();
         }
 
         return this.canUse();

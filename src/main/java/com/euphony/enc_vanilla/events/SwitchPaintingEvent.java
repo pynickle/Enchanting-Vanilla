@@ -65,7 +65,7 @@ public class SwitchPaintingEvent {
             level.registryAccess().registryOrThrow(Registries.PAINTING_VARIANT).getTagOrEmpty(PaintingVariantTags.PLACEABLE).forEach(list::add);
             if (!list.isEmpty()) {
                 list.removeIf(p_344343_ -> {
-                    painting.setVariant((Holder<PaintingVariant>)p_344343_);
+                    painting.setVariant(p_344343_);
                     return !painting.survives();
                 });
                 list.remove(painting.getVariant());

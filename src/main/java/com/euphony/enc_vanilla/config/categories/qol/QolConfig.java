@@ -138,15 +138,11 @@ public final class QolConfig {
                     .build();
 
             Option<BiConsumer<YACLScreen, ButtonOption>> extraTorchItemsOpt = ConfigUtils.getButtonOption("extraTorchItems")
-                    .action(((yaclScreen, buttonOption) ->{
-                        yaclScreen.getMinecraft().setScreen(ExtraTorchItemsScreen.makeScreen().generateScreen(yaclScreen));
-                    }))
+                    .action(((yaclScreen, buttonOption) -> yaclScreen.getMinecraft().setScreen(ExtraTorchItemsScreen.makeScreen().generateScreen(yaclScreen))))
                     .build();
 
             Option<BiConsumer<YACLScreen, ButtonOption>> extraSoulTorchItemsOpt = ConfigUtils.getButtonOption("extraSoulTorchItems")
-                    .action(((yaclScreen, buttonOption) ->{
-                        yaclScreen.getMinecraft().setScreen(ExtraSoulTorchItemsScreen.makeScreen().generateScreen(yaclScreen));
-                    }))
+                    .action(((yaclScreen, buttonOption) -> yaclScreen.getMinecraft().setScreen(ExtraSoulTorchItemsScreen.makeScreen().generateScreen(yaclScreen))))
                     .build();
 
             Option<Boolean> enableFarmlandTramplingPreventionOpt = ConfigUtils.<Boolean>getGenericOption("enableFarmlandTramplingPrevention", "trampling_prevention")
