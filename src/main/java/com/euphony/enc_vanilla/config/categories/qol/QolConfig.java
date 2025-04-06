@@ -37,6 +37,7 @@ public final class QolConfig {
     private static final String ITEM_FRAME_GROUP = "item_frame";
     private static final String TORCH_HIT_GROUP = "torch_hit";
     private static final String TRAMPLING_PREVENTION_GROUP = "trampling_prevention";
+    private static final String ANVIL_REPAIR_GROUP = "anvil_repair";
     private static final String OTHER_GROUP = "other";
 
     @SerialEntry public boolean enableVillagerAttraction = true;
@@ -76,12 +77,15 @@ public final class QolConfig {
     );
     @SerialEntry public List<String> extraSoulTorchItems = List.of();
 
+    @SerialEntry public boolean enableFarmlandTramplingPrevention = true;
+
+    @SerialEntry public boolean enableAnvilRepair = true;
+
     @SerialEntry public boolean enableBlocksOnLilyPad = true;
     @SerialEntry public boolean enablePaintingSwitching = true;
     @SerialEntry public boolean enableCutVine = true;
     @SerialEntry public boolean enableStopGrowing = true;
     @SerialEntry public boolean enableSpongePlacing = true;
-    @SerialEntry public boolean enableFarmlandTramplingPrevention = true;
     @SerialEntry public boolean enableShutupNameTag = true;
     @SerialEntry public boolean enableJukeboxLoop = true;
     @SerialEntry public boolean enableCakeDrop = true;
@@ -149,6 +153,13 @@ public final class QolConfig {
                     .binding(defaults.enableFarmlandTramplingPrevention,
                             () -> config.enableFarmlandTramplingPrevention,
                             newVal -> config.enableFarmlandTramplingPrevention = newVal)
+                    .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
+                    .build();
+
+            Option<Boolean> enableAnvilRepairOpt = ConfigUtils.<Boolean>getGenericOption("enableAnvilRepair", "anvil_repair")
+                    .binding(defaults.enableAnvilRepair,
+                            () -> config.enableAnvilRepair,
+                            newVal -> config.enableAnvilRepair = newVal)
                     .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
                     .build();
 
@@ -246,6 +257,12 @@ public final class QolConfig {
                                     .name(ConfigUtils.getGroupName(QOL_CATEGORY, TRAMPLING_PREVENTION_GROUP))
                                     .options(List.of(
                                             enableFarmlandTramplingPreventionOpt
+                                    ))
+                                    .build())
+                            .group(OptionGroup.createBuilder()
+                                    .name(ConfigUtils.getGroupName(QOL_CATEGORY, ANVIL_REPAIR_GROUP))
+                                    .options(List.of(
+                                            enableAnvilRepairOpt
                                     ))
                                     .build())
                             .group(OptionGroup.createBuilder()

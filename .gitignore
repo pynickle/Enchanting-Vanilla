@@ -120,3 +120,4 @@ runs/
 
 /src/generated/resources/.cache/
 /repo/
+/qodana.yaml

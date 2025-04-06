@@ -4,6 +4,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.item.FallingBlockEntity;
 import net.minecraft.world.level.Level;
 import net.neoforged.neoforge.event.entity.EntityEvent;
+import org.jetbrains.annotations.NotNull;
 
 
 public class AnvilFallOnLandEvent extends EntityEvent {
@@ -26,5 +27,14 @@ public class AnvilFallOnLandEvent extends EntityEvent {
         this.level = level;
         this.pos = pos;
         this.fallDistance = fallDistance;
+    }
+
+    public float getFallDistance() {
+        return fallDistance;
+    }
+
+    @Override
+    public @NotNull FallingBlockEntity getEntity() {
+        return entity;
     }
 }

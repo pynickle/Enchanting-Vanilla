@@ -15,16 +15,12 @@ public record BoolConfigCondition(String boolConfig) implements ICondition {
 
     @Override
     public boolean test(ICondition.@NotNull IContext context) {
-        switch (boolConfig) {
-            default:
-                return true;
-            case "moreCompostable":
-                return RecipesConfig.HANDLER.instance().enableMoreCompostable;
-            case "sculkCompass":
-                return ToolsConfig.HANDLER.instance().enableSculkCompass;
-            case "spongeCampfire":
-                return RecipesConfig.HANDLER.instance().enableSpongeCampfire;
-        }
+        return switch (boolConfig) {
+            case "moreCompostable" -> RecipesConfig.HANDLER.instance().enableMoreCompostable;
+            case "sculkCompass" -> ToolsConfig.HANDLER.instance().enableSculkCompass;
+            case "spongeCampfire" -> RecipesConfig.HANDLER.instance().enableSpongeCampfire;
+            default -> true;
+        };
     }
 
     @Override

@@ -29,6 +29,7 @@ import net.minecraft.world.phys.AABB;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -133,13 +134,7 @@ public class SwitchPaintingEvent {
                                 BlockPos newPos = blockPos.below(y).relative(dir.getCounterClockWise(), x);
                                 player.sendSystemMessage(Component.literal(newPos.toString()));
                                 Painting painting1 = new Painting(level, newPos, dir, optional.get());
-                                AABB bb = painting1.getBoundingBox();
-                                BlockPos pos = switch (dir) {
-                                    case SOUTH -> BlockPos.containing(bb.minX, bb.maxY - 0.5, bb.maxZ);
-                                    case WEST -> BlockPos.containing(bb.minX, bb.maxY - 0.5, bb.minZ);
-                                    case EAST -> BlockPos.containing(bb.maxX, bb.maxY - 0.5, bb.maxZ - 0.5);
-                                    default -> BlockPos.containing(bb.maxX - 0.5, bb.maxY - 0.5, bb.minZ);
-                                };
+                                BlockPos pos = getBlockPos(painting1, dir);
                                 player.sendSystemMessage(Component.literal(pos.toString()));
                                 player.sendSystemMessage(Component.empty());
                                 if (pos.getX() == blockPos.getX() && pos.getZ() == blockPos.getZ() && pos.getY() == blockPos.getY()) {
@@ -154,6 +149,17 @@ public class SwitchPaintingEvent {
                 }
             }
         }
+    }
+
+    private static @NotNull BlockPos getBlockPos(Painting painting1, Direction dir) {
+        AABB bb = painting1.getBoundingBox();
+        BlockPos pos = switch (dir) {
+            case SOUTH -> BlockPos.containing(bb.minX, bb.maxY - 0.5, bb.maxZ);
+            case WEST -> BlockPos.containing(bb.minX, bb.maxY - 0.5, bb.minZ);
+            case EAST -> BlockPos.containing(bb.maxX, bb.maxY - 0.5, bb.maxZ - 0.5);
+            default -> BlockPos.containing(bb.maxX - 0.5, bb.maxY - 0.5, bb.minZ);
+        };
+        return pos;
     }
 
     private static int variantArea(Holder<PaintingVariant> variant) {

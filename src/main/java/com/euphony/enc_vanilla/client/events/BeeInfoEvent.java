@@ -3,7 +3,6 @@ package com.euphony.enc_vanilla.client.events;
 import com.euphony.enc_vanilla.EncVanilla;
 import com.euphony.enc_vanilla.config.categories.ClientConfig;
 import net.minecraft.ChatFormatting;
-import net.minecraft.client.gui.components.Tooltip;
 import net.minecraft.core.component.DataComponentMap;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.chat.Component;

@@ -2,7 +2,7 @@
 
 A vanilla extension mod
 
-## *Functions implemented (21) :*
+## *Functions implemented (22) :*
 
 ### **Ⅰ. QOL Improvements**
 
@@ -53,6 +53,9 @@ A vanilla extension mod
 * Now you can place torches on the ceiling.
 * The inverted redstone torch sends a signal to the block above it.
 
+### **15.** *Anvil Repair*
+* You can repair a stage by right-clicking the anvil with an iron ingot.
+
 ### **Ⅱ. Tools**
 
 ### **1.** *Slime Chunk Detecting*
@@ -71,7 +74,7 @@ A vanilla extension mod
 * Place the biome crystal in your offhand and the sculk compass in your main hand, long press to use it and the compass will point to the biome corresponding to the biome crystal.
 * There is a 1% chance that it will explode and lose your biome crystal, and the sculk compass will also be destroyed.
 * If not damaged, the biome crystal returns to the unbound biome state and you can craft it again.
-* Throw the sculk compass into Soulfire to remove its bindings.
+* Throw the sculk compass into Soul fire to remove its bindings.
 * The sculk compass will randomly spin if no biome is found or if it is unbound.
 
 ### **Ⅲ. Client**
