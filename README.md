@@ -2,7 +2,7 @@
 
 A vanilla extension mod
 
-## *Functions implemented (22) :*
+## *Functions implemented (23) :*
 
 ### **Ⅰ. QOL Improvements**
 
