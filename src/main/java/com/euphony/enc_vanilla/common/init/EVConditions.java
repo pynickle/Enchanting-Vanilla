@@ -14,5 +14,5 @@ public class EVConditions {
             DeferredRegister.create(NeoForgeRegistries.Keys.CONDITION_CODECS, EncVanilla.MODID);
 
     public static final Supplier<MapCodec<BoolConfigCondition>> MORE_COMPOSTABLE =
-            CONDITION_CODECS.register("more_compostable", () -> BoolConfigCondition.CODEC);
+            CONDITION_CODECS.register("bool_config", () -> BoolConfigCondition.CODEC);
 }

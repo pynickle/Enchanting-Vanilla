@@ -93,3 +93,7 @@ A vanilla extension mod
 
 ### **3.** *Sponge Campfire*
 * Now you can use campfire drying sponges.
+
+### **4.** *Better Lodestone*
+* You can now use the 1.21.5 lodestone recipe to use iron ingots instead of netherite ingot.
+* You can find lodestones in treasure chests in the ruined portal.

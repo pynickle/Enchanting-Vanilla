@@ -1,4 +1,10 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "enc_vanilla:bool_config",
+      "boolConfig": "sculkCompass"
+    }
+  ],
   "parent": "minecraft:recipes/root",
   "criteria": {
     "has_item": {

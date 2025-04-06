@@ -10,12 +10,14 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.packs.resources.Resource;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.biome.Biome;
+import net.minecraft.world.level.block.Blocks;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
@@ -31,12 +33,24 @@ public class RecipeGenerator extends RecipeProvider {
     protected void buildRecipes(@NotNull RecipeOutput recipeOutput) {
         addSpongeCampfireRecipes(recipeOutput.withConditions(new BoolConfigCondition("spongeCampfire")));
         addSculkCompassRecipes(recipeOutput.withConditions(new BoolConfigCondition("sculkCompass")));
+        addBetterLodestoneRecipes(recipeOutput.withConditions(new BoolConfigCondition("betterLodestone")));
     }
 
     protected void addSpongeCampfireRecipes(RecipeOutput recipeOutput) {
         SimpleCookingRecipeBuilder.campfireCooking(Ingredient.of(Items.WET_SPONGE), RecipeCategory.MISC, Items.SPONGE, 0.15F, 600)
                 .unlockedBy("has_item", has(Items.WET_SPONGE))
                 .save(recipeOutput, "wet_sponge_to_sponge");
+    }
+
+    protected void addBetterLodestoneRecipes(RecipeOutput recipeOutput) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, Blocks.LODESTONE)
+                .pattern("SSS")
+                .pattern("S#S")
+                .pattern("SSS")
+                .define('S', Items.CHISELED_STONE_BRICKS)
+                .define('#', Items.IRON_INGOT)
+                .unlockedBy("has_item", has(Items.IRON_INGOT))
+                .save(recipeOutput, createKey("lodestone"));
     }
 
     protected void addSculkCompassRecipes(RecipeOutput recipeOutput) {

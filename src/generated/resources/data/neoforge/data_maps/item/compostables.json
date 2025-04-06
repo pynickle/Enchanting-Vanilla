@@ -3,7 +3,7 @@
     "minecraft:bamboo": {
       "neoforge:conditions": [
         {
-          "type": "enc_vanilla:more_compostable",
+          "type": "enc_vanilla:bool_config",
           "boolConfig": "moreCompostable"
         }
       ],
@@ -12,7 +12,7 @@
     "minecraft:beetroot_soup": {
       "neoforge:conditions": [
         {
-          "type": "enc_vanilla:more_compostable",
+          "type": "enc_vanilla:bool_config",
           "boolConfig": "moreCompostable"
         }
       ],
@@ -21,7 +21,7 @@
     "minecraft:chorus_flower": {
       "neoforge:conditions": [
         {
-          "type": "enc_vanilla:more_compostable",
+          "type": "enc_vanilla:bool_config",
           "boolConfig": "moreCompostable"
         }
       ],
@@ -30,7 +30,7 @@
     "minecraft:chorus_fruit": {
       "neoforge:conditions": [
         {
-          "type": "enc_vanilla:more_compostable",
+          "type": "enc_vanilla:bool_config",
           "boolConfig": "moreCompostable"
         }
       ],
@@ -39,7 +39,7 @@
     "minecraft:chorus_plant": {
       "neoforge:conditions": [
         {
-          "type": "enc_vanilla:more_compostable",
+          "type": "enc_vanilla:bool_config",
           "boolConfig": "moreCompostable"
         }
       ],
@@ -48,7 +48,7 @@
     "minecraft:coarse_dirt": {
       "neoforge:conditions": [
         {
-          "type": "enc_vanilla:more_compostable",
+          "type": "enc_vanilla:bool_config",
           "boolConfig": "moreCompostable"
         }
       ],
@@ -57,7 +57,7 @@
     "minecraft:dead_bush": {
       "neoforge:conditions": [
         {
-          "type": "enc_vanilla:more_compostable",
+          "type": "enc_vanilla:bool_config",
           "boolConfig": "moreCompostable"
         }
       ],
@@ -66,7 +66,7 @@
     "minecraft:dirt": {
       "neoforge:conditions": [
         {
-          "type": "enc_vanilla:more_compostable",
+          "type": "enc_vanilla:bool_config",
           "boolConfig": "moreCompostable"
         }
       ],
@@ -75,7 +75,7 @@
     "minecraft:grass_block": {
       "neoforge:conditions": [
         {
-          "type": "enc_vanilla:more_compostable",
+          "type": "enc_vanilla:bool_config",
           "boolConfig": "moreCompostable"
         }
       ],
@@ -84,7 +84,7 @@
     "minecraft:muddy_mangrove_roots": {
       "neoforge:conditions": [
         {
-          "type": "enc_vanilla:more_compostable",
+          "type": "enc_vanilla:bool_config",
           "boolConfig": "moreCompostable"
         }
       ],
@@ -93,7 +93,7 @@
     "minecraft:mushroom_stew": {
       "neoforge:conditions": [
         {
-          "type": "enc_vanilla:more_compostable",
+          "type": "enc_vanilla:bool_config",
           "boolConfig": "moreCompostable"
         }
       ],
@@ -102,7 +102,7 @@
     "minecraft:mycelium": {
       "neoforge:conditions": [
         {
-          "type": "enc_vanilla:more_compostable",
+          "type": "enc_vanilla:bool_config",
           "boolConfig": "moreCompostable"
         }
       ],
@@ -111,7 +111,7 @@
     "minecraft:podzol": {
       "neoforge:conditions": [
         {
-          "type": "enc_vanilla:more_compostable",
+          "type": "enc_vanilla:bool_config",
           "boolConfig": "moreCompostable"
         }
       ],
@@ -120,7 +120,7 @@
     "minecraft:popped_chorus_fruit": {
       "neoforge:conditions": [
         {
-          "type": "enc_vanilla:more_compostable",
+          "type": "enc_vanilla:bool_config",
           "boolConfig": "moreCompostable"
         }
       ],
@@ -129,7 +129,7 @@
     "minecraft:rooted_dirt": {
       "neoforge:conditions": [
         {
-          "type": "enc_vanilla:more_compostable",
+          "type": "enc_vanilla:bool_config",
           "boolConfig": "moreCompostable"
         }
       ],
@@ -138,7 +138,7 @@
     "minecraft:rotten_flesh": {
       "neoforge:conditions": [
         {
-          "type": "enc_vanilla:more_compostable",
+          "type": "enc_vanilla:bool_config",
           "boolConfig": "moreCompostable"
         }
       ],

@@ -52,6 +52,7 @@
   "yacl3.config.enc_vanilla:config.enableJukeboxLoop": "Enable Jukebox Loop",
   "yacl3.config.enc_vanilla:config.enableCakeDrop": "Enable Cake Drop",
   "yacl3.config.enc_vanilla:config.enableCeilingTorch": "Enable Ceiling Torch",
+  "yacl3.config.enc_vanilla:config.enableAnvilRepair": "Enable Anvil Repair",
 
   "yacl3.config.enc_vanilla:config.category.tools.group.compressed_slime_block": "Compressed Slime Block",
   "yacl3.config.enc_vanilla:config.enableCompressedSlimeBlock": "Enable Compressed Slime Block",
@@ -66,5 +67,6 @@
   "yacl3.config.enc_vanilla:config.category.recipes.group.other": "Other",
   "yacl3.config.enc_vanilla:config.enableMoreCompostable": "Enable More Compostable",
   "yacl3.config.enc_vanilla:config.enableSlabsToBlocks": "Enable Slabs To Blocks",
-  "yacl3.config.enc_vanilla:config.enableSpongeCampfire": "Enable Sponge Campfire"
+  "yacl3.config.enc_vanilla:config.enableSpongeCampfire": "Enable Sponge Campfire",
+  "yacl3.config.enc_vanilla:config.enableBetterLodestone": "Enable Better Lodestone"
 }

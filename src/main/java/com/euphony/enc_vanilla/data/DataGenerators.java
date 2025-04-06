@@ -51,7 +51,7 @@ public class DataGenerators {
         generator.addProvider(true, new DataMapGenerator(output, lookupProvider));
         generator.addProvider(true, new PackMetadataGenerator(output).add(PackMetadataSection.TYPE, new PackMetadataSection(
                 Component.literal("Resources for Enchanting Vanilla"),
-                DetectedVersion.BUILT_IN.getPackVersion(PackType.CLIENT_RESOURCES),
+                DetectedVersion.BUILT_IN.getPackVersion(PackType.SERVER_DATA),
                 Optional.empty())));
     }
 }

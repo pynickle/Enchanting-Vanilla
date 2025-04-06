@@ -1,4 +1,10 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "enc_vanilla:bool_config",
+      "boolConfig": "sculkCompass"
+    }
+  ],
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {

@@ -39,6 +39,7 @@ public class RecipesConfig {
     @SerialEntry public boolean enableMoreCompostable = true;
     @SerialEntry public boolean enableSlabsToBlocks = true;
     @SerialEntry public boolean enableSpongeCampfire = true;
+    @SerialEntry public boolean enableBetterLodestone = true;
 
     public static YetAnotherConfigLib makeScreen() {
         return YetAnotherConfigLib.create(HANDLER, (defaults, config, builder) -> {
@@ -66,6 +67,14 @@ public class RecipesConfig {
                     .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
                     .build();
 
+            Option<Boolean> enableBetterLodestoneOpt = ConfigUtils.<Boolean>getGenericOption("enableBetterLodestone", "better_lodestone")
+                    .binding(defaults.enableBetterLodestone,
+                            () -> config.enableBetterLodestone,
+                            newVal -> config.enableBetterLodestone = newVal)
+                    .flag(ConfigUtils.RESOURCE_RELOAD)
+                    .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
+                    .build();
+
             return builder
                     .title(Component.translatable("yacl3.config.enc_vanilla:config"))
                     .category(ConfigCategory.createBuilder()
@@ -75,7 +84,8 @@ public class RecipesConfig {
                                     .options(List.of(
                                             enableMoreCompostableOpt,
                                             enableSlabsToBlocksOpt,
-                                            enableSpongeCampfireOpt
+                                            enableSpongeCampfireOpt,
+                                            enableBetterLodestoneOpt
                                     ))
                                     .build())
                             .build())

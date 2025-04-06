@@ -2,7 +2,7 @@
   "neoforge:conditions": [
     {
       "type": "enc_vanilla:bool_config",
-      "boolConfig": "sculkCompass"
+      "boolConfig": "betterLodestone"
     }
   ],
   "parent": "minecraft:recipes/root",
@@ -11,7 +11,7 @@
       "conditions": {
         "items": [
           {
-            "items": "minecraft:yellow_dye"
+            "items": "minecraft:iron_ingot"
           }
         ]
       },
@@ -19,7 +19,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "enc_vanilla:biome_crystal_minecraft_sunflower_plains"
+        "recipe": "enc_vanilla:lodestone"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -32,7 +32,7 @@
   ],
   "rewards": {
     "recipes": [
-      "enc_vanilla:biome_crystal_minecraft_sunflower_plains"
+      "enc_vanilla:lodestone"
     ]
   }
 }

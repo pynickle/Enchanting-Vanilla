@@ -19,6 +19,7 @@ public record BoolConfigCondition(String boolConfig) implements ICondition {
             case "moreCompostable" -> RecipesConfig.HANDLER.instance().enableMoreCompostable;
             case "sculkCompass" -> ToolsConfig.HANDLER.instance().enableSculkCompass;
             case "spongeCampfire" -> RecipesConfig.HANDLER.instance().enableSpongeCampfire;
+            case "betterLodestone" -> RecipesConfig.HANDLER.instance().enableBetterLodestone;
             default -> true;
         };
     }
