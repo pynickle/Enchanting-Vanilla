@@ -21,7 +21,9 @@
     "WaterlilyBlockMixin"
   ],
   "client": [
-    "GameRendererMixin"
+    "GameRendererMixin",
+    "PlayerTabOverlayMixin",
+    "invoker.PlayerTabOverlayInvoker"
   ],
   "injectors": {
     "defaultRequire": 1

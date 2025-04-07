@@ -27,25 +27,44 @@ public class ClientConfig {
 
     private static final String CLIENT_CATEGORY = "client";
     private static final String FADING_NIGHT_VISION_GROUP = "fading_night_vision";
+    private static final String BETTER_PING_DISPLAY_GROUP = "better_ping_display";
     private static final String OTHER_GROUP = "other";
 
-    @SerialEntry public boolean enableBeeInfo = true;
     @SerialEntry public boolean enableFadingNightVision = true;
+
+    @SerialEntry public boolean enableBetterPingDisplay = true;
+    @SerialEntry public boolean enableDefaultPingBars = false;
+
+    @SerialEntry public boolean enableBeeInfo = true;
 
     public static YetAnotherConfigLib makeScreen() {
         return YetAnotherConfigLib.create(HANDLER, (defaults, config, builder) -> {
+            Option<Boolean> enableFadingNightVisionOpt = ConfigUtils.<Boolean>getGenericOption("enableFadingNightVision", "fading_night_vision")
+                    .binding(defaults.enableFadingNightVision,
+                            () -> config.enableFadingNightVision,
+                            newVal -> config.enableFadingNightVision = newVal)
+                    .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
+                    .build();
+
+            Option<Boolean> enableBetterPingDisplayOpt = ConfigUtils.<Boolean>getGenericOption("enableBetterPingDisplay", "better_ping_display")
+                    .binding(defaults.enableBetterPingDisplay,
+                            () -> config.enableBetterPingDisplay,
+                            newVal -> config.enableBetterPingDisplay = newVal)
+                    .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
+                    .build();
+
+            Option<Boolean> enableDefaultPingBarsOpt = ConfigUtils.<Boolean>getGenericOption("enableDefaultPingBars")
+                    .binding(defaults.enableDefaultPingBars,
+                            () -> config.enableDefaultPingBars,
+                            newVal -> config.enableDefaultPingBars = newVal)
+                    .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
+                    .build();
+
             Option<Boolean> enableBeeInfoOpt = ConfigUtils.<Boolean>getGenericOption("enableBeeInfo", "bee_info")
                     .binding(defaults.enableBeeInfo,
                             () -> config.enableBeeInfo,
                             newVal -> config.enableBeeInfo = newVal)
                     .flag(ConfigUtils.RESOURCE_RELOAD)
-                    .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
-                    .build();
-
-            Option<Boolean> enableFadingNightVisionOpt = ConfigUtils.<Boolean>getGenericOption("enableFadingNightVision", "fading_night_vision")
-                    .binding(defaults.enableFadingNightVision,
-                            () -> config.enableFadingNightVision,
-                            newVal -> config.enableFadingNightVision = newVal)
                     .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
                     .build();
 
@@ -57,6 +76,13 @@ public class ClientConfig {
                                     .name(ConfigUtils.getGroupName(CLIENT_CATEGORY, FADING_NIGHT_VISION_GROUP))
                                     .options(List.of(
                                             enableFadingNightVisionOpt
+                                    ))
+                                    .build())
+                            .group(OptionGroup.createBuilder()
+                                    .name(ConfigUtils.getGroupName(CLIENT_CATEGORY, BETTER_PING_DISPLAY_GROUP))
+                                    .options(List.of(
+                                            enableBetterPingDisplayOpt,
+                                            enableDefaultPingBarsOpt
                                     ))
                                     .build())
                             .group(OptionGroup.createBuilder()

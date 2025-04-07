@@ -110,8 +110,10 @@ dependencies {
     compileOnly("curse.maven:selene-499980:${selene_id}")
     compileOnly("curse.maven:fast-paintings-883287:${fast_paintings_id}")
 
-    implementation("it.crystalnest:cobweb-neoforge:1.21-${cobweb_version}")
-    implementation("it.crystalnest:soul-fire-d-neoforge:1.21-${soul_fire_d_version}")
+    compileOnly("it.crystalnest:cobweb-neoforge:1.21-${cobweb_version}")
+    compileOnly("it.crystalnest:soul-fire-d-neoforge:1.21-${soul_fire_d_version}")
+    // implementation("it.crystalnest:cobweb-neoforge:1.21-${cobweb_version}")
+    // implementation("it.crystalnest:soul-fire-d-neoforge:1.21-${soul_fire_d_version}")
 
     // runtimeOnly("curse.maven:selene-499980:${selene_id}")
     // runtimeOnly("curse.maven:fast-paintings-883287:${fast_paintings_id}")

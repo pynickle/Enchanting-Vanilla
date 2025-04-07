@@ -2,7 +2,7 @@
 
 A vanilla extension mod
 
-## *Functions implemented (25) :*
+## *Functions implemented (26) :*
 
 ### **Ⅰ. QOL Improvements**
 
@@ -88,6 +88,9 @@ A vanilla extension mod
 
 ### **2.** *Fading Out Night Vision*
 * Night vision now fades out instead of flickering.
+
+### **3.** *Better Ping Display*
+* The player's ping is now displayed as a number.
 
 ### **Ⅳ. Recipes**
 

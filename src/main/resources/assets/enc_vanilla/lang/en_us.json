@@ -67,6 +67,9 @@
 
   "yacl3.config.enc_vanilla:config.category.client.group.fading_night_vision": "Fading Out Night Vision",
   "yacl3.config.enc_vanilla:config.enableFadingNightVision": "Enable Fading Out Night Vision",
+  "yacl3.config.enc_vanilla:config.category.client.group.better_ping_display": "Better Ping Display",
+  "yacl3.config.enc_vanilla:config.enableBetterPingDisplay": "Enable Better Ping Display",
+  "yacl3.config.enc_vanilla:config.enableDefaultPingBars": "Enable Default Ping Bars",
   "yacl3.config.enc_vanilla:config.category.client.group.other": "Other",
   "yacl3.config.enc_vanilla:config.enableBeeInfo": "Enable Bee Info",
 
