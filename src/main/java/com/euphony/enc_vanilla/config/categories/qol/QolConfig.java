@@ -38,6 +38,7 @@ public final class QolConfig {
     private static final String TORCH_HIT_GROUP = "torch_hit";
     private static final String TRAMPLING_PREVENTION_GROUP = "trampling_prevention";
     private static final String ANVIL_REPAIR_GROUP = "anvil_repair";
+    private static final String WATER_CONVERSION_GROUP = "water_conversion";
     private static final String OTHER_GROUP = "other";
 
     @SerialEntry public boolean enableVillagerAttraction = true;
@@ -80,6 +81,9 @@ public final class QolConfig {
     @SerialEntry public boolean enableFarmlandTramplingPrevention = true;
 
     @SerialEntry public boolean enableAnvilRepair = true;
+
+    @SerialEntry public boolean enableWaterConversion = true;
+    @SerialEntry public boolean enableMudConversion = false;
 
     @SerialEntry public boolean enableBlocksOnLilyPad = true;
     @SerialEntry public boolean enablePaintingSwitching = true;
@@ -222,6 +226,20 @@ public final class QolConfig {
                     .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
                     .build();
 
+            Option<Boolean> enableWaterConversionOpt = ConfigUtils.<Boolean>getGenericOption("enableWaterConversion", "water_conversion")
+                    .binding(defaults.enableWaterConversion,
+                            () -> config.enableWaterConversion,
+                            newVal -> config.enableWaterConversion = newVal)
+                    .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
+                    .build();
+
+            Option<Boolean> enableMudConversionOpt = ConfigUtils.<Boolean>getGenericOption("enableMudConversion")
+                    .binding(defaults.enableMudConversion,
+                            () -> config.enableMudConversion,
+                            newVal -> config.enableMudConversion = newVal)
+                    .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
+                    .build();
+
             return builder
                     .title(Component.translatable("yacl3.config.enc_vanilla:config"))
                     .category(ConfigCategory.createBuilder()
@@ -262,6 +280,13 @@ public final class QolConfig {
                                     ))
                                     .build())
                             .group(OptionGroup.createBuilder()
+                                    .name(ConfigUtils.getGroupName(QOL_CATEGORY, WATER_CONVERSION_GROUP))
+                                    .options(List.of(
+                                            enableWaterConversionOpt,
+                                            enableMudConversionOpt
+                                    ))
+                                    .build())
+                            .group(OptionGroup.createBuilder()
                                     .name(ConfigUtils.getGroupName(QOL_CATEGORY, OTHER_GROUP))
                                     .options(List.of(
                                             enableBlocksOnLilyPadOpt,
@@ -272,7 +297,8 @@ public final class QolConfig {
                                             enableShutupNameTagOpt,
                                             enableJukeboxLoopOpt,
                                             enableCakeDropOpt,
-                                            enableCeilingTorchOpt
+                                            enableCeilingTorchOpt,
+                                            enableWaterConversionOpt
                                     ))
                                     .build())
                             .build())

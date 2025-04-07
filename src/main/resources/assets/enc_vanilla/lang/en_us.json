@@ -42,6 +42,11 @@
   "yacl3.config.enc_vanilla:config.extraSoulTorchItems.button": "Configure Extra Soul Torch Items",
   "yacl3.config.enc_vanilla:config.category.qol.group.trampling_prevention": "Farmland Trampling Prevention",
   "yacl3.config.enc_vanilla:config.enableFarmlandTramplingPrevention": "Enable Farmland Trampling Prevention",
+  "yacl3.config.enc_vanilla:config.category.qol.group.water_conversion": "Water Conversion",
+  "yacl3.config.enc_vanilla:config.enableWaterConversion": "Enable Water Conversion",
+  "yacl3.config.enc_vanilla:config.enableMudConversion": "Enable Mud Conversion",
+  "yacl3.config.enc_vanilla:config.category.qol.group.anvil_repair": "Anvil Repair",
+  "yacl3.config.enc_vanilla:config.enableAnvilRepair": "Enable Anvil Repair",
   "yacl3.config.enc_vanilla:config.category.qol.group.other": "Other",
   "yacl3.config.enc_vanilla:config.enableBlocksOnLilyPad": "Enable Blocks On Lily Pad",
   "yacl3.config.enc_vanilla:config.enablePaintingSwitching": "Enable Painting Switching",
@@ -52,7 +57,6 @@
   "yacl3.config.enc_vanilla:config.enableJukeboxLoop": "Enable Jukebox Loop",
   "yacl3.config.enc_vanilla:config.enableCakeDrop": "Enable Cake Drop",
   "yacl3.config.enc_vanilla:config.enableCeilingTorch": "Enable Ceiling Torch",
-  "yacl3.config.enc_vanilla:config.enableAnvilRepair": "Enable Anvil Repair",
 
   "yacl3.config.enc_vanilla:config.category.tools.group.compressed_slime_block": "Compressed Slime Block",
   "yacl3.config.enc_vanilla:config.enableCompressedSlimeBlock": "Enable Compressed Slime Block",
@@ -61,6 +65,8 @@
   "yacl3.config.enc_vanilla:config.category.tools.group.other": "Other",
   "yacl3.config.enc_vanilla:config.enableSlimeChunkDetecting": "Enable Slime Chunk Detecting",
 
+  "yacl3.config.enc_vanilla:config.category.client.group.fading_night_vision": "Fading Out Night Vision",
+  "yacl3.config.enc_vanilla:config.enableFadingNightVision": "Enable Fading Out Night Vision",
   "yacl3.config.enc_vanilla:config.category.client.group.other": "Other",
   "yacl3.config.enc_vanilla:config.enableBeeInfo": "Enable Bee Info",
 

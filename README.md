@@ -2,7 +2,7 @@
 
 A vanilla extension mod
 
-## *Functions implemented (23) :*
+## *Functions implemented (25) :*
 
 ### **Ⅰ. QOL Improvements**
 
@@ -56,6 +56,10 @@ A vanilla extension mod
 ### **15.** *Anvil Repair*
 * You can repair a stage by right-clicking the anvil with an iron ingot.
 
+### **16.** *Water Conversion*
+* You could just drop the concrete into the water and let them solidify.
+* You can also throw dirt in the water to get mud (disabled by default).
+
 ### **Ⅱ. Tools**
 
 ### **1.** *Slime Chunk Detecting*
@@ -81,6 +85,9 @@ A vanilla extension mod
 
 ### **1.** *Bee Info*
 * You can now see the number of bees and the amount of honey in beehives and bee nests, just like the feature added natively in 1.21.2.
+
+### **2.** *Fading Out Night Vision*
+* Night vision now fades out instead of flickering.
 
 ### **Ⅳ. Recipes**
 
