@@ -25,6 +25,14 @@ public class ClientConfig {
             )
             .build();
 
+    public static void load() {
+        HANDLER.load();
+    }
+
+    public static void save() {
+        HANDLER.save();
+    }
+
     private static final String CLIENT_CATEGORY = "client";
     private static final String FADING_NIGHT_VISION_GROUP = "fading_night_vision";
     private static final String BETTER_PING_DISPLAY_GROUP = "better_ping_display";
@@ -92,7 +100,7 @@ public class ClientConfig {
                                     ))
                                     .build())
                             .build())
-                    .save(RecipesConfig::save);
+                    .save(ClientConfig::save);
         });
     }
 }

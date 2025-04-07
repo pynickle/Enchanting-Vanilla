@@ -25,6 +25,10 @@ public class ToolsConfig {
             )
             .build();
 
+    public static void load() {
+        HANDLER.load();
+    }
+
     public static void save() {
         HANDLER.save();
     }
