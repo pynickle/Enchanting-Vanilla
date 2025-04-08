@@ -54,6 +54,7 @@
   "yacl3.config.enc_vanilla:config.enableJukeboxLoop": "启用唱片机循环播放",
   "yacl3.config.enc_vanilla:config.enableCakeDrop": "启用蛋糕掉落",
   "yacl3.config.enc_vanilla:config.enableCeilingTorch": "启用倒置火把",
+  "yacl3.config.enc_vanilla:config.enableSafeLavaBucket": "启用安全熔岩桶回收",
   "yacl3.config.enc_vanilla:config.category.tools.group.compressed_slime_block": "压缩史莱姆块",
   "yacl3.config.enc_vanilla:config.enableCompressedSlimeBlock": "启用压缩史莱姆块",
   "yacl3.config.enc_vanilla:config.category.tools.group.sculk_compass": "幽匿指南针",

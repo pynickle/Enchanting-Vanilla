@@ -2,7 +2,7 @@
 
 A vanilla extension mod
 
-## *Functions implemented (27) :*
+## *Functions implemented (28) :*
 
 ### **Ⅰ. QOL Improvements**
 
@@ -63,6 +63,9 @@ A vanilla extension mod
 ### **17.** *Bell Phantom*
 * Ringing the bell now repels phantoms within a 24-block radius.
 * Wings of Repelled Phantom will have a purple particle effect on their wings.
+
+### **18.** *Safe Lava Bucket*
+* Now you need to sneak in order to reclaim the lava with a bucket to prevent accidentally destroying the lava lake.
 
 ### **Ⅱ. Tools**
 

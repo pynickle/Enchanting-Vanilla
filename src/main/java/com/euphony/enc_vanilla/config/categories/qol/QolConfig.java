@@ -101,6 +101,7 @@ public final class QolConfig {
     @SerialEntry public boolean enableJukeboxLoop = true;
     @SerialEntry public boolean enableCakeDrop = true;
     @SerialEntry public boolean enableCeilingTorch = true;
+    @SerialEntry public boolean enableSafeLavaBucket = false;
 
     public static YetAnotherConfigLib makeScreen() {
         return YetAnotherConfigLib.create(HANDLER, (defaults, config, builder) -> {
@@ -167,6 +168,20 @@ public final class QolConfig {
                     .binding(defaults.enableAnvilRepair,
                             () -> config.enableAnvilRepair,
                             newVal -> config.enableAnvilRepair = newVal)
+                    .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
+                    .build();
+
+            Option<Boolean> enableWaterConversionOpt = ConfigUtils.<Boolean>getGenericOption("enableWaterConversion", "water_conversion")
+                    .binding(defaults.enableWaterConversion,
+                            () -> config.enableWaterConversion,
+                            newVal -> config.enableWaterConversion = newVal)
+                    .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
+                    .build();
+
+            Option<Boolean> enableMudConversionOpt = ConfigUtils.<Boolean>getGenericOption("enableMudConversion")
+                    .binding(defaults.enableMudConversion,
+                            () -> config.enableMudConversion,
+                            newVal -> config.enableMudConversion = newVal)
                     .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
                     .build();
 
@@ -240,17 +255,10 @@ public final class QolConfig {
                     .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
                     .build();
 
-            Option<Boolean> enableWaterConversionOpt = ConfigUtils.<Boolean>getGenericOption("enableWaterConversion", "water_conversion")
-                    .binding(defaults.enableWaterConversion,
-                            () -> config.enableWaterConversion,
-                            newVal -> config.enableWaterConversion = newVal)
-                    .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
-                    .build();
-
-            Option<Boolean> enableMudConversionOpt = ConfigUtils.<Boolean>getGenericOption("enableMudConversion")
-                    .binding(defaults.enableMudConversion,
-                            () -> config.enableMudConversion,
-                            newVal -> config.enableMudConversion = newVal)
+            Option<Boolean> enableSafeLavaBucketOpt = ConfigUtils.<Boolean>getGenericOption("enableSafeLavaBucket", "safe_lava_bucket")
+                    .binding(defaults.enableSafeLavaBucket,
+                            () -> config.enableSafeLavaBucket,
+                            newVal -> config.enableSafeLavaBucket = newVal)
                     .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
                     .build();
 
@@ -318,7 +326,8 @@ public final class QolConfig {
                                             enableJukeboxLoopOpt,
                                             enableCakeDropOpt,
                                             enableCeilingTorchOpt,
-                                            enableWaterConversionOpt
+                                            enableWaterConversionOpt,
+                                            enableSafeLavaBucketOpt
                                     ))
                                     .build())
                             .build())
