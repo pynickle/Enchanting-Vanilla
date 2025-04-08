@@ -1,6 +1,7 @@
 package com.euphony.enc_vanilla.client;
 
 import com.euphony.enc_vanilla.EncVanilla;
+import com.euphony.enc_vanilla.config.categories.RecipesConfig;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.item.crafting.RecipeManager;
@@ -16,6 +17,7 @@ import java.util.stream.Collectors;
 public class EVGameClient {
     @SubscribeEvent
     public static void recipe(RecipesUpdatedEvent event) {
+        if(!RecipesConfig.HANDLER.instance().enableBetterLodestone) return;
         RecipeManager recipeManager = event.getRecipeManager();
         Collection<RecipeHolder<?>> recipeHolders = recipeManager.getRecipes();
         Collection<RecipeHolder<?>> recipesToKeep = recipeHolders.stream()
