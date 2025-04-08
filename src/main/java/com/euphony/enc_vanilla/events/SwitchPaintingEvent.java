@@ -133,16 +133,14 @@ public class SwitchPaintingEvent {
                         for(int x = 0; x < width; x++) {
                             for(int y = 0; y < height; y++) {
                                 BlockPos newPos = blockPos.below(y).relative(dir.getCounterClockWise(), x);
-                                player.sendSystemMessage(Component.literal(newPos.toString()));
-                                Painting painting1 = new Painting(level, newPos, dir, optional.get());
-                                BlockPos pos = getBlockPos(painting1, dir);
-                                player.sendSystemMessage(Component.literal(pos.toString()));
-                                player.sendSystemMessage(Component.empty());
-                                if (pos.getX() == blockPos.getX() && pos.getZ() == blockPos.getZ() && pos.getY() == blockPos.getY()) {
-                                    player.sendSystemMessage(Component.literal("1"));
-                                    level.addFreshEntity(painting1);
-                                    event.setCanceled(true);
-                                    return;
+                                if(optional.isPresent()) {
+                                    Painting painting1 = new Painting(level, newPos, dir, optional.get());
+                                    BlockPos pos = getBlockPos(painting1, dir);
+                                    if (pos.getX() == blockPos.getX() && pos.getZ() == blockPos.getZ() && pos.getY() == blockPos.getY()) {
+                                        level.addFreshEntity(painting1);
+                                        event.setCanceled(true);
+                                        return;
+                                    }
                                 }
                             }
                         }

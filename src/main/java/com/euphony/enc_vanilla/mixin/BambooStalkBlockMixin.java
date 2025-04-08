@@ -23,7 +23,7 @@ public class BambooStalkBlockMixin {
     @Nullable
     public void getStateForPlacementInject(BlockPlaceContext context, CallbackInfoReturnable<BlockState> cir) {
         FluidState fluidstate = context.getLevel().getFluidState(context.getClickedPos());
-        if (!fluidstate.isEmpty()) {} else {
+        if (fluidstate.isEmpty()) {
             BlockState blockstate = context.getLevel().getBlockState(context.getClickedPos().below());
             TriState soilDecision = blockstate.canSustainPlant(context.getLevel(), context.getClickedPos().below(), Direction.UP, Blocks.BAMBOO.defaultBlockState());
             if (!soilDecision.isTrue()) {
