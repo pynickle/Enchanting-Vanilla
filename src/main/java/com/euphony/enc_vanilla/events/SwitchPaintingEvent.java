@@ -2,6 +2,7 @@ package com.euphony.enc_vanilla.events;
 
 import com.euphony.enc_vanilla.EncVanilla;
 import com.euphony.enc_vanilla.config.categories.qol.QolConfig;
+import com.euphony.enc_vanilla.utils.Utils;
 import net.mehvahdjukaar.fastpaintings.PaintingBlockEntity;
 import net.minecraft.ResourceLocationException;
 import net.minecraft.Util;
@@ -83,7 +84,7 @@ public class SwitchPaintingEvent {
     @SubscribeEvent
     public static void blockInteract(PlayerInteractEvent.RightClickBlock event) {
         Level level = event.getLevel();
-        if (level.isClientSide) {
+        if (level.isClientSide || !Utils.isModLoaded("fastpaintings")) {
             return;
         }
 

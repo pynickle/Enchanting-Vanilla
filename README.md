@@ -2,7 +2,7 @@
 
 A vanilla extension mod
 
-## *Functions implemented (26) :*
+## *Functions implemented (27) :*
 
 ### **Ⅰ. QOL Improvements**
 
@@ -59,6 +59,10 @@ A vanilla extension mod
 ### **16.** *Water Conversion*
 * You could just drop the concrete into the water and let them solidify.
 * You can also throw dirt in the water to get mud (disabled by default).
+
+### **17.** *Bell Phantom*
+* Ringing the bell now repels phantoms within a 24-block radius.
+* Wings of Repelled Phantom will have a purple particle effect on their wings.
 
 ### **Ⅱ. Tools**
 

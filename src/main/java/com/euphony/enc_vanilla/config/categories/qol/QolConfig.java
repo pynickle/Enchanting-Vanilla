@@ -43,6 +43,7 @@ public final class QolConfig {
     private static final String TRAMPLING_PREVENTION_GROUP = "trampling_prevention";
     private static final String ANVIL_REPAIR_GROUP = "anvil_repair";
     private static final String WATER_CONVERSION_GROUP = "water_conversion";
+    private static final String BELL_PHANTOM_GROUP = "bell_phantom";
     private static final String OTHER_GROUP = "other";
 
     @SerialEntry public boolean enableVillagerAttraction = true;
@@ -88,6 +89,8 @@ public final class QolConfig {
 
     @SerialEntry public boolean enableWaterConversion = true;
     @SerialEntry public boolean enableMudConversion = false;
+
+    @SerialEntry public boolean enableBellPhantom = true;
 
     @SerialEntry public boolean enableBlocksOnLilyPad = true;
     @SerialEntry public boolean enablePaintingSwitching = true;
@@ -164,6 +167,13 @@ public final class QolConfig {
                     .binding(defaults.enableAnvilRepair,
                             () -> config.enableAnvilRepair,
                             newVal -> config.enableAnvilRepair = newVal)
+                    .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
+                    .build();
+
+            Option<Boolean> enableBellPhantomOpt = ConfigUtils.<Boolean>getGenericOption("enableBellPhantom", "bell_phantom")
+                    .binding(defaults.enableBellPhantom,
+                            () -> config.enableBellPhantom,
+                            newVal -> config.enableBellPhantom = newVal)
                     .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
                     .build();
 
@@ -288,6 +298,12 @@ public final class QolConfig {
                                     .options(List.of(
                                             enableWaterConversionOpt,
                                             enableMudConversionOpt
+                                    ))
+                                    .build())
+                            .group(OptionGroup.createBuilder()
+                                    .name(ConfigUtils.getGroupName(QOL_CATEGORY, BELL_PHANTOM_GROUP))
+                                    .options(List.of(
+                                            enableBellPhantomOpt
                                     ))
                                     .build())
                             .group(OptionGroup.createBuilder()

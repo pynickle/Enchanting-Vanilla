@@ -28,6 +28,7 @@ public class EncVanilla {
         EVItems.ITEMS.register(modEventBus);
 
         EVConditions.CONDITION_CODECS.register(modEventBus);
+        EVAttachmentTypes.ATTACHMENT_TYPES.register(modEventBus);
 
         EVCreativeTabs.TABS.register(modEventBus);
 

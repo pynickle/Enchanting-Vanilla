@@ -47,6 +47,8 @@
   "yacl3.config.enc_vanilla:config.enableMudConversion": "Enable Mud Conversion",
   "yacl3.config.enc_vanilla:config.category.qol.group.anvil_repair": "Anvil Repair",
   "yacl3.config.enc_vanilla:config.enableAnvilRepair": "Enable Anvil Repair",
+  "yacl3.config.enc_vanilla:config.category.qol.group.bell_phantom": "Bell Phantom",
+  "yacl3.config.enc_vanilla:config.enableBellPhantom": "Enable Bell Phantom",
   "yacl3.config.enc_vanilla:config.category.qol.group.other": "Other",
   "yacl3.config.enc_vanilla:config.enableBlocksOnLilyPad": "Enable Blocks On Lily Pad",
   "yacl3.config.enc_vanilla:config.enablePaintingSwitching": "Enable Painting Switching",

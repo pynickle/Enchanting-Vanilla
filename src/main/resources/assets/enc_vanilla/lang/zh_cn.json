@@ -42,6 +42,8 @@
   "yacl3.config.enc_vanilla:config.enableMudConversion": "启用泥巴转化",
   "yacl3.config.enc_vanilla:config.category.qol.group.anvil_repair": "铁砧修复",
   "yacl3.config.enc_vanilla:config.enableAnvilRepair": "启用铁砧修复",
+  "yacl3.config.enc_vanilla:config.category.qol.group.bell_phantom": "敲钟驱赶幻翼",
+  "yacl3.config.enc_vanilla:config.enableBellPhantom": "启用敲钟驱赶幻翼",
   "yacl3.config.enc_vanilla:config.category.qol.group.other": "其他",
   "yacl3.config.enc_vanilla:config.enableBlocksOnLilyPad": "启用睡莲上方块",
   "yacl3.config.enc_vanilla:config.enablePaintingSwitching": "启用画作切换",

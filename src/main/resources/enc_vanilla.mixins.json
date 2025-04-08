@@ -12,6 +12,7 @@
     "FarmBlockMixin",
     "ItemFrameMixin",
     "JukeboxSongPlayerMixin",
+    "PhantomMixin",
     "PowderSnowBlockMixin",
     "RecipeManagerMixin",
     "ShutupNameTag",
