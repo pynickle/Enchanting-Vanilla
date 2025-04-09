@@ -1,6 +1,6 @@
 # Enchanting Vanilla
 
-A vanilla extension mod
+A vanilla enhancement mod
 
 ## *Functions implemented (28) :*
 
