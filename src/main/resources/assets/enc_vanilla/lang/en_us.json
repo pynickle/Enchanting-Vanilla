@@ -29,6 +29,7 @@
 
   "yacl3.config.enc_vanilla:config.category.qol.group.villager_attraction": "Villager Attraction",
   "yacl3.config.enc_vanilla:config.enableVillagerAttraction": "Enable Villager Attraction",
+  "yacl3.config.enc_vanilla:config.enableVillagerAttraction.desc": "",
   "yacl3.config.enc_vanilla:config.category.qol.group.item_frame": "Invisible Item Frame",
   "yacl3.config.enc_vanilla:config.enableInvisibleItemFrame": "Enable Invisible Item Frame",
   "yacl3.config.enc_vanilla:config.category.qol.group.torch_hit": "Torch Hit",

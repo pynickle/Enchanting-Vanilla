@@ -1,6 +1,6 @@
 # Enchanting Vanilla
 
-A vanilla enhancement mod
+A mod dedicated to enhancing the vanilla game experience and staying close to the vanilla style
 
 ## *Functions implemented (28) :*
 
@@ -25,10 +25,10 @@ A vanilla enhancement mod
 * Now you can right-click on the vine to convert it and the vines below it into cut vines, which will not grow.
 
 ### **6.** *Stop Growing*
-* Now you can right-click on bamboo and sugar cane with shears to stop them growing.
+* Now you can right-click on bamboo with axes and sugar cane with shears to stop them growing.
 
 ### **7.** *Torch Hit*
-* You can attack creatures with torches or soul torches to give them a chance to catch fire, compatible with Soul fire'd.
+* You can attack creatures with torches or soul torches to give them a chance to catch fire, compatible with Soul fire'd mod.
 * In the config file you can configure creature catching fire time and probability, etc., and you can also add torches from other mods (some of which have already been added).
 
 ### **8.** *Sponge Place*
