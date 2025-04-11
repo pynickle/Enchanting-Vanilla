@@ -25,7 +25,7 @@ A mod dedicated to enhancing the vanilla game experience and staying close to th
 * Now you can right-click on the vine to convert it and the vines below it into cut vines, which will not grow.
 
 ### **6.** *Stop Growing*
-* Now you can right-click on bamboo with axes and sugar cane with shears to stop them growing.
+* Now you can right-click on bamboo with axes or sugar cane with shears to stop them growing.
 
 ### **7.** *Torch Hit*
 * You can attack creatures with torches or soul torches to give them a chance to catch fire, compatible with Soul fire'd mod.
@@ -54,7 +54,7 @@ A mod dedicated to enhancing the vanilla game experience and staying close to th
 * The inverted redstone torch sends a signal to the block above it.
 
 ### **15.** *Anvil Repair*
-* You can repair a stage by right-clicking the anvil with an iron ingot.
+* You can repair a stage by shift right-clicking the anvil with an iron ingot.
 
 ### **16.** *Water Conversion*
 * You could just drop the concrete into the water and let them solidify.

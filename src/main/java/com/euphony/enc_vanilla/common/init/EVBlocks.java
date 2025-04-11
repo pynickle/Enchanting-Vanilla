@@ -29,9 +29,9 @@ public class EVBlocks {
     public static final DeferredBlock<CompressedSlimeBlock> COMPRESSED_SLIME_BLOCK = registerWithItem("compressed_slime_block", CompressedSlimeBlock::new,
             BlockBehaviour.Properties.ofFullCopy(Blocks.SLIME_BLOCK));
 
-    public static final DeferredBlock<CeilingTorchBlock> CEILING_TORCH = register("torch", (p) -> new CeilingTorchBlock(p, ParticleTypes.FLAME, Blocks.TORCH), BlockBehaviour.Properties.ofFullCopy(Blocks.TORCH));
-    public static final DeferredBlock<RedstoneCeilingTorchBlock> CEILING_REDSTONE_TORCH = register("redstone_torch", (p) -> new RedstoneCeilingTorchBlock(p, Blocks.REDSTONE_TORCH), BlockBehaviour.Properties.ofFullCopy(Blocks.REDSTONE_TORCH));
-    public static final DeferredBlock<CeilingTorchBlock> CEILING_SOUL_TORCH = register("soul_torch", (p) -> new CeilingTorchBlock(p, ParticleTypes.SOUL_FIRE_FLAME, Blocks.SOUL_TORCH), BlockBehaviour.Properties.ofFullCopy(Blocks.SOUL_TORCH));
+    public static final DeferredBlock<CeilingTorchBlock> CEILING_TORCH = registerWithItem("torch", (p) -> new CeilingTorchBlock(p, ParticleTypes.FLAME, Blocks.TORCH), BlockBehaviour.Properties.ofFullCopy(Blocks.TORCH));
+    public static final DeferredBlock<RedstoneCeilingTorchBlock> CEILING_REDSTONE_TORCH = registerWithItem("redstone_torch", (p) -> new RedstoneCeilingTorchBlock(p, Blocks.REDSTONE_TORCH), BlockBehaviour.Properties.ofFullCopy(Blocks.REDSTONE_TORCH));
+    public static final DeferredBlock<CeilingTorchBlock> CEILING_SOUL_TORCH = registerWithItem("soul_torch", (p) -> new CeilingTorchBlock(p, ParticleTypes.SOUL_FIRE_FLAME, Blocks.SOUL_TORCH), BlockBehaviour.Properties.ofFullCopy(Blocks.SOUL_TORCH));
 
 
     public static <T extends Block> DeferredBlock<T> register(String name, Function<BlockBehaviour.Properties, T> function, BlockBehaviour.Properties properties) {

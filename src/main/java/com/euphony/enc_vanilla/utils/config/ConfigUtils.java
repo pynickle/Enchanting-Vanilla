@@ -13,7 +13,7 @@ import java.util.Collection;
 
 public class ConfigUtils {
     public static final int IMG_WIDTH = 1920;
-    public static final int IMG_HEIGHT = 1080;
+    public static final int IMG_HEIGHT = 991;
 
     public static final OptionFlag RESOURCE_RELOAD = (client) -> {
         if(client.hasSingleplayerServer()) {

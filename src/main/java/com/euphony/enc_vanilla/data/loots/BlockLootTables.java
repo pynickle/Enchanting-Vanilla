@@ -24,6 +24,11 @@ public class BlockLootTables extends BlockLootSubProvider {
         add(EVBlocks.CUT_VINE.get(), createShearsOnlyDrop(Items.VINE));
         dropOther(EVBlocks.CUT_SUGAR_CANE.get(), Items.SUGAR_CANE);
         dropOther(EVBlocks.CUT_BAMBOO_SAPLING.get(), Items.BAMBOO);
+
+        dropOther(EVBlocks.CEILING_TORCH.get(), Items.TORCH);
+        dropOther(EVBlocks.CEILING_REDSTONE_TORCH.get(), Items.REDSTONE_TORCH);
+        dropOther(EVBlocks.CEILING_SOUL_TORCH.get(), Items.SOUL_TORCH);
+
         dropSelf(EVBlocks.COMPRESSED_SLIME_BLOCK.get());
     }
 }

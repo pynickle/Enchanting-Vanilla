@@ -7,6 +7,7 @@ import com.euphony.enc_vanilla.common.item.SculkCompassItem;
 import com.euphony.enc_vanilla.config.client.EVConfigScreen;
 import com.euphony.enc_vanilla.utils.CompassState;
 import com.euphony.enc_vanilla.utils.Utils;
+import net.minecraft.client.color.block.BlockColors;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.client.renderer.item.ClampedItemPropertyFunction;
@@ -17,8 +18,11 @@ import net.minecraft.util.Mth;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.FoliageColor;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
@@ -49,6 +53,18 @@ public class EVClient {
         event.register(
                 (state, level, pos, tintIndex) -> level != null && pos != null ? BiomeColors.getAverageGrassColor(level, pos) : -1,
                 EVBlocks.CUT_SUGAR_CANE.get()
+        );
+    }
+
+    @SubscribeEvent
+    public static void registerItemColor(RegisterColorHandlersEvent.Item event) {
+        BlockColors colors = event.getBlockColors();
+        event.register(
+                (p_92687_, p_92688_) -> {
+                    BlockState blockstate = ((BlockItem)p_92687_.getItem()).getBlock().defaultBlockState();
+                    return colors.getColor(blockstate, null, null, p_92688_);
+                },
+                EVBlocks.CUT_VINE.get()
         );
     }
 

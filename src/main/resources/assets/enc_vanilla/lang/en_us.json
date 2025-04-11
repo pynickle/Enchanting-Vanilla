@@ -29,32 +29,55 @@
 
   "yacl3.config.enc_vanilla:config.category.qol.group.villager_attraction": "Villager Attraction",
   "yacl3.config.enc_vanilla:config.enableVillagerAttraction": "Enable Villager Attraction",
-  "yacl3.config.enc_vanilla:config.enableVillagerAttraction.desc": "",
+  "yacl3.config.enc_vanilla:config.enableVillagerAttraction.desc": "Villagers can be attracted by the player holding an emerald in the main hand and an ominous banner in the offhand.",
+
   "yacl3.config.enc_vanilla:config.category.qol.group.item_frame": "Invisible Item Frame",
   "yacl3.config.enc_vanilla:config.enableInvisibleItemFrame": "Enable Invisible Item Frame",
+  "yacl3.config.enc_vanilla:config.enableInvisibleItemFrame.desc": "You can use a Splash Invisibility Potion on an item frame to make it invisible, as well as a Splash Water Bottle to de-invisible it.",
+
   "yacl3.config.enc_vanilla:config.category.qol.group.torch_hit": "Torch Hit",
   "yacl3.config.enc_vanilla:config.enableTorchHit": "Enable Torch Hit",
+  "yacl3.config.enc_vanilla:config.enableTorchHit.desc": "You can attack creatures with torches or soul torches to give them a chance to catch fire.",
   "yacl3.config.enc_vanilla:config.enableMobTorchHit": "Enable Mob Torch Hit",
+  "yacl3.config.enc_vanilla:config.enableMobTorchHit.desc": "Creatures attacking with torches now also catch enemies on fire.",
   "yacl3.config.enc_vanilla:config.torchHitFireChance": "Torch Hit Fire Chance",
+  "yacl3.config.enc_vanilla:config.torchHitFireChance.desc": "Chance that a torch attack will set an enemy on fire",
   "yacl3.config.enc_vanilla:config.torchHitFireDuration": "Torch Hit Fire Duration",
+  "yacl3.config.enc_vanilla:config.torchHitFireDuration.desc": "Duration for a torch attack to set an enemy on fire",
   "yacl3.config.enc_vanilla:config.extraTorchItems": "Extra Torch Items",
+  "yacl3.config.enc_vanilla:config.extraTorchItems.desc": "Configure items from other mods that can be considered torches",
   "yacl3.config.enc_vanilla:config.extraTorchItems.button": "Configure Extra Torch Items",
   "yacl3.config.enc_vanilla:config.extraSoulTorchItems": "Extra Soul Torch Items",
+  "yacl3.config.enc_vanilla:config.extraSoulTorchItems.desc": "Configure items from other mods that can be considered soul torches",
   "yacl3.config.enc_vanilla:config.extraSoulTorchItems.button": "Configure Extra Soul Torch Items",
+
   "yacl3.config.enc_vanilla:config.category.qol.group.trampling_prevention": "Farmland Trampling Prevention",
   "yacl3.config.enc_vanilla:config.enableFarmlandTramplingPrevention": "Enable Farmland Trampling Prevention",
+  "yacl3.config.enc_vanilla:config.enableFarmlandTramplingPrevention.desc": "Now when you have a slow falling effect, you won't be trampling farmland.",
+
   "yacl3.config.enc_vanilla:config.category.qol.group.water_conversion": "Water Conversion",
   "yacl3.config.enc_vanilla:config.enableWaterConversion": "Enable Water Conversion",
+  "yacl3.config.enc_vanilla:config.enableWaterConversion.desc": "You could just drop the concrete into the water and let them solidify.",
   "yacl3.config.enc_vanilla:config.enableMudConversion": "Enable Mud Conversion",
+  "yacl3.config.enc_vanilla:config.enableMudConversion.desc": "You can throw dirt in the water to get mud.",
+
   "yacl3.config.enc_vanilla:config.category.qol.group.anvil_repair": "Anvil Repair",
   "yacl3.config.enc_vanilla:config.enableAnvilRepair": "Enable Anvil Repair",
+  "yacl3.config.enc_vanilla:config.enableAnvilRepair.desc": "You can repair a stage by shift right-clicking the anvil with an iron ingot.",
+
   "yacl3.config.enc_vanilla:config.category.qol.group.bell_phantom": "Bell Phantom",
   "yacl3.config.enc_vanilla:config.enableBellPhantom": "Enable Bell Phantom",
+  "yacl3.config.enc_vanilla:config.enableBellPhantom.desc": "Ringing the bell now repels phantoms within a 24-block radius.",
+
   "yacl3.config.enc_vanilla:config.category.qol.group.other": "Other",
   "yacl3.config.enc_vanilla:config.enableBlocksOnLilyPad": "Enable Blocks On Lily Pad",
+  "yacl3.config.enc_vanilla:config.enableBlocksOnLilyPad.desc": "Now you can place blocks above the lily pads, which works by turning the block underneath into waterlogged lily pad.",
   "yacl3.config.enc_vanilla:config.enablePaintingSwitching": "Enable Painting Switching",
+  "yacl3.config.enc_vanilla:config.enablePaintingSwitching.desc": "You can now right-click on a painting to quickly switch between paintings.",
   "yacl3.config.enc_vanilla:config.enableCutVine": "Enable Cut Vine",
+  "yacl3.config.enc_vanilla:config.enableCutVine.desc": "Now you can right-click on the vine to convert it and the vines below it into cut vines, which will not grow.",
   "yacl3.config.enc_vanilla:config.enableStopGrowing": "Enable Stop Growing",
+  "yacl3.config.enc_vanilla:config.enableStopGrowing.desc": "Now you can right-click on bamboo with axes or sugar cane with shears to stop them growing.",
   "yacl3.config.enc_vanilla:config.enableSpongePlacing": "Enable Sponge Placing",
   "yacl3.config.enc_vanilla:config.enableShutupNameTag": "Enable Shutup Name Tag",
   "yacl3.config.enc_vanilla:config.enableJukeboxLoop": "Enable Jukebox Loop",
@@ -64,16 +87,20 @@
 
   "yacl3.config.enc_vanilla:config.category.tools.group.compressed_slime_block": "Compressed Slime Block",
   "yacl3.config.enc_vanilla:config.enableCompressedSlimeBlock": "Enable Compressed Slime Block",
+
   "yacl3.config.enc_vanilla:config.category.tools.group.sculk_compass": "Sculk Compass",
   "yacl3.config.enc_vanilla:config.enableSculkCompass": "Enable Sculk Compass",
+
   "yacl3.config.enc_vanilla:config.category.tools.group.other": "Other",
   "yacl3.config.enc_vanilla:config.enableSlimeChunkDetecting": "Enable Slime Chunk Detecting",
 
   "yacl3.config.enc_vanilla:config.category.client.group.fading_night_vision": "Fading Out Night Vision",
   "yacl3.config.enc_vanilla:config.enableFadingNightVision": "Enable Fading Out Night Vision",
+
   "yacl3.config.enc_vanilla:config.category.client.group.better_ping_display": "Better Ping Display",
   "yacl3.config.enc_vanilla:config.enableBetterPingDisplay": "Enable Better Ping Display",
   "yacl3.config.enc_vanilla:config.enableDefaultPingBars": "Enable Default Ping Bars",
+
   "yacl3.config.enc_vanilla:config.category.client.group.other": "Other",
   "yacl3.config.enc_vanilla:config.enableBeeInfo": "Enable Bee Info",
 

@@ -1,15 +1,19 @@
 package com.euphony.enc_vanilla.data.models;
 
 import com.euphony.enc_vanilla.EncVanilla;
+import com.euphony.enc_vanilla.common.init.EVBlocks;
 import com.euphony.enc_vanilla.common.init.EVItems;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.client.model.generators.ItemModelBuilder;
 import net.neoforged.neoforge.client.model.generators.ItemModelProvider;
 import net.neoforged.neoforge.client.model.generators.ModelFile;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
+
+import java.util.Objects;
 
 public class ItemModelGenerator extends ItemModelProvider {
     ExistingFileHelper existingFileHelper;
@@ -33,7 +37,33 @@ public class ItemModelGenerator extends ItemModelProvider {
         basicItem(EVItems.BIOME_CRYSTAL_ITEM.get());
         basicItem(EVItems.FROZEN_BIOME_CRYSTAL_ITEM.get());
         basicItem(EVItems.HEATED_BIOME_CRYSTAL_ITEM.get());
+
+        basicBlockItem(EVBlocks.CUT_VINE.asItem());
+        basicBlockItem(EVBlocks.CUT_SUGAR_CANE.asItem());
+
+        simpleVanillaBlockItem(EVBlocks.COMPRESSED_SLIME_BLOCK.get(), "slime_block");
+
+        simpleBlockItem(EVBlocks.CEILING_TORCH.get());
+        simpleBlockItem(EVBlocks.CEILING_REDSTONE_TORCH.get());
+        simpleBlockItem(EVBlocks.CEILING_SOUL_TORCH.get());
     }
+
+    public ItemModelBuilder basicBlockItem(Item item) {
+        return basicBlockItem(Objects.requireNonNull(BuiltInRegistries.ITEM.getKey(item)));
+    }
+
+    public ItemModelBuilder basicBlockItem(ResourceLocation item) {
+        return getBuilder(item.toString()).parent(new ModelFile.UncheckedModelFile("item/generated")).texture("layer0", ResourceLocation.fromNamespaceAndPath(item.getNamespace(), "block/" + item.getPath()));
+    }
+
+    public ItemModelBuilder simpleVanillaBlockItem(Block block, String path) {
+        return simpleVanillaBlockItem(Objects.requireNonNull(BuiltInRegistries.BLOCK.getKey(block)), path);
+    }
+
+    public ItemModelBuilder simpleVanillaBlockItem(ResourceLocation block, String path) {
+        return this.withExistingParent(block.toString(), ResourceLocation.withDefaultNamespace("block/" + path));
+    }
+
 
     protected ItemModelBuilder.OverrideBuilder predicateItem(Item item, int customModelData, String overrideModel) {
         return predicateItem(BuiltInRegistries.ITEM.getKey(item), customModelData, overrideModel);

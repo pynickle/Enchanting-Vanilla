@@ -30,6 +30,8 @@ public class AnvilRepairEvent {
         if (level.isClientSide) return;
 
         Player player = event.getEntity();
+        if(!player.isShiftKeyDown()) return;
+
         InteractionHand hand = event.getHand();
 
         ItemStack itemStack = player.getItemInHand(hand);

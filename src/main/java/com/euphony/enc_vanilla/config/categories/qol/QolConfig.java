@@ -126,7 +126,7 @@ public final class QolConfig {
                     .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
                     .build();
 
-            Option<Boolean> enableMobTorchHitOpt = ConfigUtils.<Boolean>getGenericOption("enableMobTorchHit", "mob_torch_hit")
+            Option<Boolean> enableMobTorchHitOpt = ConfigUtils.<Boolean>getGenericOption("enableMobTorchHit")
                     .binding(defaults.enableMobTorchHit,
                             () -> config.enableMobTorchHit,
                             newVal -> config.enableMobTorchHit = newVal)
@@ -199,7 +199,7 @@ public final class QolConfig {
                     .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
                     .build();
 
-            Option<Boolean> enablePaintingSwitchingOpt = ConfigUtils.<Boolean>getGenericOption("enablePaintingSwitching", "painting_switching")
+            Option<Boolean> enablePaintingSwitchingOpt = ConfigUtils.<Boolean>getGenericOption("enablePaintingSwitching")
                     .binding(defaults.enablePaintingSwitching,
                             () -> config.enablePaintingSwitching,
                             newVal -> config.enablePaintingSwitching = newVal)
