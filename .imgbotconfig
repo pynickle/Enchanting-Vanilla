@@ -1,3 +1,7 @@
 {
-    "schedule": "daily"
+    "schedule": "weekly",
+    "ignoredFiles": [
+        "src/main/resources/enc_vanilla.png"
+    ],
+    "aggressiveCompression": true
 }
