@@ -22,7 +22,7 @@ public class ShutupNameTag {
             if (livingEntity.getCustomName() == null)
                 return;
 
-            String name = livingEntity.getCustomName().getString().toLowerCase();
+            String name = livingEntity.getCustomName().getString();
 
             if (Objects.equals(name, "Shutup!")) {
                 ci.cancel();

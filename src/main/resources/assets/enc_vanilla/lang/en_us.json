@@ -79,34 +79,51 @@
   "yacl3.config.enc_vanilla:config.enableStopGrowing": "Enable Stop Growing",
   "yacl3.config.enc_vanilla:config.enableStopGrowing.desc": "Now you can right-click on bamboo with axes or sugar cane with shears to stop them growing.",
   "yacl3.config.enc_vanilla:config.enableSpongePlacing": "Enable Sponge Placing",
+  "yacl3.config.enc_vanilla:config.enableSpongePlacing.desc": "You can now place a sponge directly on the water without having to place a cube next to it first.",
   "yacl3.config.enc_vanilla:config.enableShutupNameTag": "Enable Shutup Name Tag",
+  "yacl3.config.enc_vanilla:config.enableShutupNameTag.desc": "Now you can use a name tag to name a mob \"Shutup!\" to make it silent.",
   "yacl3.config.enc_vanilla:config.enableJukeboxLoop": "Enable Jukebox Loop",
+  "yacl3.config.enc_vanilla:config.enableJukeboxLoop.desc": "Now the jukebox will loop the music disc.",
   "yacl3.config.enc_vanilla:config.enableCakeDrop": "Enable Cake Drop",
+  "yacl3.config.enc_vanilla:config.enableCakeDrop.desc": "Now you can destroy a whole cake to get it.",
   "yacl3.config.enc_vanilla:config.enableCeilingTorch": "Enable Ceiling Torch",
+  "yacl3.config.enc_vanilla:config.enableCeilingTorch.desc": "Now you can place torches on the ceiling.",
   "yacl3.config.enc_vanilla:config.enableSafeLavaBucket": "Enable Safe Lava Bucket",
+  "yacl3.config.enc_vanilla:config.enableSafeLavaBucket.desc": "Now you need to sneak in order to reclaim the lava with a bucket to prevent accidentally destroying the lava lake.",
 
   "yacl3.config.enc_vanilla:config.category.tools.group.compressed_slime_block": "Compressed Slime Block",
   "yacl3.config.enc_vanilla:config.enableCompressedSlimeBlock": "Enable Compressed Slime Block",
+  "yacl3.config.enc_vanilla:config.enableCompressedSlimeBlock.desc": "Now you can make it compress into a compressed Slime block by placing an anvil on top of two consecutive slime blocks above and below.",
 
   "yacl3.config.enc_vanilla:config.category.tools.group.sculk_compass": "Sculk Compass",
   "yacl3.config.enc_vanilla:config.enableSculkCompass": "Enable Sculk Compass",
+  "yacl3.config.enc_vanilla:config.enableSculkCompass.desc": "The sculk compass will point to the biome corresponding to the biome crystal.",
 
   "yacl3.config.enc_vanilla:config.category.tools.group.other": "Other",
   "yacl3.config.enc_vanilla:config.enableSlimeChunkDetecting": "Enable Slime Chunk Detecting",
+  "yacl3.config.enc_vanilla:config.enableSlimeChunkDetecting.desc": "When you come to the Slime chunk with a frog bucket in your inventory, the frog bucket will be animated.",
 
   "yacl3.config.enc_vanilla:config.category.client.group.fading_night_vision": "Fading Out Night Vision",
   "yacl3.config.enc_vanilla:config.enableFadingNightVision": "Enable Fading Out Night Vision",
+  "yacl3.config.enc_vanilla:config.enableFadingNightVision.desc": "Night vision now fades out instead of flickering.",
 
   "yacl3.config.enc_vanilla:config.category.client.group.better_ping_display": "Better Ping Display",
   "yacl3.config.enc_vanilla:config.enableBetterPingDisplay": "Enable Better Ping Display",
+  "yacl3.config.enc_vanilla:config.enableBetterPingDisplay.desc": "The player's ping is now displayed as a number.",
   "yacl3.config.enc_vanilla:config.enableDefaultPingBars": "Enable Default Ping Bars",
+  "yacl3.config.enc_vanilla:config.enableDefaultPingBars.desc": "The vanilla ping bars will also show.",
 
   "yacl3.config.enc_vanilla:config.category.client.group.other": "Other",
   "yacl3.config.enc_vanilla:config.enableBeeInfo": "Enable Bee Info",
+    "yacl3.config.enc_vanilla:config.enableBeeInfo.desc": "You can now see the number of bees and the amount of honey in beehives and bee nests, just like the feature added natively in 1.21.2.",
 
   "yacl3.config.enc_vanilla:config.category.recipes.group.other": "Other",
   "yacl3.config.enc_vanilla:config.enableMoreCompostable": "Enable More Compostable",
+    "yacl3.config.enc_vanilla:config.enableMoreCompostable.desc": "You can now compost even more items, which include rotten flesh, dead bush, grass blocks and more.",
   "yacl3.config.enc_vanilla:config.enableSlabsToBlocks": "Enable Slabs To Blocks",
+    "yacl3.config.enc_vanilla:config.enableSlabsToBlocks.desc": "Add recipes for all slabs to blocks.",
   "yacl3.config.enc_vanilla:config.enableSpongeCampfire": "Enable Sponge Campfire",
-  "yacl3.config.enc_vanilla:config.enableBetterLodestone": "Enable Better Lodestone"
+    "yacl3.config.enc_vanilla:config.enableSpongeCampfire.desc": "Now you can use campfire drying sponges.",
+  "yacl3.config.enc_vanilla:config.enableBetterLodestone": "Enable Better Lodestone",
+    "yacl3.config.enc_vanilla:config.enableBetterLodestone.desc": "You can now use the 1.21.5 lodestone recipe and find it in ruined portal treasure chests."
 }

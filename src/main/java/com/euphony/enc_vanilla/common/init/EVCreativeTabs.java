@@ -21,5 +21,6 @@ public class EVCreativeTabs {
                 output.accept(EVItems.HEATED_BIOME_CRYSTAL_ITEM);
                 output.accept(EVItems.FROZEN_BIOME_CRYSTAL_ITEM);
                 output.accept(EVBlocks.COMPRESSED_SLIME_BLOCK);
+                output.accept(EVItems.FROG_BUCKET_ITEM);
             }).build());
 }

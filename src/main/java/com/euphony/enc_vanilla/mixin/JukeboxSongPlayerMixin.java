@@ -13,19 +13,21 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(JukeboxSongPlayer.class)
-public class JukeboxSongPlayerMixin {
+public abstract class JukeboxSongPlayerMixin {
     @Shadow
     private Holder<JukeboxSong> song;
     @Shadow
     private long ticksSinceSongStarted;
 
-    @Inject(method = "tick", at = @At("HEAD"), cancellable = true)
+    @Shadow public abstract void play(LevelAccessor level, Holder<JukeboxSong> song);
+
+    @Inject(method = "tick", at = @At("HEAD"))
     public void tickInject(LevelAccessor level, BlockState state, CallbackInfo ci) {
         if(!QolConfig.HANDLER.instance().enableJukeboxLoop)
             return;
         if (this.song != null) {
             if (this.song.value().hasFinished(this.ticksSinceSongStarted)) {
-                this.ticksSinceSongStarted = 0L;
+                play(level, song);
             }
         }
 

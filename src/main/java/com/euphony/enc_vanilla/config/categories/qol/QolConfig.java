@@ -234,7 +234,7 @@ public final class QolConfig {
                     .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
                     .build();
 
-            Option<Boolean> enableJukeboxLoopOpt = ConfigUtils.<Boolean>getGenericOption("enableJukeboxLoop", "jukebox_loop")
+            Option<Boolean> enableJukeboxLoopOpt = ConfigUtils.<Boolean>getGenericOption("enableJukeboxLoop")
                     .binding(defaults.enableJukeboxLoop,
                             () -> config.enableJukeboxLoop,
                             newVal -> config.enableJukeboxLoop = newVal)
@@ -255,7 +255,7 @@ public final class QolConfig {
                     .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
                     .build();
 
-            Option<Boolean> enableSafeLavaBucketOpt = ConfigUtils.<Boolean>getGenericOption("enableSafeLavaBucket", "safe_lava_bucket")
+            Option<Boolean> enableSafeLavaBucketOpt = ConfigUtils.<Boolean>getGenericOption("enableSafeLavaBucket")
                     .binding(defaults.enableSafeLavaBucket,
                             () -> config.enableSafeLavaBucket,
                             newVal -> config.enableSafeLavaBucket = newVal)

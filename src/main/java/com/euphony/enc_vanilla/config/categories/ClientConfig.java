@@ -47,7 +47,7 @@ public class ClientConfig {
 
     public static YetAnotherConfigLib makeScreen() {
         return YetAnotherConfigLib.create(HANDLER, (defaults, config, builder) -> {
-            Option<Boolean> enableFadingNightVisionOpt = ConfigUtils.<Boolean>getGenericOption("enableFadingNightVision", "fading_night_vision")
+            Option<Boolean> enableFadingNightVisionOpt = ConfigUtils.<Boolean>getGenericOption("enableFadingNightVision")
                     .binding(defaults.enableFadingNightVision,
                             () -> config.enableFadingNightVision,
                             newVal -> config.enableFadingNightVision = newVal)
@@ -61,7 +61,7 @@ public class ClientConfig {
                     .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
                     .build();
 
-            Option<Boolean> enableDefaultPingBarsOpt = ConfigUtils.<Boolean>getGenericOption("enableDefaultPingBars")
+            Option<Boolean> enableDefaultPingBarsOpt = ConfigUtils.<Boolean>getGenericOption("enableDefaultPingBars", "default_ping_bars")
                     .binding(defaults.enableDefaultPingBars,
                             () -> config.enableDefaultPingBars,
                             newVal -> config.enableDefaultPingBars = newVal)
