@@ -13,7 +13,6 @@ import dev.isxander.yacl3.api.controller.IntegerFieldControllerBuilder;
 import dev.isxander.yacl3.config.v2.api.ConfigClassHandler;
 import dev.isxander.yacl3.config.v2.api.SerialEntry;
 import dev.isxander.yacl3.config.v2.api.serializer.GsonConfigSerializerBuilder;
-import dev.isxander.yacl3.gui.controllers.slider.DoubleSliderController;
 import net.minecraft.network.chat.Component;
 
 import java.nio.file.Path;
