@@ -1,6 +1,8 @@
 # Enchanting Vanilla
 
-A mod dedicated to enhancing the vanilla game experience and staying close to the vanilla style
+**A mod dedicated to enhancing the vanilla game experience and staying close to the vanilla style**
+
+**The vast majority of the features are switchable, and you can easily configure them visually within the game by installing the optional dependency YetAnotherConfigLib mod**
 
 ## *Functions implemented (30) :*
 
