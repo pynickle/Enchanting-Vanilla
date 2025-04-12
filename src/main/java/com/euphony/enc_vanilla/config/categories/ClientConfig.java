@@ -9,6 +9,7 @@ import dev.isxander.yacl3.api.OptionGroup;
 import dev.isxander.yacl3.api.YetAnotherConfigLib;
 import dev.isxander.yacl3.api.controller.BooleanControllerBuilder;
 import dev.isxander.yacl3.api.controller.DoubleSliderControllerBuilder;
+import dev.isxander.yacl3.api.controller.IntegerFieldControllerBuilder;
 import dev.isxander.yacl3.config.v2.api.ConfigClassHandler;
 import dev.isxander.yacl3.config.v2.api.SerialEntry;
 import dev.isxander.yacl3.config.v2.api.serializer.GsonConfigSerializerBuilder;
@@ -38,6 +39,7 @@ public class ClientConfig {
     private static final String CLIENT_CATEGORY = "client";
     private static final String FADING_NIGHT_VISION_GROUP = "fading_night_vision";
     private static final String BETTER_PING_DISPLAY_GROUP = "better_ping_display";
+    private static final String BETTER_CHAT_GROUP = "better_chat";
     private static final String OTHER_GROUP = "other";
 
     @SerialEntry public boolean enableFadingNightVision = true;
@@ -45,6 +47,9 @@ public class ClientConfig {
 
     @SerialEntry public boolean enableBetterPingDisplay = true;
     @SerialEntry public boolean enableDefaultPingBars = false;
+
+    @SerialEntry public boolean enableLongerChatHistory = true;
+    @SerialEntry public int chatMaxMessages = 4096;
 
     @SerialEntry public boolean enableBeeInfo = true;
 
@@ -87,6 +92,21 @@ public class ClientConfig {
                     .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
                     .build();
 
+            Option<Boolean> enableLongerChatHistoryOpt = ConfigUtils.<Boolean>getGenericOption("enableLongerChatHistory")
+                    .binding(defaults.enableLongerChatHistory,
+                            () -> config.enableLongerChatHistory,
+                            newVal -> config.enableLongerChatHistory = newVal)
+                    .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
+                    .build();
+
+            Option<Integer> chatMaxMessagesOpt = ConfigUtils.<Integer>getGenericOption("chatMaxMessages")
+                    .binding(defaults.chatMaxMessages,
+                            () -> config.chatMaxMessages,
+                            newVal -> config.chatMaxMessages = newVal)
+                    .controller(opt -> IntegerFieldControllerBuilder.create(opt)
+                            .range(100, 32768))
+                    .build();
+
             return builder
                     .title(Component.translatable("yacl3.config.enc_vanilla:config"))
                     .category(ConfigCategory.createBuilder()
@@ -103,6 +123,13 @@ public class ClientConfig {
                                     .options(List.of(
                                             enableBetterPingDisplayOpt,
                                             enableDefaultPingBarsOpt
+                                    ))
+                                    .build())
+                            .group(OptionGroup.createBuilder()
+                                    .name(ConfigUtils.getGroupName(CLIENT_CATEGORY, BETTER_CHAT_GROUP))
+                                    .options(List.of(
+                                            enableLongerChatHistoryOpt,
+                                            chatMaxMessagesOpt
                                     ))
                                     .build())
                             .group(OptionGroup.createBuilder()

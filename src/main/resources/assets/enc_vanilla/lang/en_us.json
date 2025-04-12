@@ -123,6 +123,12 @@
   "yacl3.config.enc_vanilla:config.enableDefaultPingBars": "Enable Default Ping Bars",
   "yacl3.config.enc_vanilla:config.enableDefaultPingBars.desc": "The vanilla ping bars will also show.",
 
+  "yacl3.config.enc_vanilla:config.category.client.group.better_chat": "Better Chat",
+  "yacl3.config.enc_vanilla:config.enableLongerChatHistory": "Enable Longer Chat History",
+  "yacl3.config.enc_vanilla:config.enableLongerChatHistory.desc": "Chat history now extends from the vanilla 100 to 4096.",
+  "yacl3.config.enc_vanilla:config.chatMaxMessages": "Chat Max Messages",
+  "yacl3.config.enc_vanilla:config.chatMaxMessages.desc": "Maximum number of messages retained in chat history",
+
   "yacl3.config.enc_vanilla:config.category.client.group.other": "Other",
   "yacl3.config.enc_vanilla:config.enableBeeInfo": "Enable Bee Info",
     "yacl3.config.enc_vanilla:config.enableBeeInfo.desc": "You can now see the number of bees and the amount of honey in beehives and bee nests, just like the feature added natively in 1.21.2.",

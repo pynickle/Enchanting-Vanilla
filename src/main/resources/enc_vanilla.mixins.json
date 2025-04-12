@@ -23,6 +23,7 @@
     "WaterlilyBlockMixin"
   ],
   "client": [
+    "ChatComponentMixin",
     "GameRendererMixin",
     "PlayerTabOverlayMixin",
     "invoker.PlayerTabOverlayInvoker"

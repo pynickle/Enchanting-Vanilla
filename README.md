@@ -2,7 +2,7 @@
 
 A mod dedicated to enhancing the vanilla game experience and staying close to the vanilla style
 
-## *Functions implemented (29) :*
+## *Functions implemented (30) :*
 
 ### **Ⅰ. QOL Improvements**
 
@@ -101,6 +101,9 @@ A mod dedicated to enhancing the vanilla game experience and staying close to th
 
 ### **3.** *Better Ping Display*
 * The player's ping is now displayed as a number.
+
+### **4.** *Longer Chat History*
+* Chat history now extends from the vanilla 100 to 4096 (configurable).
 
 ### **Ⅳ. Recipes**
 
