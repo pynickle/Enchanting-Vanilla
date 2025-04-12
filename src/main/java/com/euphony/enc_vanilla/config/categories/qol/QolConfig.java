@@ -157,14 +157,14 @@ public final class QolConfig {
                     .action(((yaclScreen, buttonOption) -> yaclScreen.getMinecraft().setScreen(ExtraSoulTorchItemsScreen.makeScreen().generateScreen(yaclScreen))))
                     .build();
 
-            Option<Boolean> enableFarmlandTramplingPreventionOpt = ConfigUtils.<Boolean>getGenericOption("enableFarmlandTramplingPrevention", "trampling_prevention")
+            Option<Boolean> enableFarmlandTramplingPreventionOpt = ConfigUtils.<Boolean>getGenericOption("enableFarmlandTramplingPrevention")
                     .binding(defaults.enableFarmlandTramplingPrevention,
                             () -> config.enableFarmlandTramplingPrevention,
                             newVal -> config.enableFarmlandTramplingPrevention = newVal)
                     .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
                     .build();
 
-            Option<Boolean> enableAnvilRepairOpt = ConfigUtils.<Boolean>getGenericOption("enableAnvilRepair", "anvil_repair")
+            Option<Boolean> enableAnvilRepairOpt = ConfigUtils.<Boolean>getGenericOption("enableAnvilRepair")
                     .binding(defaults.enableAnvilRepair,
                             () -> config.enableAnvilRepair,
                             newVal -> config.enableAnvilRepair = newVal)
@@ -185,7 +185,7 @@ public final class QolConfig {
                     .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
                     .build();
 
-            Option<Boolean> enableBellPhantomOpt = ConfigUtils.<Boolean>getGenericOption("enableBellPhantom", "bell_phantom")
+            Option<Boolean> enableBellPhantomOpt = ConfigUtils.<Boolean>getGenericOption("enableBellPhantom")
                     .binding(defaults.enableBellPhantom,
                             () -> config.enableBellPhantom,
                             newVal -> config.enableBellPhantom = newVal)
