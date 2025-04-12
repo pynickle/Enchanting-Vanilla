@@ -38,6 +38,11 @@ public class ItemModelGenerator extends ItemModelProvider {
         basicItem(EVItems.FROZEN_BIOME_CRYSTAL_ITEM.get());
         basicItem(EVItems.HEATED_BIOME_CRYSTAL_ITEM.get());
 
+        basicItem(EncVanilla.prefix("axolotl_bucket_wild"));
+        basicItem(EncVanilla.prefix("axolotl_bucket_gold"));
+        basicItem(EncVanilla.prefix("axolotl_bucket_cyan"));
+        basicItem(EncVanilla.prefix("axolotl_bucket_blue"));
+
         basicBlockItem(EVBlocks.CUT_VINE.asItem());
         basicBlockItem(EVBlocks.CUT_SUGAR_CANE.asItem());
 

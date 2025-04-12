@@ -84,6 +84,8 @@
   "yacl3.config.enc_vanilla:config.enableCeilingTorch.desc": "现在你可以在天花板上放置火把。",
   "yacl3.config.enc_vanilla:config.enableSafeLavaBucket": "启用安全熔岩桶回收",
   "yacl3.config.enc_vanilla:config.enableSafeLavaBucket.desc": "现在你需要潜行才能用熔岩桶回收熔岩，以防止意外破坏熔岩湖。",
+  "yacl3.config.enc_vanilla:config.enableAxolotlBucketFix": "启用美西螈桶修复",
+  "yacl3.config.enc_vanilla:config.enableAxolotlBucketFix.desc": "现在装有不同种类美西螈的美西螈桶会显示不同的纹理。",
   "yacl3.config.enc_vanilla:config.category.tools.group.compressed_slime_block": "压缩黏液块",
   "yacl3.config.enc_vanilla:config.enableCompressedSlimeBlock": "启用压缩黏液块",
   "yacl3.config.enc_vanilla:config.enableCompressedSlimeBlock.desc": "现在，你可以在上下两个连续的黏液块上放置一个铁砧，铁砧落下使其压缩成一个压缩黏液块。",

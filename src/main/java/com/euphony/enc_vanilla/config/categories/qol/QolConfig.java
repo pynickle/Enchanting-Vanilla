@@ -109,6 +109,7 @@ public final class QolConfig {
     @SerialEntry public boolean enableCakeDrop = true;
     @SerialEntry public boolean enableCeilingTorch = true;
     @SerialEntry public boolean enableSafeLavaBucket = false;
+    @SerialEntry public boolean enableAxolotlBucketFix = true;
 
     public static YetAnotherConfigLib makeScreen() {
         return YetAnotherConfigLib.create(HANDLER, (defaults, config, builder) -> {
@@ -291,6 +292,13 @@ public final class QolConfig {
                     .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
                     .build();
 
+            Option<Boolean> enableAxolotlBucketFixOpt = ConfigUtils.<Boolean>getGenericOption("enableAxolotlBucketFix", "axolotl_bucket")
+                    .binding(defaults.enableAxolotlBucketFix,
+                            () -> config.enableAxolotlBucketFix,
+                            newVal -> config.enableAxolotlBucketFix = newVal)
+                    .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
+                    .build();
+
             return builder
                     .title(Component.translatable("yacl3.config.enc_vanilla:config"))
                     .category(ConfigCategory.createBuilder()
@@ -359,7 +367,8 @@ public final class QolConfig {
                                             enableCakeDropOpt,
                                             enableCeilingTorchOpt,
                                             enableWaterConversionOpt,
-                                            enableSafeLavaBucketOpt
+                                            enableSafeLavaBucketOpt,
+                                            enableAxolotlBucketFixOpt
                                     ))
                                     .build())
                             .build())

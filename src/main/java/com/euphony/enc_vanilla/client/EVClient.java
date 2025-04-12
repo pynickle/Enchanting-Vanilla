@@ -4,6 +4,7 @@ import com.euphony.enc_vanilla.EncVanilla;
 import com.euphony.enc_vanilla.common.init.EVBlocks;
 import com.euphony.enc_vanilla.common.init.EVItems;
 import com.euphony.enc_vanilla.common.item.SculkCompassItem;
+import com.euphony.enc_vanilla.config.categories.qol.QolConfig;
 import com.euphony.enc_vanilla.config.client.EVConfigScreen;
 import com.euphony.enc_vanilla.utils.CompassState;
 import com.euphony.enc_vanilla.utils.Utils;
@@ -13,6 +14,7 @@ import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.client.renderer.item.ClampedItemPropertyFunction;
 import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.Entity;
@@ -20,8 +22,9 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.component.CustomData;
 import net.minecraft.world.level.FoliageColor;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
 import net.neoforged.api.distmarker.Dist;
@@ -74,7 +77,20 @@ public class EVClient {
             if (Utils.isModLoaded("yet_another_config_lib_v3")) {
                 ModLoadingContext.get().registerExtensionPoint(IConfigScreenFactory.class, () -> (client, screen) -> new EVConfigScreen(screen));
             }
-            ItemProperties.register(EVItems.SCULK_COMPASS_ITEM.get(), ResourceLocation.fromNamespaceAndPath(EncVanilla.MODID, "angle"), new ClampedItemPropertyFunction() {
+            ItemProperties.register(Items.AXOLOTL_BUCKET, ResourceLocation.withDefaultNamespace("variant"), (stack, level, entity, seed) -> {
+                if(!QolConfig.HANDLER.instance().enableAxolotlBucketFix) return 0;
+
+                int axolotlType = 0;
+                CustomData customData;
+                if (stack.getComponents().has(DataComponents.BUCKET_ENTITY_DATA)) {
+                    customData = stack.getComponents().get(DataComponents.BUCKET_ENTITY_DATA);
+                    if (customData != null) {
+                        axolotlType = customData.copyTag().getInt("Variant");
+                    }
+                }
+                return axolotlType;
+            });
+            ItemProperties.register(EVItems.SCULK_COMPASS_ITEM.get(), EncVanilla.prefix("angle"), new ClampedItemPropertyFunction() {
                 private final CompassWobble wobble = new CompassWobble();
                 private final CompassWobble wobbleRandom = new CompassWobble();
 

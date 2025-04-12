@@ -2,7 +2,7 @@
 
 A mod dedicated to enhancing the vanilla game experience and staying close to the vanilla style
 
-## *Functions implemented (28) :*
+## *Functions implemented (29) :*
 
 ### **Ⅰ. QOL Improvements**
 
@@ -66,6 +66,9 @@ A mod dedicated to enhancing the vanilla game experience and staying close to th
 
 ### **18.** *Safe Lava Bucket*
 * Now you need to sneak in order to reclaim the lava with a bucket to prevent accidentally destroying the lava lake.
+
+### **19.** *Axolotl Bucket Fix*
+* Now buckets containing different variants of axolotl display different textures.
 
 ### **Ⅱ. Tools**
 
