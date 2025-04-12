@@ -23,10 +23,11 @@ public class BellPhantomEvent {
 
         BlockPos pos = event.getPos();
         if(level.getBlockState(pos).is(Blocks.BELL)) {
+            int particleTicks = (int) (QolConfig.HANDLER.instance().particleDuration * 20);
             List<Phantom> phantoms = level.getEntitiesOfClass(Phantom.class, new AABB(pos).inflate(24));
             phantoms.forEach(phantom -> {
-                phantom.animateHurt(50);
-                phantom.setData(EVAttachmentTypes.BELL_TIME, 50);
+                phantom.animateHurt(particleTicks);
+                phantom.setData(EVAttachmentTypes.BELL_TIME, particleTicks);
             });
         }
     }

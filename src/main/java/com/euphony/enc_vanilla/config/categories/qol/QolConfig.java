@@ -97,6 +97,7 @@ public final class QolConfig {
     @SerialEntry public boolean enableMudConversion = false;
 
     @SerialEntry public boolean enableBellPhantom = true;
+    @SerialEntry public double particleDuration = 2.0D;
 
     @SerialEntry public boolean enableBlocksOnLilyPad = true;
     @SerialEntry public boolean enablePaintingSwitching = true;
@@ -210,6 +211,14 @@ public final class QolConfig {
                             () -> config.enableBellPhantom,
                             newVal -> config.enableBellPhantom = newVal)
                     .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
+                    .build();
+
+            Option<Double> particleDurationOpt = ConfigUtils.<Double>getGenericOption("particleDuration")
+                    .binding(defaults.particleDuration,
+                            () -> config.particleDuration,
+                            newVal -> config.particleDuration = newVal)
+                    .controller(opt -> DoubleSliderControllerBuilder.create(opt)
+                            .range(0.0, 5.0).step(0.5).formatValue(value -> Component.literal(value + "s")))
                     .build();
 
             Option<Boolean> enableBlocksOnLilyPadOpt = ConfigUtils.<Boolean>getGenericOption("enableBlocksOnLilyPad", "blocks_on_lily_pad")
@@ -333,7 +342,8 @@ public final class QolConfig {
                             .group(OptionGroup.createBuilder()
                                     .name(ConfigUtils.getGroupName(QOL_CATEGORY, BELL_PHANTOM_GROUP))
                                     .options(List.of(
-                                            enableBellPhantomOpt
+                                            enableBellPhantomOpt,
+                                            particleDurationOpt
                                     ))
                                     .build())
                             .group(OptionGroup.createBuilder()

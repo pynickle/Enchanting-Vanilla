@@ -72,6 +72,8 @@
   "yacl3.config.enc_vanilla:config.category.qol.group.bell_phantom": "Bell Phantom",
   "yacl3.config.enc_vanilla:config.enableBellPhantom": "Enable Bell Phantom",
   "yacl3.config.enc_vanilla:config.enableBellPhantom.desc": "Ringing the bell now repels phantoms within a 24-block radius.",
+  "yacl3.config.enc_vanilla:config.particleDuration": "Particle Duration",
+  "yacl3.config.enc_vanilla:config.particleDuration.desc": "Duration of the purple particle effect on the wings of repelled phantom",
 
   "yacl3.config.enc_vanilla:config.category.qol.group.other": "Other",
   "yacl3.config.enc_vanilla:config.enableBlocksOnLilyPad": "Enable Blocks On Lily Pad",
