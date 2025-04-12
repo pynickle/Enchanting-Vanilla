@@ -37,7 +37,7 @@ public class AnvilRepairEvent {
         ItemStack itemStack = player.getItemInHand(hand);
         Item item = itemStack.getItem();
 
-        if (!item.equals(Items.IRON_INGOT)) return;
+        if (!item.equals(QolConfig.HANDLER.instance().anvilRepairMaterial)) return;
 
         BlockPos pos = event.getPos();
         BlockState state = level.getBlockState(pos);

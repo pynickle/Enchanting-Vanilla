@@ -64,7 +64,7 @@ public abstract class VillagerMixin extends AbstractVillager {
             )
     )
     private void init(EntityType<? extends Villager> entityType, Level level, VillagerType villagerType, CallbackInfo ci) {
-        this.enc_vanilla$villagersAttractedGoal = new DoubleHandedTemptGoal(this, 0.5F, Ingredient.of(Items.EMERALD), Ingredient.of(OMINOUS_BANNER), false);
+        this.enc_vanilla$villagersAttractedGoal = new DoubleHandedTemptGoal(this, 0.5F, Ingredient.of(QolConfig.HANDLER.instance().mainHandItem), Ingredient.of(OMINOUS_BANNER), false);
     }
 
     @Inject(
@@ -77,7 +77,7 @@ public abstract class VillagerMixin extends AbstractVillager {
         final boolean configEnabled = QolConfig.HANDLER.instance().enableVillagerAttraction;
         if(!this.enc_vanilla$villagersAttracted && configEnabled) {
             if (!this.enc_vanilla$villagersAttractedGoal.canUse()) {
-                this.enc_vanilla$villagersAttractedGoal = new DoubleHandedTemptGoal(this, 0.5F, Ingredient.of(Items.EMERALD), Ingredient.of(OMINOUS_BANNER), false);
+                this.enc_vanilla$villagersAttractedGoal = new DoubleHandedTemptGoal(this, 0.5F, Ingredient.of(QolConfig.HANDLER.instance().mainHandItem), Ingredient.of(OMINOUS_BANNER), false);
             }
             this.goalSelector.addGoal(0, this.enc_vanilla$villagersAttractedGoal);
             this.enc_vanilla$villagersAttracted = true;

@@ -8,9 +8,11 @@ import dev.isxander.yacl3.api.Option;
 import dev.isxander.yacl3.api.OptionGroup;
 import dev.isxander.yacl3.api.YetAnotherConfigLib;
 import dev.isxander.yacl3.api.controller.BooleanControllerBuilder;
+import dev.isxander.yacl3.api.controller.DoubleSliderControllerBuilder;
 import dev.isxander.yacl3.config.v2.api.ConfigClassHandler;
 import dev.isxander.yacl3.config.v2.api.SerialEntry;
 import dev.isxander.yacl3.config.v2.api.serializer.GsonConfigSerializerBuilder;
+import dev.isxander.yacl3.gui.controllers.slider.DoubleSliderController;
 import net.minecraft.network.chat.Component;
 
 import java.nio.file.Path;
@@ -39,6 +41,7 @@ public class ClientConfig {
     private static final String OTHER_GROUP = "other";
 
     @SerialEntry public boolean enableFadingNightVision = true;
+    @SerialEntry public double fadingOutDuration = 3.0D;
 
     @SerialEntry public boolean enableBetterPingDisplay = true;
     @SerialEntry public boolean enableDefaultPingBars = false;
@@ -52,6 +55,14 @@ public class ClientConfig {
                             () -> config.enableFadingNightVision,
                             newVal -> config.enableFadingNightVision = newVal)
                     .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
+                    .build();
+
+            Option<Double> fadingOutDurationOpt = ConfigUtils.<Double>getGenericOption("fadingOutDuration")
+                    .binding(defaults.fadingOutDuration,
+                            () -> config.fadingOutDuration,
+                            newVal -> config.fadingOutDuration = newVal)
+                    .controller(opt -> DoubleSliderControllerBuilder.create(opt)
+                            .range(1.0, 5.0).step(0.5).formatValue(value -> Component.literal(value + "s")))
                     .build();
 
             Option<Boolean> enableBetterPingDisplayOpt = ConfigUtils.<Boolean>getGenericOption("enableBetterPingDisplay", "better_ping_display")
@@ -83,7 +94,8 @@ public class ClientConfig {
                             .group(OptionGroup.createBuilder()
                                     .name(ConfigUtils.getGroupName(CLIENT_CATEGORY, FADING_NIGHT_VISION_GROUP))
                                     .options(List.of(
-                                            enableFadingNightVisionOpt
+                                            enableFadingNightVisionOpt,
+                                            fadingOutDurationOpt
                                     ))
                                     .build())
                             .group(OptionGroup.createBuilder()

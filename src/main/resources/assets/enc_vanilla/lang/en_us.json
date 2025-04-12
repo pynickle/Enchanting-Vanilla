@@ -29,7 +29,9 @@
 
   "yacl3.config.enc_vanilla:config.category.qol.group.villager_attraction": "Villager Attraction",
   "yacl3.config.enc_vanilla:config.enableVillagerAttraction": "Enable Villager Attraction",
-  "yacl3.config.enc_vanilla:config.enableVillagerAttraction.desc": "Villagers can be attracted by the player holding an emerald in the main hand and an ominous banner in the offhand.",
+  "yacl3.config.enc_vanilla:config.enableVillagerAttraction.desc": "Villagers can be attracted by the player holding an emerald (by default) in the main hand and an ominous banner in the offhand.",
+  "yacl3.config.enc_vanilla:config.mainHandItem": "Main Hand Item",
+  "yacl3.config.enc_vanilla:config.mainHandItem.desc": "Change the main hand items needed to attract villagers",
 
   "yacl3.config.enc_vanilla:config.category.qol.group.item_frame": "Invisible Item Frame",
   "yacl3.config.enc_vanilla:config.enableInvisibleItemFrame": "Enable Invisible Item Frame",
@@ -63,7 +65,9 @@
 
   "yacl3.config.enc_vanilla:config.category.qol.group.anvil_repair": "Anvil Repair",
   "yacl3.config.enc_vanilla:config.enableAnvilRepair": "Enable Anvil Repair",
-  "yacl3.config.enc_vanilla:config.enableAnvilRepair.desc": "You can repair a stage by shift right-clicking the anvil with an iron ingot.",
+  "yacl3.config.enc_vanilla:config.enableAnvilRepair.desc": "You can repair a stage by shift right-clicking the anvil with the anvil repair material.",
+  "yacl3.config.enc_vanilla:config.anvilRepairMaterial": "Anvil Repair Material",
+  "yacl3.config.enc_vanilla:config.anvilRepairMaterial.desc": "Materials needed to repair an anvil",
 
   "yacl3.config.enc_vanilla:config.category.qol.group.bell_phantom": "Bell Phantom",
   "yacl3.config.enc_vanilla:config.enableBellPhantom": "Enable Bell Phantom",
@@ -106,6 +110,8 @@
   "yacl3.config.enc_vanilla:config.category.client.group.fading_night_vision": "Fading Out Night Vision",
   "yacl3.config.enc_vanilla:config.enableFadingNightVision": "Enable Fading Out Night Vision",
   "yacl3.config.enc_vanilla:config.enableFadingNightVision.desc": "Night vision now fades out instead of flickering.",
+  "yacl3.config.enc_vanilla:config.fadingOutDuration": "Fading Out Duration",
+  "yacl3.config.enc_vanilla:config.fadingOutDuration.desc": "Duration of night vision effect fade out",
 
   "yacl3.config.enc_vanilla:config.category.client.group.better_ping_display": "Better Ping Display",
   "yacl3.config.enc_vanilla:config.enableBetterPingDisplay": "Enable Better Ping Display",

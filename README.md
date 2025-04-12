@@ -54,7 +54,7 @@ A mod dedicated to enhancing the vanilla game experience and staying close to th
 * The inverted redstone torch sends a signal to the block above it.
 
 ### **15.** *Anvil Repair*
-* You can repair a stage by shift right-clicking the anvil with an iron ingot.
+* You can repair a stage by shift right-clicking the anvil with an iron ingot (configurable).
 
 ### **16.** *Water Conversion*
 * You could just drop the concrete into the water and let them solidify.

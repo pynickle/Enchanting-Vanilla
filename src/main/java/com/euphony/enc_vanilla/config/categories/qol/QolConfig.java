@@ -9,11 +9,14 @@ import dev.isxander.yacl3.api.*;
 import dev.isxander.yacl3.api.controller.BooleanControllerBuilder;
 import dev.isxander.yacl3.api.controller.DoubleSliderControllerBuilder;
 import dev.isxander.yacl3.api.controller.IntegerSliderControllerBuilder;
+import dev.isxander.yacl3.api.controller.ItemControllerBuilder;
 import dev.isxander.yacl3.config.v2.api.ConfigClassHandler;
 import dev.isxander.yacl3.config.v2.api.SerialEntry;
 import dev.isxander.yacl3.config.v2.api.serializer.GsonConfigSerializerBuilder;
 import dev.isxander.yacl3.gui.YACLScreen;
 import net.minecraft.network.chat.Component;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 
 import java.nio.file.Path;
 import java.util.List;
@@ -47,6 +50,8 @@ public final class QolConfig {
     private static final String OTHER_GROUP = "other";
 
     @SerialEntry public boolean enableVillagerAttraction = true;
+    @SerialEntry public Item mainHandItem = Items.EMERALD;
+
     @SerialEntry public boolean enableInvisibleItemFrame = true;
 
     @SerialEntry public boolean enableTorchHit = true;
@@ -86,6 +91,7 @@ public final class QolConfig {
     @SerialEntry public boolean enableFarmlandTramplingPrevention = true;
 
     @SerialEntry public boolean enableAnvilRepair = true;
+    @SerialEntry public Item anvilRepairMaterial = Items.IRON_INGOT;
 
     @SerialEntry public boolean enableWaterConversion = true;
     @SerialEntry public boolean enableMudConversion = false;
@@ -110,6 +116,13 @@ public final class QolConfig {
                             () -> config.enableVillagerAttraction,
                             newVal -> config.enableVillagerAttraction = newVal)
                     .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
+                    .build();
+
+            Option<Item> mainHandItemOpt = ConfigUtils.<Item>getGenericOption("mainHandItem")
+                    .binding(defaults.mainHandItem,
+                            () -> config.mainHandItem,
+                            newVal -> config.mainHandItem = newVal)
+                    .controller(ItemControllerBuilder::create)
                     .build();
 
             Option<Boolean> enableInvisibleItemFrameOpt = ConfigUtils.<Boolean>getGenericOption("enableInvisibleItemFrame", "item_frame")
@@ -169,6 +182,13 @@ public final class QolConfig {
                             () -> config.enableAnvilRepair,
                             newVal -> config.enableAnvilRepair = newVal)
                     .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
+                    .build();
+
+            Option<Item> anvilRepairMaterialOpt = ConfigUtils.<Item>getGenericOption("anvilRepairMaterial")
+                    .binding(defaults.anvilRepairMaterial,
+                            () -> config.anvilRepairMaterial,
+                            newVal -> config.anvilRepairMaterial = newVal)
+                    .controller(ItemControllerBuilder::create)
                     .build();
 
             Option<Boolean> enableWaterConversionOpt = ConfigUtils.<Boolean>getGenericOption("enableWaterConversion", "water_conversion")
@@ -269,7 +289,8 @@ public final class QolConfig {
                             .group(OptionGroup.createBuilder()
                                     .name(ConfigUtils.getGroupName(QOL_CATEGORY, VILLAGER_ATTRACTION_GROUP))
                                     .options(List.of(
-                                            enableVillagerAttractionOpt
+                                            enableVillagerAttractionOpt,
+                                            mainHandItemOpt
                                     ))
                                     .build())
                             .group(OptionGroup.createBuilder()
@@ -298,7 +319,8 @@ public final class QolConfig {
                             .group(OptionGroup.createBuilder()
                                     .name(ConfigUtils.getGroupName(QOL_CATEGORY, ANVIL_REPAIR_GROUP))
                                     .options(List.of(
-                                            enableAnvilRepairOpt
+                                            enableAnvilRepairOpt,
+                                            anvilRepairMaterialOpt
                                     ))
                                     .build())
                             .group(OptionGroup.createBuilder()

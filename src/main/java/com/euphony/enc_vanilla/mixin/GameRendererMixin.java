@@ -15,7 +15,12 @@ public class GameRendererMixin {
     private static float getNightVisionScaleModify(float original, LivingEntity livingEntity, float pNanoTime) {
         if(!ClientConfig.HANDLER.instance().enableFadingNightVision) return original;
 
+        int fadingOutTicks = (int) (ClientConfig.HANDLER.instance().fadingOutDuration * 20);
         MobEffectInstance mobeffectinstance = livingEntity.getEffect(MobEffects.NIGHT_VISION);
-        return !mobeffectinstance.endsWithin(60) ? 1.0F : (1f / (20f * 3.0f) * (mobeffectinstance.getDuration() - pNanoTime));
+        if (mobeffectinstance != null) {
+            return !mobeffectinstance.endsWithin(fadingOutTicks) ? 1.0F : (1f / fadingOutTicks * (mobeffectinstance.getDuration() - pNanoTime));
+        } else {
+            return 1.0F;
+        }
     }
 }
