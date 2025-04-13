@@ -4,7 +4,7 @@
 
 **The vast majority of the features are switchable, and you can easily configure them visually within the game by installing the optional dependency YetAnotherConfigLib mod**
 
-## *Functions implemented (30) :*
+## *Functions implemented (31) :*
 
 ### **Ⅰ. QOL Improvements**
 
@@ -71,6 +71,9 @@
 
 ### **19.** *Axolotl Bucket Fix*
 * Now buckets containing different variants of axolotl display different textures.
+
+### **20.** *Highlight Mobs Preventing Sleep*
+* Mobs that prevent you from sleeping are now highlighted for 3s (default).
 
 ### **Ⅱ. Tools**
 

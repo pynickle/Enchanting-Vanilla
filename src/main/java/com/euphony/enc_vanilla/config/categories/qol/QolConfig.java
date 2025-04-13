@@ -47,6 +47,7 @@ public final class QolConfig {
     private static final String ANVIL_REPAIR_GROUP = "anvil_repair";
     private static final String WATER_CONVERSION_GROUP = "water_conversion";
     private static final String BELL_PHANTOM_GROUP = "bell_phantom";
+    private static final String HIGHLIGHT_MOBS_GROUP = "highlight_mobs";
     private static final String OTHER_GROUP = "other";
 
     @SerialEntry public boolean enableVillagerAttraction = true;
@@ -98,6 +99,9 @@ public final class QolConfig {
 
     @SerialEntry public boolean enableBellPhantom = true;
     @SerialEntry public double particleDuration = 2.0D;
+
+    @SerialEntry public boolean enableHighlightMobs = true;
+    @SerialEntry public double highlightDuration = 3.0;
 
     @SerialEntry public boolean enableBlocksOnLilyPad = true;
     @SerialEntry public boolean enablePaintingSwitching = true;
@@ -220,6 +224,21 @@ public final class QolConfig {
                             newVal -> config.particleDuration = newVal)
                     .controller(opt -> DoubleSliderControllerBuilder.create(opt)
                             .range(0.0, 5.0).step(0.5).formatValue(value -> Component.literal(value + "s")))
+                    .build();
+
+            Option<Boolean> enableHighlightMobsOpt = ConfigUtils.<Boolean>getGenericOption("enableHighlightMobs", "highlight_mobs")
+                    .binding(defaults.enableHighlightMobs,
+                            () -> config.enableHighlightMobs,
+                            newVal -> config.enableHighlightMobs = newVal)
+                    .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
+                    .build();
+
+            Option<Double> highlightDurationOpt = ConfigUtils.<Double>getGenericOption("highlightDuration")
+                    .binding(defaults.highlightDuration,
+                            () -> config.highlightDuration,
+                            newVal -> config.highlightDuration = newVal)
+                    .controller(opt -> DoubleSliderControllerBuilder.create(opt)
+                            .range(1.0, 5.0).step(0.5).formatValue(value -> Component.literal(value + "s")))
                     .build();
 
             Option<Boolean> enableBlocksOnLilyPadOpt = ConfigUtils.<Boolean>getGenericOption("enableBlocksOnLilyPad", "blocks_on_lily_pad")
@@ -352,6 +371,13 @@ public final class QolConfig {
                                     .options(List.of(
                                             enableBellPhantomOpt,
                                             particleDurationOpt
+                                    ))
+                                    .build())
+                            .group(OptionGroup.createBuilder()
+                                    .name(ConfigUtils.getGroupName(QOL_CATEGORY, HIGHLIGHT_MOBS_GROUP))
+                                    .options(List.of(
+                                            enableHighlightMobsOpt,
+                                            highlightDurationOpt
                                     ))
                                     .build())
                             .group(OptionGroup.createBuilder()

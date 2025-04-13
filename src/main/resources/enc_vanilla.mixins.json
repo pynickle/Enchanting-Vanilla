@@ -16,6 +16,7 @@
     "PhantomMixin",
     "PowderSnowBlockMixin",
     "RecipeManagerMixin",
+    "ServerPlayerMixin",
     "ShutupNameTag",
     "SmallFireballMixin",
     "ThrownPotionMixin",

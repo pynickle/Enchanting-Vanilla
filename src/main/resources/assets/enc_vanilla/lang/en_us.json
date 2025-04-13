@@ -75,6 +75,12 @@
   "yacl3.config.enc_vanilla:config.particleDuration": "Particle Duration",
   "yacl3.config.enc_vanilla:config.particleDuration.desc": "Duration of the purple particle effect on the wings of repelled phantom",
 
+  "yacl3.config.enc_vanilla:config.category.qol.group.highlight_mobs": "Highlight Mobs Preventing Sleep",
+  "yacl3.config.enc_vanilla:config.enableHighlightMobs": "Enable HighLight Mobs",
+  "yacl3.config.enc_vanilla:config.enableHighlightMobs.desc": "Mobs that prevent you from sleeping are now highlighted for 3s.",
+  "yacl3.config.enc_vanilla:config.highlightDuration": "Highlight Duration",
+  "yacl3.config.enc_vanilla:config.highlightDuration.desc": "Duration of mobs highlighting",
+
   "yacl3.config.enc_vanilla:config.category.qol.group.other": "Other",
   "yacl3.config.enc_vanilla:config.enableBlocksOnLilyPad": "Enable Blocks On Lily Pad",
   "yacl3.config.enc_vanilla:config.enableBlocksOnLilyPad.desc": "Now you can place blocks above the lily pads, which works by turning the block underneath into waterlogged lily pad.",
