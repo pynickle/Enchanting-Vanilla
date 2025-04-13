@@ -2,7 +2,6 @@ package com.euphony.enc_vanilla.mixin;
 
 import com.euphony.enc_vanilla.config.categories.qol.QolConfig;
 import com.mojang.datafixers.util.Either;
-import java.util.Optional;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.util.Unit;
@@ -20,6 +19,8 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
+
+import java.util.Optional;
 
 @Mixin({ServerPlayer.class})
 public abstract class ServerPlayerMixin extends Entity {
