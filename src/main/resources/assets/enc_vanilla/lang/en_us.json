@@ -136,6 +136,9 @@
   "yacl3.config.enc_vanilla:config.enableLongerChatHistory.desc": "Chat history now extends from the vanilla 100 to 4096.",
   "yacl3.config.enc_vanilla:config.chatMaxMessages": "Chat Max Messages",
   "yacl3.config.enc_vanilla:config.chatMaxMessages.desc": "Maximum number of messages retained in chat history",
+  "yacl3.config.enc_vanilla:config.enableTimeStamp": "Enable Time Stamp",
+  "yacl3.config.enc_vanilla:config.enableTimeStamp.desc": "The time is now displayed before the chat message.",
+
 
   "yacl3.config.enc_vanilla:config.category.client.group.other": "Other",
   "yacl3.config.enc_vanilla:config.enableBeeInfo": "Enable Bee Info",

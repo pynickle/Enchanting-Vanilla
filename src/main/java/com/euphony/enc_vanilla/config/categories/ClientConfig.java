@@ -49,6 +49,7 @@ public class ClientConfig {
 
     @SerialEntry public boolean enableLongerChatHistory = true;
     @SerialEntry public int chatMaxMessages = 4096;
+    @SerialEntry public boolean enableTimeStamp = true;
 
     @SerialEntry public boolean enableBeeInfo = true;
 
@@ -106,6 +107,13 @@ public class ClientConfig {
                             .range(100, 32768))
                     .build();
 
+            Option<Boolean> enableTimeStampOpt = ConfigUtils.<Boolean>getGenericOption("enableTimeStamp")
+                    .binding(defaults.enableTimeStamp,
+                            () -> config.enableTimeStamp,
+                            newVal -> config.enableTimeStamp = newVal)
+                    .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
+                    .build();
+
             return builder
                     .title(Component.translatable("yacl3.config.enc_vanilla:config"))
                     .category(ConfigCategory.createBuilder()
@@ -128,7 +136,8 @@ public class ClientConfig {
                                     .name(ConfigUtils.getGroupName(CLIENT_CATEGORY, BETTER_CHAT_GROUP))
                                     .options(List.of(
                                             enableLongerChatHistoryOpt,
-                                            chatMaxMessagesOpt
+                                            chatMaxMessagesOpt,
+                                            enableTimeStampOpt
                                     ))
                                     .build())
                             .group(OptionGroup.createBuilder()
