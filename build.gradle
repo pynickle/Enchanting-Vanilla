@@ -123,7 +123,7 @@ dependencies {
     // runtimeOnly("curse.maven:catalogue-459701:${catalogue_id}")
     // runtimeOnly("curse.maven:selene-499980:${selene_id}")
     // runtimeOnly("curse.maven:fast-paintings-883287:${fast_paintings_id}")
-    runtimeOnly("tschipp.carryon:carryon-neoforge-${minecraft_version}:${carryon_version}")
+    // runtimeOnly("tschipp.carryon:carryon-neoforge-${minecraft_version}:${carryon_version}")
 }
 
 var generateModMetadata = tasks.register("generateModMetadata", ProcessResources) {

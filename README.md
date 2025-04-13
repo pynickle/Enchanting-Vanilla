@@ -30,6 +30,6 @@ A: No plans for the time being.
 
 ## Version Support
 
-* **1.21.1 Neoforge: 0.1.0 (Active Updates)**
+* **1.21.1 Neoforge: 0.1.1 (Active Updates)**
 * **1.21.4 Neoforge: unplanned**
 * **1.21.5 Neoforge: Consideration of future migration**

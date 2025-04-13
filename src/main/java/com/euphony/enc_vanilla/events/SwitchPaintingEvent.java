@@ -73,8 +73,11 @@ public class SwitchPaintingEvent {
                     int i = list.stream().mapToInt(SwitchPaintingEvent::variantArea).max().orElse(0);
                     list.removeIf(p_218883_ -> variantArea(p_218883_) < i);
                     Optional<Holder<PaintingVariant>> optional = Util.getRandomSafe(list, painting.getRandom());
-                    optional.ifPresent(painting::setVariant);
-                    event.setCanceled(true);
+                    if(optional.isPresent()) {
+                        painting.setVariant(optional.get());
+                        player.swing(hand);
+                        event.setCanceled(true);
+                    }
                 }
             }
         }
@@ -137,6 +140,7 @@ public class SwitchPaintingEvent {
                                     BlockPos pos = getBlockPos(painting1, dir);
                                     if (pos.getX() == blockPos.getX() && pos.getZ() == blockPos.getZ() && pos.getY() == blockPos.getY()) {
                                         level.addFreshEntity(painting1);
+                                        player.swing(hand);
                                         event.setCanceled(true);
                                         return;
                                     }
@@ -151,13 +155,12 @@ public class SwitchPaintingEvent {
 
     private static @NotNull BlockPos getBlockPos(Painting painting1, Direction dir) {
         AABB bb = painting1.getBoundingBox();
-        BlockPos pos = switch (dir) {
+        return switch (dir) {
             case SOUTH -> BlockPos.containing(bb.minX, bb.maxY - 0.5, bb.maxZ);
             case WEST -> BlockPos.containing(bb.minX, bb.maxY - 0.5, bb.minZ);
             case EAST -> BlockPos.containing(bb.maxX, bb.maxY - 0.5, bb.maxZ - 0.5);
             default -> BlockPos.containing(bb.maxX - 0.5, bb.maxY - 0.5, bb.minZ);
         };
-        return pos;
     }
 
     private static int variantArea(Holder<PaintingVariant> variant) {

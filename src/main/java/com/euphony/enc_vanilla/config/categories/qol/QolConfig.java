@@ -114,6 +114,7 @@ public final class QolConfig {
     @SerialEntry public boolean enableCeilingTorch = true;
     @SerialEntry public boolean enableSafeLavaBucket = false;
     @SerialEntry public boolean enableAxolotlBucketFix = true;
+    @SerialEntry public boolean enablePlaceChestOnBoat = true;
 
     public static YetAnotherConfigLib makeScreen() {
         return YetAnotherConfigLib.create(HANDLER, (defaults, config, builder) -> {
@@ -318,6 +319,13 @@ public final class QolConfig {
                     .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
                     .build();
 
+            Option<Boolean> enablePlaceChestOnBoatOpt = ConfigUtils.<Boolean>getGenericOption("enablePlaceChestOnBoat")
+                    .binding(defaults.enablePlaceChestOnBoat,
+                            () -> config.enablePlaceChestOnBoat,
+                            newVal -> config.enablePlaceChestOnBoat = newVal)
+                    .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
+                    .build();
+
             return builder
                     .title(Component.translatable("yacl3.config.enc_vanilla:config"))
                     .category(ConfigCategory.createBuilder()
@@ -394,7 +402,8 @@ public final class QolConfig {
                                             enableCeilingTorchOpt,
                                             enableWaterConversionOpt,
                                             enableSafeLavaBucketOpt,
-                                            enableAxolotlBucketFixOpt
+                                            enableAxolotlBucketFixOpt,
+                                            enablePlaceChestOnBoatOpt
                                     ))
                                     .build())
                             .build())

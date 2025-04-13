@@ -104,6 +104,8 @@
   "yacl3.config.enc_vanilla:config.enableSafeLavaBucket.desc": "Now you need to sneak in order to reclaim the lava with a bucket to prevent accidentally destroying the lava lake.",
   "yacl3.config.enc_vanilla:config.enableAxolotlBucketFix": "Enable Axolotl Bucket Fix",
   "yacl3.config.enc_vanilla:config.enableAxolotlBucketFix.desc": "Now buckets containing different variants of axolotl display different textures.",
+  "yacl3.config.enc_vanilla:config.enablePlaceChestOnBoat": "Enable Place Chest On Boat",
+  "yacl3.config.enc_vanilla:config.enablePlaceChestOnBoat.desc": "Now you can just right-click to place a chest on the boat.",
 
   "yacl3.config.enc_vanilla:config.category.tools.group.compressed_slime_block": "Compressed Slime Block",
   "yacl3.config.enc_vanilla:config.enableCompressedSlimeBlock": "Enable Compressed Slime Block",
