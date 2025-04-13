@@ -1,8 +1,34 @@
-# Enchanting Vanilla
+![minecraft_title.png](title.png)
 
-**A mod dedicated to enhancing the vanilla game experience and staying close to the vanilla style**
+## Description
 
-**The vast majority of the features are switchable, and you can easily configure them visually within the game by installing the optional dependency YetAnotherConfigLib mod**
+**Enchanting Vanilla** is a mod dedicated to enhancing the vanilla game experience and staying close to the vanilla style.
+
+It focuses on all-around optimization of the game experience, including not only QOL improvements like dropping concrete powders into water to make it solidify, but also utilities that can detect slime chunks, everything you can think of is here!
+
+## Dependency
+
+The vast majority of the features are switchable, and you can easily configure them visually within the game by installing the optional dependency **"YetAnotherConfigLib"** mod
+
+Configuration files are also available.
+
+## Development
+
+This mod is actively being updated and more features will be added in the future!
+
+Currently in beta
+
+## FAQ
+
+**Q: Are you going to migrate the mod to Fabric?**
+
+A: No plans for the time being.
+
+## Version Support
+
+* **1.21.1 Neoforge: 0.1.0 (Active Updates)**
+* **1.21.4 Neoforge: unplanned**
+* **1.21.5 Neoforge: Consideration of future migration**
 
 ## *Functions implemented (31) :*
 
