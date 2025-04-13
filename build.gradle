@@ -19,6 +19,9 @@ repositories {
         name = "ModMaven"
         url = "https://modmaven.dev"
     }
+    maven {
+        url "https://maven.blamejared.com/"
+    }
     exclusiveContent {
         // Curse Maven
         forRepository {
@@ -109,6 +112,7 @@ dependencies {
     runtimeOnly("dev.isxander:yet-another-config-lib:${yacl_version}+${minecraft_version}-neoforge")
     compileOnly("curse.maven:selene-499980:${selene_id}")
     compileOnly("curse.maven:fast-paintings-883287:${fast_paintings_id}")
+    compileOnly("tschipp.carryon:carryon-neoforge-${minecraft_version}:${carryon_version}")
 
     compileOnly("it.crystalnest:cobweb-neoforge:1.21-${cobweb_version}")
     compileOnly("it.crystalnest:soul-fire-d-neoforge:1.21-${soul_fire_d_version}")
@@ -119,6 +123,7 @@ dependencies {
     // runtimeOnly("curse.maven:catalogue-459701:${catalogue_id}")
     // runtimeOnly("curse.maven:selene-499980:${selene_id}")
     // runtimeOnly("curse.maven:fast-paintings-883287:${fast_paintings_id}")
+    runtimeOnly("tschipp.carryon:carryon-neoforge-${minecraft_version}:${carryon_version}")
 }
 
 var generateModMetadata = tasks.register("generateModMetadata", ProcessResources) {
@@ -129,6 +134,7 @@ var generateModMetadata = tasks.register("generateModMetadata", ProcessResources
                              loader_version_range   : loader_version_range,
                              soul_fire_d_version    : soul_fire_d_version,
                              cobweb_version         : cobweb_version,
+                             carryon_version        : carryon_version,
                              catalogue_id           : catalogue_id,
                              yacl_version           : yacl_version,
                              mod_id                 : mod_id,

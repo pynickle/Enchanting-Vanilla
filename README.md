@@ -2,6 +2,8 @@
 
 ## Description
 
+中文 README & Wiki：[README-CN](https://github.com/pynickle/Enchanting-Vanilla/blob/master/README-CN.md)
+
 **Enchanting Vanilla** is a mod dedicated to enhancing the vanilla game experience and staying close to the vanilla style.
 
 It focuses on all-around optimization of the game experience, including not only QOL improvements like dropping concrete powders into water to make it solidify, but also utilities that can detect slime chunks, everything you can think of is here!
