@@ -13,6 +13,7 @@
     "ItemFrameMixin",
     "JukeboxSongPlayerMixin",
     "LiquidBlockMixin",
+    "MonsterMixin",
     "PhantomMixin",
     "PowderSnowBlockMixin",
     "RecipeManagerMixin",

@@ -115,6 +115,7 @@ public final class QolConfig {
     @SerialEntry public boolean enableSafeLavaBucket = false;
     @SerialEntry public boolean enableAxolotlBucketFix = true;
     @SerialEntry public boolean enablePlaceChestOnBoat = true;
+    @SerialEntry public boolean enableNameTagDespawn = true;
 
     public static YetAnotherConfigLib makeScreen() {
         return YetAnotherConfigLib.create(HANDLER, (defaults, config, builder) -> {
@@ -326,6 +327,13 @@ public final class QolConfig {
                     .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
                     .build();
 
+            Option<Boolean> enableNameTagDespawnOpt = ConfigUtils.<Boolean>getGenericOption("enableNameTagDespawn")
+                    .binding(defaults.enableNameTagDespawn,
+                            () -> config.enableNameTagDespawn,
+                            newVal -> config.enableNameTagDespawn = newVal)
+                    .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
+                    .build();
+
             return builder
                     .title(Component.translatable("yacl3.config.enc_vanilla:config"))
                     .category(ConfigCategory.createBuilder()
@@ -403,7 +411,8 @@ public final class QolConfig {
                                             enableWaterConversionOpt,
                                             enableSafeLavaBucketOpt,
                                             enableAxolotlBucketFixOpt,
-                                            enablePlaceChestOnBoatOpt
+                                            enablePlaceChestOnBoatOpt,
+                                            enableNameTagDespawnOpt
                                     ))
                                     .build())
                             .build())

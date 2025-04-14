@@ -106,6 +106,8 @@
   "yacl3.config.enc_vanilla:config.enableAxolotlBucketFix.desc": "Now buckets containing different variants of axolotl display different textures.",
   "yacl3.config.enc_vanilla:config.enablePlaceChestOnBoat": "Enable Place Chest On Boat",
   "yacl3.config.enc_vanilla:config.enablePlaceChestOnBoat.desc": "Now you can just right-click to place a chest on the boat.",
+  "yacl3.config.enc_vanilla:config.enableNameTagDespawn": "Enable NameTag Despawn",
+  "yacl3.config.enc_vanilla:config.enableNameTagDespawn.desc": "Named monsters now don't despawn in peaceful mode.",
 
   "yacl3.config.enc_vanilla:config.category.tools.group.compressed_slime_block": "Compressed Slime Block",
   "yacl3.config.enc_vanilla:config.enableCompressedSlimeBlock": "Enable Compressed Slime Block",

@@ -93,6 +93,8 @@
   "yacl3.config.enc_vanilla:config.enableAxolotlBucketFix.desc": "现在装有不同种类美西螈的美西螈桶会显示不同的纹理。",
   "yacl3.config.enc_vanilla:config.enablePlaceChestOnBoat": "启用在船上放置箱子",
   "yacl3.config.enc_vanilla:config.enablePlaceChestOnBoat.desc": "现在你只需右键点击就能在船上放置一个箱子。",
+  "yacl3.config.enc_vanilla:config.enableNameTagDespawn": "启用命名牌和平保留",
+  "yacl3.config.enc_vanilla:config.enableNameTagDespawn.desc": "被命名的怪物现在不会在和平模式下消失。",
   "yacl3.config.enc_vanilla:config.category.tools.group.compressed_slime_block": "压缩黏液块",
   "yacl3.config.enc_vanilla:config.enableCompressedSlimeBlock": "启用压缩黏液块",
   "yacl3.config.enc_vanilla:config.enableCompressedSlimeBlock.desc": "现在，你可以在上下两个连续的黏液块上放置一个铁砧，铁砧落下使其压缩成一个压缩黏液块。",
