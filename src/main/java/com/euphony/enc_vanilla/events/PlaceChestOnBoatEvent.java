@@ -2,6 +2,7 @@ package com.euphony.enc_vanilla.events;
 
 import com.euphony.enc_vanilla.EncVanilla;
 import com.euphony.enc_vanilla.config.categories.qol.QolConfig;
+import com.euphony.enc_vanilla.utils.Utils;
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
@@ -22,7 +23,7 @@ import tschipp.carryon.common.carry.CarryOnData;
 import tschipp.carryon.common.carry.CarryOnDataManager;
 
 @EventBusSubscriber(modid = EncVanilla.MODID)
-public class RightClickChestBoat {
+public class PlaceChestOnBoatEvent {
     @SubscribeEvent
     public static void rightClickChestBoat(PlayerInteractEvent.EntityInteract event) {
         if(!QolConfig.HANDLER.instance().enablePlaceChestOnBoat) return;
@@ -47,7 +48,7 @@ public class RightClickChestBoat {
                 stack.consume(1, player);
                 level.addFreshEntity(newBoat);
             } else {
-                if (!player.isShiftKeyDown()) {
+                if (!player.isShiftKeyDown() && Utils.isModLoaded("carryon")) {
                     CarryOnData carry = CarryOnDataManager.getCarryData(player);
                     if (carry.isCarrying()) {
                         if (carry.isCarrying(CarryOnData.CarryType.BLOCK)) {
