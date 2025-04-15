@@ -1,6 +1,7 @@
 package com.euphony.enc_vanilla.client;
 
 import com.euphony.enc_vanilla.EncVanilla;
+import com.euphony.enc_vanilla.client.events.BiomeTitleEvent;
 import com.euphony.enc_vanilla.common.init.EVBlocks;
 import com.euphony.enc_vanilla.common.init.EVItems;
 import com.euphony.enc_vanilla.common.item.SculkCompassItem;
@@ -33,15 +34,35 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModLoadingContext;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
+import net.neoforged.fml.event.lifecycle.FMLLoadCompleteEvent;
+import net.neoforged.neoforge.client.event.RegisterClientReloadListenersEvent;
 import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
+import net.neoforged.neoforge.client.event.RegisterGuiLayersEvent;
 import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
+import net.neoforged.neoforge.client.gui.VanillaGuiLayers;
 import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
+import java.util.concurrent.CompletableFuture;
 
 
 @EventBusSubscriber(modid = EncVanilla.MODID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class EVClient {
+    @SubscribeEvent
+    public static void onResourceManagerReload(RegisterClientReloadListenersEvent event) {
+        event.registerReloadListener((barrier, manager, preparationsProfiler, reloadProfiler, backgroundExecutor, gameExecutor) -> CompletableFuture.runAsync(BiomeTitleEvent.NAME_CACHE::clear, backgroundExecutor).thenCompose(barrier::wait));
+    }
+
+    @SubscribeEvent
+    public static void onRegisterGuiLayers(RegisterGuiLayersEvent event) {
+        event.registerAbove(VanillaGuiLayers.TITLE, ResourceLocation.fromNamespaceAndPath(EncVanilla.MODID, "overlay"), BiomeTitleEvent::renderBiomeInfo);
+    }
+
+    @SubscribeEvent
+    public static void onLoadComplete(FMLLoadCompleteEvent event) {
+        BiomeTitleEvent.setComplete(true);
+    }
+
     @SubscribeEvent
     public static void registerBlockColor(RegisterColorHandlersEvent.Block event) {
         event.register(
