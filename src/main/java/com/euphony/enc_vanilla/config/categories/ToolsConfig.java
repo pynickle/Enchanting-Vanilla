@@ -44,6 +44,7 @@ public class ToolsConfig {
 
     public static YetAnotherConfigLib makeScreen() {
         return YetAnotherConfigLib.create(HANDLER, (defaults, config, builder) -> {
+            // Compressed Slime Block
             Option<Boolean> enableCompressedSlimeBlockOpt = ConfigUtils.<Boolean>getGenericOption("enableCompressedSlimeBlock", "compressed_slime_block")
                     .binding(defaults.enableCompressedSlimeBlock,
                             () -> config.enableCompressedSlimeBlock,
@@ -51,6 +52,7 @@ public class ToolsConfig {
                     .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
                     .build();
 
+            // Sculk Compass
             Option<Boolean> enableSculkCompassOpt = ConfigUtils.<Boolean>getGenericOption("enableSculkCompass", "sculk_compass")
                     .binding(defaults.enableSculkCompass,
                             () -> config.enableSculkCompass,
@@ -58,6 +60,7 @@ public class ToolsConfig {
                     .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
                     .build();
 
+            // Other
             Option<Boolean> enableSlimeChunkDetectingOpt = ConfigUtils.<Boolean>getGenericOption("enableSlimeChunkDetecting", "slime_chunk")
                     .binding(defaults.enableSlimeChunkDetecting,
                             () -> config.enableSlimeChunkDetecting,

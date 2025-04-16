@@ -2,6 +2,7 @@ package com.euphony.enc_vanilla.config.categories;
 
 import com.euphony.enc_vanilla.EncVanilla;
 import com.euphony.enc_vanilla.utils.config.ConfigUtils;
+import com.euphony.enc_vanilla.utils.config.DescComponent;
 import com.google.gson.GsonBuilder;
 import dev.isxander.yacl3.api.ConfigCategory;
 import dev.isxander.yacl3.api.Option;
@@ -39,6 +40,7 @@ public class ClientConfig {
     private static final String BETTER_PING_DISPLAY_GROUP = "better_ping_display";
     private static final String BETTER_CHAT_GROUP = "better_chat";
     private static final String BIOME_TITLE_GROUP = "biome_title";
+    private static final String FASTER_CLIMBING_GROUP = "faster_climbing";
     private static final String OTHER_GROUP = "other";
 
     @SerialEntry public boolean enableFadingNightVision = true;
@@ -50,6 +52,11 @@ public class ClientConfig {
     @SerialEntry public boolean enableLongerChatHistory = true;
     @SerialEntry public int chatMaxMessages = 4096;
     @SerialEntry public boolean enableTimeStamp = true;
+
+    @SerialEntry public boolean enableFasterClimbing = true;
+    @SerialEntry public boolean enableFasterUpward = true;
+    @SerialEntry public boolean enableFasterDownward = true;
+    @SerialEntry public double speedMultiplier = 2.0D;
 
     @SerialEntry public boolean enableBiomeTitle = true;
     @SerialEntry public boolean hideInF3 = true;
@@ -68,6 +75,7 @@ public class ClientConfig {
 
     public static YetAnotherConfigLib makeScreen() {
         return YetAnotherConfigLib.create(HANDLER, (defaults, config, builder) -> {
+            // Fading Night Vision
             Option<Boolean> enableFadingNightVisionOpt = ConfigUtils.<Boolean>getGenericOption("enableFadingNightVision")
                     .binding(defaults.enableFadingNightVision,
                             () -> config.enableFadingNightVision,
@@ -83,6 +91,7 @@ public class ClientConfig {
                             .range(1.0, 5.0).step(0.5).formatValue(value -> Component.literal(value + "s")))
                     .build();
 
+            // Better Ping Display
             Option<Boolean> enableBetterPingDisplayOpt = ConfigUtils.<Boolean>getGenericOption("enableBetterPingDisplay", "better_ping_display")
                     .binding(defaults.enableBetterPingDisplay,
                             () -> config.enableBetterPingDisplay,
@@ -97,14 +106,7 @@ public class ClientConfig {
                     .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
                     .build();
 
-            Option<Boolean> enableBeeInfoOpt = ConfigUtils.<Boolean>getGenericOption("enableBeeInfo", "bee_info")
-                    .binding(defaults.enableBeeInfo,
-                            () -> config.enableBeeInfo,
-                            newVal -> config.enableBeeInfo = newVal)
-                    .flag(ConfigUtils.RESOURCE_RELOAD)
-                    .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
-                    .build();
-
+            // Better Chat
             Option<Boolean> enableLongerChatHistoryOpt = ConfigUtils.<Boolean>getGenericOption("enableLongerChatHistory")
                     .binding(defaults.enableLongerChatHistory,
                             () -> config.enableLongerChatHistory,
@@ -127,6 +129,7 @@ public class ClientConfig {
                     .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
                     .build();
 
+            // Biome Title
             Option<Boolean> enableBiomeTitleOpt = ConfigUtils.<Boolean>getGenericOption("enableBiomeTitle", "biome_title")
                     .binding(defaults.enableBiomeTitle,
                             () -> config.enableBiomeTitle,
@@ -156,20 +159,20 @@ public class ClientConfig {
                             .range(1.0, 5.0).step(0.5).formatValue(value -> Component.literal(value + "s")))
                     .build();
 
-            Option<Integer> fadeInTimeOpt = ConfigUtils.<Integer>getGenericOption("fadeInTime")
+            Option<Integer> fadeInTimeOpt = ConfigUtils.<Integer>getGenericOption("fadeInTime", DescComponent.TICK_EXPLANATION)
                     .binding(defaults.fadeInTime,
                             () -> config.fadeInTime,
                             newVal -> config.fadeInTime = newVal)
                     .controller(opt -> IntegerFieldControllerBuilder.create(opt)
-                            .range(0, 60))
+                            .range(0, 60).formatValue(value -> Component.literal(value + " ticks")))
                     .build();
 
-            Option<Integer> fadeOutTimeOpt = ConfigUtils.<Integer>getGenericOption("fadeOutTime")
+            Option<Integer> fadeOutTimeOpt = ConfigUtils.<Integer>getGenericOption("fadeOutTime", DescComponent.TICK_EXPLANATION)
                     .binding(defaults.fadeOutTime,
                             () -> config.fadeOutTime,
                             newVal -> config.fadeOutTime = newVal)
                     .controller(opt -> IntegerFieldControllerBuilder.create(opt)
-                            .range(0, 60))
+                            .range(0, 60).formatValue(value -> Component.literal(value + " ticks")))
                     .build();
 
             Option<Double> scaleOpt = ConfigUtils.<Double>getGenericOption("scale")
@@ -217,6 +220,44 @@ public class ClientConfig {
                     .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
                     .build();
 
+            // Faster Climbing
+            Option<Boolean> enableFasterClimbingOpt = ConfigUtils.<Boolean>getGenericOption("enableFasterClimbing")
+                    .binding(defaults.enableFasterClimbing,
+                            () -> config.enableFasterClimbing,
+                            newVal -> config.enableFasterClimbing = newVal)
+                    .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
+                    .build();
+
+            Option<Boolean> enableFasterUpwardOpt = ConfigUtils.<Boolean>getGenericOption("enableFasterUpward")
+                    .binding(defaults.enableFasterUpward,
+                            () -> config.enableFasterUpward,
+                            newVal -> config.enableFasterUpward = newVal)
+                    .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
+                    .build();
+
+            Option<Boolean> enableFasterDownwardOpt = ConfigUtils.<Boolean>getGenericOption("enableFasterDownward")
+                    .binding(defaults.enableFasterDownward,
+                            () -> config.enableFasterDownward,
+                            newVal -> config.enableFasterDownward = newVal)
+                    .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
+                    .build();
+
+            Option<Double> speedMultiplierOpt = ConfigUtils.<Double>getGenericOption("speedMultiplier")
+                    .binding(defaults.speedMultiplier,
+                            () -> config.speedMultiplier,
+                            newVal -> config.speedMultiplier = newVal)
+                    .controller(opt -> DoubleSliderControllerBuilder.create(opt)
+                            .range(1.0, 10.0).step(0.5))
+                    .build();
+
+            // Other
+            Option<Boolean> enableBeeInfoOpt = ConfigUtils.<Boolean>getGenericOption("enableBeeInfo", "bee_info")
+                    .binding(defaults.enableBeeInfo,
+                            () -> config.enableBeeInfo,
+                            newVal -> config.enableBeeInfo = newVal)
+                    .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
+                    .build();
+
             return builder
                     .title(Component.translatable("yacl3.config.enc_vanilla:config"))
                     .category(ConfigCategory.createBuilder()
@@ -258,6 +299,15 @@ public class ClientConfig {
                                             cooldownTimeOpt,
                                             enableModNameOpt,
                                             enableUndergroundUpdateOpt
+                                    ))
+                                    .build())
+                            .group(OptionGroup.createBuilder()
+                                    .name(ConfigUtils.getGroupName(CLIENT_CATEGORY, FASTER_CLIMBING_GROUP))
+                                    .options(List.of(
+                                            enableFasterClimbingOpt,
+                                            enableFasterUpwardOpt,
+                                            enableFasterDownwardOpt,
+                                            speedMultiplierOpt
                                     ))
                                     .build())
                             .group(OptionGroup.createBuilder()

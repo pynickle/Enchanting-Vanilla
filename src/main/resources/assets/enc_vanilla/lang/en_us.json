@@ -27,6 +27,8 @@
   "yacl3.config.enc_vanilla:config.category.client": "Client",
   "yacl3.config.enc_vanilla:config.category.recipes": "Recipes",
 
+  "yacl3.config.enc_vanilla:description.tick_explanation": "1 second equals 20 ticks.",
+
   "yacl3.config.enc_vanilla:config.category.qol.group.villager_attraction": "Villager Attraction",
   "yacl3.config.enc_vanilla:config.enableVillagerAttraction": "Enable Villager Attraction",
   "yacl3.config.enc_vanilla:config.enableVillagerAttraction.desc": "Villagers can be attracted by the player holding an emerald (by default) in the main hand and an ominous banner in the offhand.",
@@ -81,6 +83,12 @@
   "yacl3.config.enc_vanilla:config.highlightDuration": "Highlight Duration",
   "yacl3.config.enc_vanilla:config.highlightDuration.desc": "Duration of mobs highlighting",
 
+  "yacl3.config.enc_vanilla:config.category.qol.group.sponge_placing": "Sponge Placing",
+  "yacl3.config.enc_vanilla:config.enableSpongePlacing": "Enable Sponge Placing",
+  "yacl3.config.enc_vanilla:config.enableSpongePlacing.desc": "You can now place a sponge directly on the water without having to place a cube next to it first.",
+  "yacl3.config.enc_vanilla:config.enableSpongePlacingSneaking": "Enable Sneaking When Placing Sponge",
+  "yacl3.config.enc_vanilla:config.enableSpongePlacingSneaking.desc": "You have to sneak in order to place a sponge directly on the water.",
+
   "yacl3.config.enc_vanilla:config.category.qol.group.other": "Other",
   "yacl3.config.enc_vanilla:config.enableBlocksOnLilyPad": "Enable Blocks On Lily Pad",
   "yacl3.config.enc_vanilla:config.enableBlocksOnLilyPad.desc": "Now you can place blocks above the lily pads, which works by turning the block underneath into waterlogged lily pad.",
@@ -90,8 +98,6 @@
   "yacl3.config.enc_vanilla:config.enableCutVine.desc": "Now you can right-click on the vine to convert it and the vines below it into cut vines, which will not grow.",
   "yacl3.config.enc_vanilla:config.enableStopGrowing": "Enable Stop Growing",
   "yacl3.config.enc_vanilla:config.enableStopGrowing.desc": "Now you can right-click on bamboo with axes or sugar cane with shears to stop them growing.",
-  "yacl3.config.enc_vanilla:config.enableSpongePlacing": "Enable Sponge Placing",
-  "yacl3.config.enc_vanilla:config.enableSpongePlacing.desc": "You can now place a sponge directly on the water without having to place a cube next to it first.",
   "yacl3.config.enc_vanilla:config.enableShutupNameTag": "Enable Shutup Name Tag",
   "yacl3.config.enc_vanilla:config.enableShutupNameTag.desc": "Now you can use a name tag to name a mob \"Shutup!\" to make it silent.",
   "yacl3.config.enc_vanilla:config.enableJukeboxLoop": "Enable Jukebox Loop",
@@ -167,17 +173,27 @@
   "yacl3.config.enc_vanilla:config.enableUndergroundUpdate": "Enable Underground Update",
   "yacl3.config.enc_vanilla:config.enableUndergroundUpdate.desc": "The title is also displayed when the player is underground.",
 
+  "yacl3.config.enc_vanilla:config.category.client.group.faster_climbing": "Faster Climbing",
+  "yacl3.config.enc_vanilla:config.enableFasterClimbing": "Enable Faster Climbing",
+  "yacl3.config.enc_vanilla:config.enableFasterClimbing.desc": "The speed at which you climb the ladder now changes depending on your viewpoint orientation when you're on the ladder.",
+  "yacl3.config.enc_vanilla:config.enableFasterUpward": "Enable Faster Upward",
+  "yacl3.config.enc_vanilla:config.enableFasterUpward.desc": "Whether to enable faster upward laddering.",
+  "yacl3.config.enc_vanilla:config.enableFasterDownward": "Enable Faster Downward",
+  "yacl3.config.enc_vanilla:config.enableFasterDownward.desc": "Whether to enable faster downward laddering.",
+  "yacl3.config.enc_vanilla:config.speedMultiplier": "Speed Multiplier",
+  "yacl3.config.enc_vanilla:config.speedMultiplier.desc": "Speed multiplier, multiplied by the angle sin value, 2.0 corresponds to 30 degrees for the original speed.",
+
   "yacl3.config.enc_vanilla:config.category.client.group.other": "Other",
   "yacl3.config.enc_vanilla:config.enableBeeInfo": "Enable Bee Info",
-    "yacl3.config.enc_vanilla:config.enableBeeInfo.desc": "You can now see the number of bees and the amount of honey in beehives and bee nests, just like the feature added natively in 1.21.2.",
+  "yacl3.config.enc_vanilla:config.enableBeeInfo.desc": "You can now see the number of bees and the amount of honey in beehives and bee nests, just like the feature added natively in 1.21.2.",
 
   "yacl3.config.enc_vanilla:config.category.recipes.group.other": "Other",
   "yacl3.config.enc_vanilla:config.enableMoreCompostable": "Enable More Compostable",
-    "yacl3.config.enc_vanilla:config.enableMoreCompostable.desc": "You can now compost even more items, which include rotten flesh, dead bush, grass blocks and more.",
+  "yacl3.config.enc_vanilla:config.enableMoreCompostable.desc": "You can now compost even more items, which include rotten flesh, dead bush, grass blocks and more.",
   "yacl3.config.enc_vanilla:config.enableSlabsToBlocks": "Enable Slabs To Blocks",
-    "yacl3.config.enc_vanilla:config.enableSlabsToBlocks.desc": "Add recipes for all slabs to blocks.",
+  "yacl3.config.enc_vanilla:config.enableSlabsToBlocks.desc": "Add recipes for all slabs to blocks.",
   "yacl3.config.enc_vanilla:config.enableSpongeCampfire": "Enable Sponge Campfire",
-    "yacl3.config.enc_vanilla:config.enableSpongeCampfire.desc": "Now you can use campfire drying sponges.",
+  "yacl3.config.enc_vanilla:config.enableSpongeCampfire.desc": "Now you can use campfire drying sponges.",
   "yacl3.config.enc_vanilla:config.enableBetterLodestone": "Enable Better Lodestone",
-    "yacl3.config.enc_vanilla:config.enableBetterLodestone.desc": "You can now use the 1.21.5 lodestone recipe and find it in ruined portal treasure chests."
+  "yacl3.config.enc_vanilla:config.enableBetterLodestone.desc": "You can now use the 1.21.5 lodestone recipe and find it in ruined portal treasure chests."
 }

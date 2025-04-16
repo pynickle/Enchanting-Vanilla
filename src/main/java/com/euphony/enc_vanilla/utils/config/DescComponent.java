@@ -5,8 +5,7 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 
 public enum DescComponent {
-
-    VILLAGER_ATTRACTION("villager_attraction");
+    TICK_EXPLANATION("tick_explanation", ChatFormatting.GRAY);
 
     private final String translationKey;
     private final ChatFormatting[] formattings;
@@ -18,7 +17,7 @@ public enum DescComponent {
 
     public Component getText() {
         return Component.translatable(
-                String.format("option.%s.description.%s", EncVanilla.MODID, this.translationKey)
+                String.format("yacl3.config.%s:description.%s", EncVanilla.MODID, this.translationKey)
         ).withStyle(this.formattings);
     }
 }

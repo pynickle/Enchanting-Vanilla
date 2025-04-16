@@ -48,6 +48,7 @@ public final class QolConfig {
     private static final String WATER_CONVERSION_GROUP = "water_conversion";
     private static final String BELL_PHANTOM_GROUP = "bell_phantom";
     private static final String HIGHLIGHT_MOBS_GROUP = "highlight_mobs";
+    private static final String SPONGE_PLACING_GROUP = "sponge_placing";
     private static final String OTHER_GROUP = "other";
 
     @SerialEntry public boolean enableVillagerAttraction = true;
@@ -103,11 +104,13 @@ public final class QolConfig {
     @SerialEntry public boolean enableHighlightMobs = true;
     @SerialEntry public double highlightDuration = 3.0;
 
+    @SerialEntry public boolean enableSpongePlacing = true;
+    @SerialEntry public boolean enableSpongePlacingSneaking = false;
+
     @SerialEntry public boolean enableBlocksOnLilyPad = true;
     @SerialEntry public boolean enablePaintingSwitching = true;
     @SerialEntry public boolean enableCutVine = true;
     @SerialEntry public boolean enableStopGrowing = true;
-    @SerialEntry public boolean enableSpongePlacing = true;
     @SerialEntry public boolean enableShutupNameTag = true;
     @SerialEntry public boolean enableJukeboxLoop = true;
     @SerialEntry public boolean enableCakeDrop = true;
@@ -119,6 +122,7 @@ public final class QolConfig {
 
     public static YetAnotherConfigLib makeScreen() {
         return YetAnotherConfigLib.create(HANDLER, (defaults, config, builder) -> {
+            // Villager Attraction
             Option<Boolean> enableVillagerAttractionOpt = ConfigUtils.<Boolean>getGenericOption("enableVillagerAttraction", "villager_attraction")
                     .binding(defaults.enableVillagerAttraction,
                             () -> config.enableVillagerAttraction,
@@ -133,6 +137,7 @@ public final class QolConfig {
                     .controller(ItemControllerBuilder::create)
                     .build();
 
+            // Item Frame
             Option<Boolean> enableInvisibleItemFrameOpt = ConfigUtils.<Boolean>getGenericOption("enableInvisibleItemFrame", "item_frame")
                     .binding(defaults.enableInvisibleItemFrame,
                             () -> config.enableInvisibleItemFrame,
@@ -140,6 +145,7 @@ public final class QolConfig {
                     .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
                     .build();
 
+            // Torch Hit
             Option<Boolean> enableTorchHitOpt = ConfigUtils.<Boolean>getGenericOption("enableTorchHit", "torch_hit")
                     .binding(defaults.enableTorchHit,
                             () -> config.enableTorchHit,
@@ -178,6 +184,7 @@ public final class QolConfig {
                     .action(((yaclScreen, buttonOption) -> yaclScreen.getMinecraft().setScreen(ExtraSoulTorchItemsScreen.makeScreen().generateScreen(yaclScreen))))
                     .build();
 
+            // Farmland Trampling Prevention
             Option<Boolean> enableFarmlandTramplingPreventionOpt = ConfigUtils.<Boolean>getGenericOption("enableFarmlandTramplingPrevention")
                     .binding(defaults.enableFarmlandTramplingPrevention,
                             () -> config.enableFarmlandTramplingPrevention,
@@ -185,6 +192,7 @@ public final class QolConfig {
                     .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
                     .build();
 
+            // Anvil Repair
             Option<Boolean> enableAnvilRepairOpt = ConfigUtils.<Boolean>getGenericOption("enableAnvilRepair")
                     .binding(defaults.enableAnvilRepair,
                             () -> config.enableAnvilRepair,
@@ -199,6 +207,7 @@ public final class QolConfig {
                     .controller(ItemControllerBuilder::create)
                     .build();
 
+            // Water Conversion
             Option<Boolean> enableWaterConversionOpt = ConfigUtils.<Boolean>getGenericOption("enableWaterConversion", "water_conversion")
                     .binding(defaults.enableWaterConversion,
                             () -> config.enableWaterConversion,
@@ -213,6 +222,7 @@ public final class QolConfig {
                     .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
                     .build();
 
+            // Bell Phantom
             Option<Boolean> enableBellPhantomOpt = ConfigUtils.<Boolean>getGenericOption("enableBellPhantom")
                     .binding(defaults.enableBellPhantom,
                             () -> config.enableBellPhantom,
@@ -228,6 +238,7 @@ public final class QolConfig {
                             .range(0.0, 5.0).step(0.5).formatValue(value -> Component.literal(value + "s")))
                     .build();
 
+            // Highlight Mobs
             Option<Boolean> enableHighlightMobsOpt = ConfigUtils.<Boolean>getGenericOption("enableHighlightMobs", "highlight_mobs")
                     .binding(defaults.enableHighlightMobs,
                             () -> config.enableHighlightMobs,
@@ -243,6 +254,22 @@ public final class QolConfig {
                             .range(1.0, 5.0).step(0.5).formatValue(value -> Component.literal(value + "s")))
                     .build();
 
+            // Sponge Placing
+            Option<Boolean> enableSpongePlacingOpt = ConfigUtils.<Boolean>getGenericOption("enableSpongePlacing", "sponge_placing")
+                    .binding(defaults.enableSpongePlacing,
+                            () -> config.enableSpongePlacing,
+                            newVal -> config.enableSpongePlacing = newVal)
+                    .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
+                    .build();
+
+            Option<Boolean> enableSpongePlacingSneakingOpt = ConfigUtils.<Boolean>getGenericOption("enableSpongePlacingSneaking")
+                    .binding(defaults.enableSpongePlacingSneaking,
+                            () -> config.enableSpongePlacingSneaking,
+                            newVal -> config.enableSpongePlacingSneaking = newVal)
+                    .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
+                    .build();
+
+            // Other
             Option<Boolean> enableBlocksOnLilyPadOpt = ConfigUtils.<Boolean>getGenericOption("enableBlocksOnLilyPad", "blocks_on_lily_pad")
                     .binding(defaults.enableBlocksOnLilyPad,
                             () -> config.enableBlocksOnLilyPad,
@@ -268,13 +295,6 @@ public final class QolConfig {
                     .binding(defaults.enableStopGrowing,
                             () -> config.enableStopGrowing,
                             newVal -> config.enableStopGrowing = newVal)
-                    .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
-                    .build();
-
-            Option<Boolean> enableSpongePlacingOpt = ConfigUtils.<Boolean>getGenericOption("enableSpongePlacing", "sponge_placing")
-                    .binding(defaults.enableSpongePlacing,
-                            () -> config.enableSpongePlacing,
-                            newVal -> config.enableSpongePlacing = newVal)
                     .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
                     .build();
 
@@ -397,13 +417,19 @@ public final class QolConfig {
                                     ))
                                     .build())
                             .group(OptionGroup.createBuilder()
+                                    .name(ConfigUtils.getGroupName(QOL_CATEGORY, SPONGE_PLACING_GROUP))
+                                    .options(List.of(
+                                            enableSpongePlacingOpt,
+                                            enableSpongePlacingSneakingOpt
+                                    ))
+                                    .build())
+                            .group(OptionGroup.createBuilder()
                                     .name(ConfigUtils.getGroupName(QOL_CATEGORY, OTHER_GROUP))
                                     .options(List.of(
                                             enableBlocksOnLilyPadOpt,
                                             enablePaintingSwitchingOpt,
                                             enableCutVineOpt,
                                             enableStopGrowingOpt,
-                                            enableSpongePlacingOpt,
                                             enableShutupNameTagOpt,
                                             enableJukeboxLoopOpt,
                                             enableCakeDropOpt,

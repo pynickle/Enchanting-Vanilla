@@ -22,7 +22,9 @@ import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent.RightClick
 public class SpongePlaceEvent {
     @SubscribeEvent
     public static void onSpongePlaceEvent(RightClickItem event) {
-        if(!QolConfig.HANDLER.instance().enableSpongePlacing) return;
+        boolean shouldPlace = !QolConfig.HANDLER.instance().enableSpongePlacingSneaking || event.getEntity().isShiftKeyDown();
+
+        if(!QolConfig.HANDLER.instance().enableSpongePlacing || !shouldPlace) return;
 
         ItemStack stack = event.getItemStack();
         if(stack.is(Items.SPONGE)) {

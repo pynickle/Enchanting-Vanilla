@@ -26,7 +26,6 @@ import org.apache.commons.lang3.StringUtils;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Optional;
 import java.util.StringJoiner;
 
 @EventBusSubscriber(modid = EncVanilla.MODID, value = Dist.CLIENT, bus = Bus.GAME)
@@ -78,13 +77,12 @@ public class BiomeTitleEvent {
         if (complete && ClientConfig.HANDLER.instance().enableBiomeTitle) {
             Minecraft mc = Minecraft.getInstance();
 
-            if (hideInF1(mc) || hideInF3(mc))
-                return;
+            if (hideInF1(mc) || hideInF3(mc)) return;
 
             Entity player = mc.getCameraEntity();
 
-            if(player == null)
-                return;
+            if(player == null) return;
+
             BlockPos pos = player.getOnPos();
 
             if (mc.level != null && mc.level.isLoaded(pos)) {
