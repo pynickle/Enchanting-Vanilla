@@ -20,16 +20,13 @@ public class FasterClimbingEvent {
         if(!player.level().isClientSide) return;
 
         if (player.onClimbable() && !player.isCrouching()) {
-            // player.sendSystemMessage(Component.literal(String.valueOf(player.getSpeed())));
             Climber climber = new Climber(player);
 
             if (ClientConfig.HANDLER.instance().enableFasterDownward && climber.isFacingDownward()
                     && !climber.isMovingForward() && !climber.isMovingBackward()) {
-                player.sendSystemMessage(Component.literal(String.valueOf(climber.getSpeed())));
                 climber.moveDownFaster();
             } else if (ClientConfig.HANDLER.instance().enableFasterUpward && climber.isFacingUpward()
                     && climber.isMovingForward()) {
-                player.sendSystemMessage(Component.literal(String.valueOf(climber.getSpeed())));
                 climber.moveUpFaster();
             }
         }

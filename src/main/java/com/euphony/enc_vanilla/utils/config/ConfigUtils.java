@@ -89,7 +89,7 @@ public class ConfigUtils {
 
     private static Component getDesc(String option, @Nullable DescComponent descComponent) {
         MutableComponent component = Component.translatable(String.format("yacl3.config.%s:config.%s.desc", EncVanilla.MODID, option));
-        if (descComponent != null) component.append(Component.literal("\n").append(descComponent.getText()));
+        if (descComponent != null) component.append(Component.literal("\n\n").append(descComponent.getText()));
         return component;
     }
 
