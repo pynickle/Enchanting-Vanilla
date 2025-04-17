@@ -4,12 +4,10 @@ import com.euphony.enc_vanilla.EncVanilla;
 import com.euphony.enc_vanilla.config.categories.qol.screen.ExtraSoulTorchItemsScreen;
 import com.euphony.enc_vanilla.config.categories.qol.screen.ExtraTorchItemsScreen;
 import com.euphony.enc_vanilla.utils.config.ConfigUtils;
+import com.euphony.enc_vanilla.utils.config.DescComponent;
 import com.google.gson.GsonBuilder;
 import dev.isxander.yacl3.api.*;
-import dev.isxander.yacl3.api.controller.BooleanControllerBuilder;
-import dev.isxander.yacl3.api.controller.DoubleSliderControllerBuilder;
-import dev.isxander.yacl3.api.controller.IntegerSliderControllerBuilder;
-import dev.isxander.yacl3.api.controller.ItemControllerBuilder;
+import dev.isxander.yacl3.api.controller.*;
 import dev.isxander.yacl3.config.v2.api.ConfigClassHandler;
 import dev.isxander.yacl3.config.v2.api.SerialEntry;
 import dev.isxander.yacl3.config.v2.api.serializer.GsonConfigSerializerBuilder;
@@ -49,6 +47,7 @@ public final class QolConfig {
     private static final String BELL_PHANTOM_GROUP = "bell_phantom";
     private static final String HIGHLIGHT_MOBS_GROUP = "highlight_mobs";
     private static final String SPONGE_PLACING_GROUP = "sponge_placing";
+    private static final String HEALING_CAMPFIRE_GROUP = "healing_campfire";
     private static final String OTHER_GROUP = "other";
 
     @SerialEntry public boolean enableVillagerAttraction = true;
@@ -106,6 +105,12 @@ public final class QolConfig {
 
     @SerialEntry public boolean enableSpongePlacing = true;
     @SerialEntry public boolean enableSpongePlacingSneaking = false;
+
+    @SerialEntry public boolean enableHealingCampfire = true;
+    @SerialEntry public int checkEveryTick = 60;
+    @SerialEntry public int healingRadius = 16;
+    @SerialEntry public double effectDuration = 5;
+    @SerialEntry public int effectLevel = 1;
 
     @SerialEntry public boolean enableBlocksOnLilyPad = true;
     @SerialEntry public boolean enablePaintingSwitching = true;
@@ -269,6 +274,46 @@ public final class QolConfig {
                     .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
                     .build();
 
+            // Healing Campfire
+            Option<Boolean> enableHealingCampfireOpt = ConfigUtils.<Boolean>getGenericOption("enableHealingCampfire")
+                    .binding(defaults.enableHealingCampfire,
+                            () -> config.enableHealingCampfire,
+                            newVal -> config.enableHealingCampfire = newVal)
+                    .controller(opt -> BooleanControllerBuilder.create(opt).trueFalseFormatter())
+                    .build();
+
+            Option<Integer> checkEveryTickOpt = ConfigUtils.<Integer>getGenericOption("checkEveryTick", DescComponent.TICK_EXPLANATION)
+                    .binding(defaults.checkEveryTick,
+                            () -> config.checkEveryTick,
+                            newVal -> config.checkEveryTick = newVal)
+                    .controller(opt -> IntegerFieldControllerBuilder.create(opt)
+                            .range(1, 60).formatValue(value -> Component.literal(value + " ticks")))
+                    .build();
+
+            Option<Integer> healingRadiusOpt = ConfigUtils.<Integer>getGenericOption("healingRadius")
+                    .binding(defaults.healingRadius,
+                            () -> config.healingRadius,
+                            newVal -> config.healingRadius = newVal)
+                    .controller(opt -> IntegerFieldControllerBuilder.create(opt)
+                            .range(0, 60))
+                    .build();
+
+            Option<Double> effectDurationOpt = ConfigUtils.<Double>getGenericOption("effectDuration")
+                    .binding(defaults.effectDuration,
+                            () -> config.effectDuration,
+                            newVal -> config.effectDuration = newVal)
+                    .controller(opt -> DoubleFieldControllerBuilder.create(opt)
+                            .range(1.0, 5.0).formatValue(value -> Component.literal(value + "s")))
+                    .build();
+
+            Option<Integer> effectLevelOpt = ConfigUtils.<Integer>getGenericOption("effectLevel")
+                    .binding(defaults.effectLevel,
+                            () -> config.effectLevel,
+                            newVal -> config.effectLevel = newVal)
+                    .controller(opt -> IntegerFieldControllerBuilder.create(opt)
+                            .range(0, 60))
+                    .build();
+
             // Other
             Option<Boolean> enableBlocksOnLilyPadOpt = ConfigUtils.<Boolean>getGenericOption("enableBlocksOnLilyPad", "blocks_on_lily_pad")
                     .binding(defaults.enableBlocksOnLilyPad,
@@ -421,6 +466,16 @@ public final class QolConfig {
                                     .options(List.of(
                                             enableSpongePlacingOpt,
                                             enableSpongePlacingSneakingOpt
+                                    ))
+                                    .build())
+                            .group(OptionGroup.createBuilder()
+                                    .name(ConfigUtils.getGroupName(QOL_CATEGORY, HEALING_CAMPFIRE_GROUP))
+                                    .options(List.of(
+                                            enableHealingCampfireOpt,
+                                            checkEveryTickOpt,
+                                            healingRadiusOpt,
+                                            effectDurationOpt,
+                                            effectLevelOpt
                                     ))
                                     .build())
                             .group(OptionGroup.createBuilder()

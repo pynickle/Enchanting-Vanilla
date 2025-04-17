@@ -3,7 +3,9 @@ package com.euphony.enc_vanilla;
 import com.euphony.enc_vanilla.common.init.*;
 import com.euphony.enc_vanilla.common.loot.EVLootModifiers;
 import com.euphony.enc_vanilla.config.EVConfig;
+import com.euphony.enc_vanilla.utils.BlockEntityMap;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
@@ -24,6 +26,9 @@ public class EncVanilla {
 
     public EncVanilla(IEventBus modEventBus, ModContainer modContainer) {
         EncVanilla.getConfig().load();
+
+        BlockEntityMap.addBlockEntity(BlockEntityType.CAMPFIRE);
+
         EVBlocks.BLOCKS.register(modEventBus);
         EVItems.ITEMS.register(modEventBus);
 

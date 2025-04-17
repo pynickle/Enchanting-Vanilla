@@ -7,6 +7,7 @@
   "mixins": [
     "BambooStalkBlockMixin",
     "BaseFireBlockMixin",
+    "BlockEntityMixin",
     "ConcretePowderBlockMixin",
     "FallingBlockEntityMixin",
     "FarmBlockMixin",
