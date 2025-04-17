@@ -89,6 +89,18 @@
   "yacl3.config.enc_vanilla:config.enableSpongePlacingSneaking": "Enable Sneaking When Placing Sponge",
   "yacl3.config.enc_vanilla:config.enableSpongePlacingSneaking.desc": "You have to sneak in order to place a sponge directly on the water.",
 
+  "yacl3.config.enc_vanilla:config.category.qol.group.healing_campfire": "Healing Campfire",
+  "yacl3.config.enc_vanilla:config.enableHealingCampfire": "Enable Healing Campfire",
+  "yacl3.config.enc_vanilla:config.enableHealingCampfire.desc": "Players within a certain radius of a campfire now get the Regeneration effect.",
+  "yacl3.config.enc_vanilla:config.checkEveryTick": "Check Every Tick",
+  "yacl3.config.enc_vanilla:config.checkEveryTick.desc": "How many ticks per check?",
+  "yacl3.config.enc_vanilla:config.healingRadius": "Healing Radius",
+  "yacl3.config.enc_vanilla:config.healingRadius.desc": "Players within what radius from the campfire are healed.",
+  "yacl3.config.enc_vanilla:config.effectDuration": "Effect Duration",
+  "yacl3.config.enc_vanilla:config.effectDuration.desc": "Duration of the regeneration effect each time you get it",
+  "yacl3.config.enc_vanilla:config.effectLevel": "Effect Level",
+  "yacl3.config.enc_vanilla:config.effectLevel.desc": "Level of regeneration effect each time you get it",
+
   "yacl3.config.enc_vanilla:config.category.qol.group.other": "Other",
   "yacl3.config.enc_vanilla:config.enableBlocksOnLilyPad": "Enable Blocks On Lily Pad",
   "yacl3.config.enc_vanilla:config.enableBlocksOnLilyPad.desc": "Now you can place blocks above the lily pads, which works by turning the block underneath into waterlogged lily pad.",
