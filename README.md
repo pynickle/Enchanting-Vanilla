@@ -1,5 +1,7 @@
 ![minecraft_title.png](title.png)
 
+# Go to [Enchanting Vanilla Architectury](https://github.com/pynickle/Enchanting-Vanilla-Architectury)
+
 ## Description
 
 中文 README & Wiki：[README-CN](https://github.com/pynickle/Enchanting-Vanilla/blob/master/README-CN.md)
